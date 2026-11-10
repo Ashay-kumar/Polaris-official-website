@@ -6,8 +6,17 @@ test("Styles, local fonts and decorative assets load under the Pages subpath", a
   page.on("requestfailed",request=>failures.push(request.url()));
   for (const route of ["/", "/our-thinking/", "/home-leadership-kit/", "/help-shape-polaris/", "/about/"]) {
     await page.goto(sitePath(route));
-    await page.evaluate(async ()=>{await document.fonts.ready; await Promise.all([...document.fonts].map(font=>font.load()));});
-    expect(await page.evaluate(()=>[...document.fonts].every(font=>font.status==="loaded"))).toBe(true);
+    // Check the actual web-font families, not platform-specific local fallback faces.
+    const loaded = await page.evaluate(async () => {
+      await document.fonts.ready;
+      return Promise.all([document.body, document.querySelector("h1")!].map(async element => {
+        const style = getComputedStyle(element);
+        const family = style.fontFamily.split(",")[0];
+        const faces = await document.fonts.load(style.fontWeight + " 16px " + family);
+        return faces.length > 0 && faces.every(face => face.status === "loaded");
+      }));
+    });
+    expect(loaded).toEqual([true, true]);
     const css = await page.locator('link[rel="stylesheet"]').evaluateAll(links=>links.map(link=>(link as HTMLLinkElement).href));
     for(const href of css) {
       const response=await request.get(href);expect(response.ok()).toBe(true);

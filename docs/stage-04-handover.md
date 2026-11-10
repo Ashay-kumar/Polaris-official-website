@@ -44,3 +44,5 @@ Static-host navigation: the locked Next 16.4.3 export emitted segmented RSC pref
 - Pages is not yet configured (has_pages=false); no repository setting, merge or deployment was performed. Owner setup/approval remains required. CI/PR status is reported separately after remote handover.
 
 The current moderate development-tool advisories remain a known maintenance item. Browser/axe results do not certify all assistive technology, browser engines or real devices. Copy/photography/privacy/backend limitations remain as described above.
+
+CI follow-up: Linux passed install, lint, integrity, build, type and export checks plus eleven browser tests. The additional font test incorrectly attempted to load Windows-only local fallback faces. It now verifies the actual heading/body web-font families; CSS checks still request every bundled font/decoration URL. This is a cross-platform test correction, with no website/font/token changes. Final remote results are linked from the PR.
