@@ -1,0 +1,12 @@
+/* Generated from src/lib/card-system.ts. Card specifications Approved. */
+:root {
+  --panel-shadow: var(--elevation-raised);
+  --panel-background: var(--color-surface-primary);
+  --panel-featured-background: var(--color-brand-peach);
+  --panel-guidance-background: var(--color-surface-secondary);
+  --panel-interactive-border: var(--color-border-strong);
+  --panel-hover-background: var(--color-action-secondary-hover);
+  --panel-pressed-background: var(--color-surface-selected);
+  --panel-inset-comfortable: var(--space-inset-card);
+  --panel-inset-compact: var(--space-inset-compact);
+}

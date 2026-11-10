@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 650" role="img" aria-labelledby="t d">
+<title id="t">Illustrated report card</title><desc id="d">A stylised fictional report card with rows and grades, intended to contrast scores with everyday growth.</desc>
+<g transform="translate(65 55) rotate(-8 220 260)">
+<rect x="10" y="20" width="440" height="550" rx="12" fill="#19253D" opacity=".12"/>
+<rect width="440" height="550" rx="12" fill="#FFFDF7" stroke="#19253D" stroke-width="5"/>
+<text x="32" y="75" fill="#19253D" font-family="Georgia,serif" font-size="42" font-weight="700">Report Card</text>
+<path d="M30 108 H410" stroke="#19253D" stroke-width="3"/>
+<text x="32" y="147" fill="#19253D" font-family="Arial,sans-serif" font-size="18">Subjects</text><text x="345" y="147" fill="#19253D" font-family="Arial,sans-serif" font-size="18">Grade</text>
+<g fill="#19253D" font-family="Arial,sans-serif" font-size="27"><text x="34" y="208">Mathematics</text><text x="347" y="208">A</text><text x="34" y="286">Science</text><text x="347" y="286">A</text><text x="34" y="364">Language</text><text x="347" y="364">B+</text><text x="34" y="442">Arts</text><text x="347" y="442">A</text></g>
+<g stroke="#19253D" stroke-opacity=".28" stroke-width="2"><path d="M30 170H410 M30 246H410 M30 324H410 M30 402H410 M30 480H410"/></g>
+<path d="M45 518 Q215 490 394 516" fill="none" stroke="#E93C8D" stroke-width="12" stroke-linecap="round"/>
+</g><g fill="#C8EE56"><path d="M477 58 Q482 108 530 113 Q481 118 477 167 Q472 116 425 113 Q474 108 477 58Z"/></g>
+</svg>

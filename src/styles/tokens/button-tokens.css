@@ -1,0 +1,13 @@
+/* Generated from src/lib/button-system.ts. Button specifications Approved. */
+:root {
+  --button-secondary-pressed-background: var(--color-surface-selected);
+  --button-tertiary-text: var(--color-text-link);
+  --button-tertiary-background: var(--color-surface-primary);
+  --button-tertiary-hover-background: var(--color-action-secondary-hover);
+  --button-tertiary-pressed-background: var(--color-surface-selected);
+  --button-danger-background: var(--color-feedback-error-text);
+  --button-danger-text: var(--color-text-inverse);
+  --button-height-small: calc(var(--space-1) * 9);
+  --button-height-medium: calc(var(--space-1) * 11);
+  --button-height-large: var(--space-12);
+}

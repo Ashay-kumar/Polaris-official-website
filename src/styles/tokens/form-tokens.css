@@ -1,0 +1,13 @@
+/* Generated from src/lib/form-system.ts. Form specifications Approved. */
+:root {
+  --field-background: var(--color-surface-primary);
+  --field-text: var(--color-text-primary);
+  --field-placeholder: var(--color-text-muted);
+  --field-border: var(--color-border-strong);
+  --field-border-hover: var(--color-text-primary);
+  --field-focus: var(--color-border-focus);
+  --field-error: var(--color-feedback-error-text);
+  --field-success: var(--color-feedback-success-text);
+  --field-unavailable-background: var(--color-surface-subtle);
+  --field-height: calc(var(--space-1) * 11);
+}

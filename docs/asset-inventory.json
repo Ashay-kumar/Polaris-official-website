@@ -1,0 +1,634 @@
+{
+  "preservedFiles": [
+    {
+      "path": "design-references/01-home/home-desktop-approved.png",
+      "format": "png",
+      "bytes": 1959918,
+      "sha256": "65518a4efde92332326ca8b44cb3dee373edb347e5ffeacb146aefe7dc001786",
+      "width": 724,
+      "height": 2172,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/01-home/home-mobile-approved.png",
+      "format": "png",
+      "bytes": 1863708,
+      "sha256": "139f681429abd979a2076a51d8fb6872d4482b4cd5878cefb2507cdf42dd1087",
+      "width": 1024,
+      "height": 1536,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/02-our-thinking/our-thinking-desktop-approved.png",
+      "format": "png",
+      "bytes": 2103507,
+      "sha256": "b4193a73814e0a18a225601f327ba185d4544c53095c2bf5ceeb20637dfab496",
+      "width": 1024,
+      "height": 1536,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/02-our-thinking/our-thinking-mobile-approved.png",
+      "format": "png",
+      "bytes": 2033174,
+      "sha256": "d6ce3f0f43a378a83a23b692c3d7744d25d52ad8b68e479f17fda5151671a5b4",
+      "width": 724,
+      "height": 2172,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/03-home-leadership-kit/home-leadership-kit-desktop-approved.png",
+      "format": "png",
+      "bytes": 2008805,
+      "sha256": "1fcef526eab997e817e2c2de8433e239b4b56bf36d8c69f82da122fbf8e06b77",
+      "width": 1024,
+      "height": 1536,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/03-home-leadership-kit/home-leadership-kit-mobile-approved.png.png",
+      "format": "png",
+      "bytes": 653724,
+      "sha256": "08f8572127d5d8fda8e08b88c89f14b6c851e96da735e718271c1fa7ab100a00",
+      "width": 900,
+      "height": 5520,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/04-help-shape-polaris/help-shape-polaris-desktop-approved.png",
+      "format": "png",
+      "bytes": 1836512,
+      "sha256": "2a1a82a7e5edf0b2b52021e6340b6384cbd306534781b0ea2994c5eadbef1abd",
+      "width": 1024,
+      "height": 1536,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/04-help-shape-polaris/help-shape-polaris-mobile-approved.png",
+      "format": "png",
+      "bytes": 1639013,
+      "sha256": "062e7d08d0ebe4f70d4a6d6ff321e5d16e14dbd5dfa099037bbd89879d4710c8",
+      "width": 724,
+      "height": 2172,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/05-about/about-desktop-approved.png",
+      "format": "png",
+      "bytes": 2014192,
+      "sha256": "439d7f600e58087006f9f2f42cc0bc55c82a4914ea3be7da6405f256d0c20d0b",
+      "width": 1024,
+      "height": 1536,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "design-references/05-about/about-mobile-approved.png.png",
+      "format": "png",
+      "bytes": 1904824,
+      "sha256": "7565f98b6d18f97d526daf52e9c006835be094bc4301d172b08636ec50303101",
+      "width": 724,
+      "height": 2172,
+      "status": "supplied-approved-reference"
+    },
+    {
+      "path": "public/images/about/about-highlight-rays.svg",
+      "format": "svg",
+      "bytes": 200,
+      "sha256": "50c435d7fdc129ebb1b483aab8097ce8c76bd94e9c381a3c21faea16389daf04",
+      "viewBox": "0 0 360 210",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/about-path-ribbon.svg",
+      "format": "svg",
+      "bytes": 342,
+      "sha256": "ace3805a2c7f9b83fe69b434c2721d89c52154c3c5e83c9921d33d3ef0f37b9b",
+      "viewBox": "0 0 1200 500",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/about-progress-path.svg",
+      "format": "svg",
+      "bytes": 587,
+      "sha256": "56fedb019090b8b33da53275a0b9379eb237937795f8c7017562f51f546728ea",
+      "viewBox": "0 0 1000 300",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/about-speech-questions.svg",
+      "format": "svg",
+      "bytes": 502,
+      "sha256": "cfd52f830efb10183680bd05e68e96415035e88e9c4f1027ca513d1c1a4d2d64",
+      "viewBox": "0 0 480 310",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/about-star.svg",
+      "format": "svg",
+      "bytes": 201,
+      "sha256": "ab382668037038658181cd2142911700080b40bc8def9cdc1d34e47e6146a9d4",
+      "viewBox": "0 0 320 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/principle-everyday-growth.svg",
+      "format": "svg",
+      "bytes": 392,
+      "sha256": "35f6ebf846559182a967e6a8ff5ceffd1575bbf2775145d0a1f3028baef15574",
+      "viewBox": "0 0 500 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/principle-individual-progress.svg",
+      "format": "svg",
+      "bytes": 275,
+      "sha256": "a0338e82d18e3a95e482c3fce26ccf774779931245af7dffbe36f1a639837837",
+      "viewBox": "0 0 500 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/principle-listen.svg",
+      "format": "svg",
+      "bytes": 571,
+      "sha256": "ee612ab2f2fd61bee36200bd259d8296202e24d7516250c476a67d00f4fbd7ab",
+      "viewBox": "0 0 500 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/principle-whole-child.svg",
+      "format": "svg",
+      "bytes": 475,
+      "sha256": "6d935ce7950635210db94675cbff9463553bd9efd1c0ca18d5e45e54116af726",
+      "viewBox": "0 0 500 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/about/README.md",
+      "format": "md",
+      "bytes": 1470,
+      "sha256": "8725cc59c9725d5bcea307b0a5ba9152efd1092d83b9ec3c335f5461dbbef7ea",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/child-smiling-provisional.jpg",
+      "format": "jpg",
+      "bytes": 39896,
+      "sha256": "b25d3188677927256d6f41ce9b605b2fed0870dc9fec74e0eaae7a8d552e8871",
+      "width": 285,
+      "height": 249,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/help-shape-polaris/conversation-bubbles.svg",
+      "format": "svg",
+      "bytes": 580,
+      "sha256": "caaf4d36112912e625939676992a224ce38f0fcd77f965a8d6154fe2caab32a4",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/hero-child-thinking-provisional.jpg",
+      "format": "jpg",
+      "bytes": 47335,
+      "sha256": "87324da3dafc42824cd9407d1cfd956efd007d155cf949099bf59cd5c2d4d65f",
+      "width": 342,
+      "height": 251,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/help-shape-polaris/paper-plane.svg",
+      "format": "svg",
+      "bytes": 467,
+      "sha256": "e67c5ef84f4659f706c80d2952bbeeb4603fa7a9a5df21a1a146f357c7c0fa26",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/parent-child-learning-provisional.jpg",
+      "format": "jpg",
+      "bytes": 46425,
+      "sha256": "4995e6014d1995ea00c3b502f000c949857993e5a627177a07055b61f0e291ef",
+      "width": 359,
+      "height": 250,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/help-shape-polaris/question-challenge.svg",
+      "format": "svg",
+      "bytes": 530,
+      "sha256": "4d5ca8693ac2950cc031efafb564c85a8958c8d6ca90070fea48a79ba50b1913",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/question-understand.svg",
+      "format": "svg",
+      "bytes": 363,
+      "sha256": "2baa67bc7f10728a25c5efbabc09464006d850c76ab8e2a51b11954a80d42888",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/question-wish.svg",
+      "format": "svg",
+      "bytes": 460,
+      "sha256": "cc71e721412a2494cc8b8b0ea433c28078326070d1e07d224cc579756f0de243",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/README.md",
+      "format": "md",
+      "bytes": 1544,
+      "sha256": "187e23d09da26b076067e8f6a3818042b3b132008f7ec94d9a2143d8bb9ea7a1",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/role-educator.svg",
+      "format": "svg",
+      "bytes": 403,
+      "sha256": "c0b57821d3b1ea3b5ad0121b7d24aaaffc2ee5d3dc20494890aab5ea49115910",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/role-parent-caregiver.svg",
+      "format": "svg",
+      "bytes": 561,
+      "sha256": "53aeb1ff9cd58623396dc4dc886e043c25c84a98f7218549631b6a224d69a5e9",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/role-professional.svg",
+      "format": "svg",
+      "bytes": 464,
+      "sha256": "68083199a79c8cbc27f13f58c755757f907fe7ab3648e3c1667e68ded000b597",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/role-visitor.svg",
+      "format": "svg",
+      "bytes": 449,
+      "sha256": "6924cd277b7b63bd13bb1bba7fd6c898b6b4607698990dee5487c965121088eb",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/sticky-note-blank.svg",
+      "format": "svg",
+      "bytes": 391,
+      "sha256": "f4ca31d3bd6184fb788725e08879259c856f5d08623e46f19168368da619cbb1",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/help-shape-polaris/success-check.svg",
+      "format": "svg",
+      "bytes": 485,
+      "sha256": "67d5502ca9032b80a19758aff87f0f924b44cc67c1b60afded11e019c2aabef2",
+      "viewBox": "0 0 240 240",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/accent-rays-lime.svg",
+      "format": "svg",
+      "bytes": 196,
+      "sha256": "88539fcff863a39a4a1374608311106d78c79ffedebdaae4bfe00e9b42f00f34",
+      "viewBox": "0 0 180 160",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/accent-rays-pink.svg",
+      "format": "svg",
+      "bytes": 196,
+      "sha256": "eae2a564b4e516f1602c01378053a3f239f8cbea25f104ffa8c903e840c60fde",
+      "viewBox": "0 0 180 160",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/blob-blue.svg",
+      "format": "svg",
+      "bytes": 208,
+      "sha256": "9ba42cbac1ae18e669dfe6e72e3ace732d32100b134d588f762e5f309b9cf70a",
+      "viewBox": "0 0 600 380",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/blob-lime.svg",
+      "format": "svg",
+      "bytes": 209,
+      "sha256": "f9b0f3dd6c98d43c29c08b3687ece88daa287afb00f421a75f6ddfe96495ca9d",
+      "viewBox": "0 0 600 380",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/blob-peach.svg",
+      "format": "svg",
+      "bytes": 209,
+      "sha256": "d75fbb143c7c3f22c06b5cc0208e05e67721e92d5714367be9df56636cb0e840",
+      "viewBox": "0 0 600 380",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/blob-pink.svg",
+      "format": "svg",
+      "bytes": 192,
+      "sha256": "6fe24aa8324ffc53c75794f862e2d3f0e0c0c2f5de93a89afe75df8a3c2f5d88",
+      "viewBox": "0 0 600 380",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/children-together-path.jpg",
+      "format": "jpg",
+      "bytes": 107130,
+      "sha256": "51ce2ecc0ded8b5b9fb4448e10dc259232142bf493bc60e3a6614fe8b0306c69",
+      "width": 755,
+      "height": 322,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/curious-child-telescope.jpg",
+      "format": "jpg",
+      "bytes": 112444,
+      "sha256": "14f98a133b7f7d236161290fd059dd163177a5b4bba35cc6efa0c6845f4611d6",
+      "width": 894,
+      "height": 308,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/hero-child-looking-up.jpg",
+      "format": "jpg",
+      "bytes": 107372,
+      "sha256": "22460f187df0b3288f27804e718a0651ee5fd694aa68dbc648000f44c881c649",
+      "width": 755,
+      "height": 322,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/home-leadership-kit-mockup.jpg",
+      "format": "jpg",
+      "bytes": 84619,
+      "sha256": "0376d3c50745f3a893912ac83a8f41603b7f6f569361510b340492d92ad2a11a",
+      "width": 615,
+      "height": 308,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/north-star-lime.svg",
+      "format": "svg",
+      "bytes": 186,
+      "sha256": "9272c6c910d3b9205b5e236811fed63e1dc8728d17e58cdb8243bf3056c1ca00",
+      "viewBox": "0 0 200 200",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/path-swoosh-lime.svg",
+      "format": "svg",
+      "bytes": 197,
+      "sha256": "b01452556927f6874237c40507398783e44b2a2bb86a77548fddefa6a36dc1e0",
+      "viewBox": "0 0 1200 360",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/path-swoosh.svg",
+      "format": "svg",
+      "bytes": 315,
+      "sha256": "b3bc15d4da94caa86bedf37ec3d881be63bf9d79d5c69ff8f9ba002aec5fccc2",
+      "viewBox": "0 0 1200 360",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home/quality-communication.jpg",
+      "format": "jpg",
+      "bytes": 49464,
+      "sha256": "147abdebaecfa53d73ac2d5671c5a386fd031e0a9d7005bab7c395eefdc37924",
+      "width": 373,
+      "height": 232,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/quality-curiosity.jpg",
+      "format": "jpg",
+      "bytes": 50151,
+      "sha256": "912510d20f0531b473b5a936c98d1ae164c645f288d7c060c9f23bda09e2b9f8",
+      "width": 371,
+      "height": 232,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/quality-leadership.jpg",
+      "format": "jpg",
+      "bytes": 44062,
+      "sha256": "a372114e52cf99b257e25bfc5d5dc9ddf28863df9dc752aa1bc2427011b229f6",
+      "width": 371,
+      "height": 232,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home/quality-resilience.jpg",
+      "format": "jpg",
+      "bytes": 48962,
+      "sha256": "434002bce6492d28b58c278000a06b5796fccf37ddeec84d47870926908b3693",
+      "width": 372,
+      "height": 232,
+      "status": "production-approval-undocumented"
+    },
+    {
+      "path": "public/images/home-leadership-kit/activity-spotlight-three-part-day.svg",
+      "format": "svg",
+      "bytes": 1721,
+      "sha256": "ff5eae0ca2ba3b53cff818f0aa99a05b544778191bb8a235adf138161b6b8fb5",
+      "viewBox": "0 0 760 690",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/four-week-tracker.svg",
+      "format": "svg",
+      "bytes": 2783,
+      "sha256": "6282433af55c6198ad3fb6548cdc53939e40ea65abb795d91e4cb31f52708dbc",
+      "viewBox": "0 0 1200 1050",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/home-leadership-kit-cover.svg",
+      "format": "svg",
+      "bytes": 4364,
+      "sha256": "c24c9bc1979445488cf38db8b295a9009373471390cb5eb74f3513a113f72802",
+      "viewBox": "0 0 800 1120",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/how-it-works-step-01.svg",
+      "format": "svg",
+      "bytes": 584,
+      "sha256": "8e12e4c9848c4cea1945a37b359a10009f30cc1bcc60f36b5cf640a7c86cde7c",
+      "viewBox": "0 0 540 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/how-it-works-step-02.svg",
+      "format": "svg",
+      "bytes": 681,
+      "sha256": "60dca1847b32a6e7d3f2022cfa7c37b0c5a652dafcc5b734a6f85aef4ced8626",
+      "viewBox": "0 0 540 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/how-it-works-step-03.svg",
+      "format": "svg",
+      "bytes": 679,
+      "sha256": "d47cef66cee0f8dd09083a900af5d21e878a55c62b3e28722812e8164f6d6025",
+      "viewBox": "0 0 540 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/how-it-works-step-04.svg",
+      "format": "svg",
+      "bytes": 587,
+      "sha256": "33ebc779114be5882b18a320d0dd7b1e9de930453a74df4ad7437011449491b0",
+      "viewBox": "0 0 540 320",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/home-leadership-kit/provisional-photos/activity-communication.jpg",
+      "format": "jpg",
+      "bytes": 22617,
+      "sha256": "98f5c65e33d1599b90c9a67326464102337195f3c6e553fa4442d61737645b5a",
+      "width": 351,
+      "height": 208,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/home-leadership-kit/provisional-photos/activity-teach-me.jpg",
+      "format": "jpg",
+      "bytes": 24826,
+      "sha256": "2d789096d730bea885c82b42dec433e0d58f5f4b03e7bc597333ea48ac3a933d",
+      "width": 352,
+      "height": 208,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/home-leadership-kit/provisional-photos/activity-writing.jpg",
+      "format": "jpg",
+      "bytes": 24333,
+      "sha256": "18914ed1c2478592a6a46ef5468f4a5f5ef11a819965cba4d3f3935653cd5634",
+      "width": 357,
+      "height": 208,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/home-leadership-kit/provisional-photos/home-leadership-kit-stacked-reference.jpg",
+      "format": "jpg",
+      "bytes": 38640,
+      "sha256": "da4bb20b4ad366027fb5d83a663a6d292a5971d5f197843bf83f84fac279ff54",
+      "width": 341,
+      "height": 369,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/home-leadership-kit/provisional-photos/parent-child-learning.jpg",
+      "format": "jpg",
+      "bytes": 26848,
+      "sha256": "16b42ba7cbd1e46d6f2f3b7cacce4c97a280bf684e2ec4fdcd3cf9c125559810",
+      "width": 362,
+      "height": 207,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/home-leadership-kit/README.md",
+      "format": "md",
+      "bytes": 986,
+      "sha256": "cda373096a9d76de4d374c438a6c3b28a361655f324b9db285d7f63b264b3c99",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-communication.jpg",
+      "format": "jpg",
+      "bytes": 30664,
+      "sha256": "fe33e2c8e869d6c4dd75caae25dd5be50c69f48ff6ada143384a57090a1ba777",
+      "width": 300,
+      "height": 201,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-creative-hands.jpg",
+      "format": "jpg",
+      "bytes": 43841,
+      "sha256": "8076d42748d5d8fe824d1270e8a4217f053acf5add8fa7f67e12920a61837d5f",
+      "width": 324,
+      "height": 253,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-curiosity.jpg",
+      "format": "jpg",
+      "bytes": 33107,
+      "sha256": "55be2b3fc1b96e4bdf9e2a84174786529d5127c9bebc23e0084719bd48aaca91",
+      "width": 295,
+      "height": 202,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-hero-dreaming-child.jpg",
+      "format": "jpg",
+      "bytes": 57328,
+      "sha256": "1b8f382dea7744cfc388c715edc35cb71ba0c68d4763d7ec60be79b2e22a08f6",
+      "width": 526,
+      "height": 252,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-leadership.jpg",
+      "format": "jpg",
+      "bytes": 24690,
+      "sha256": "ca075ff6efcc54740d28225998c3490124367c13f048fc69b8dddacf6faa42c7",
+      "width": 290,
+      "height": 199,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-personal-progress.jpg",
+      "format": "jpg",
+      "bytes": 28427,
+      "sha256": "d97b7f60f5ca2c890b5dc765a748000980dd8f52fb584c5c8207ac1ab8cce43d",
+      "width": 311,
+      "height": 206,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-report-card.svg",
+      "format": "svg",
+      "bytes": 1552,
+      "sha256": "fe85252219c8a823968fc752b0bbc7d03104a59d12ea3e45764c460ae49101e1",
+      "viewBox": "0 0 560 650",
+      "status": "supplied-asset"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-resilience.jpg",
+      "format": "jpg",
+      "bytes": 30980,
+      "sha256": "a33d47b25c546def135c7d93a8cdf1477665a8a25a3909ef73b60e6d40572b15",
+      "width": 287,
+      "height": 200,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/our-thinking-togetherness.jpg",
+      "format": "jpg",
+      "bytes": 44050,
+      "sha256": "b829eee7acda1c92e8c8e00d64449c2641a4dd213b8c7558c4e197a773b455c1",
+      "width": 423,
+      "height": 206,
+      "status": "provisional-not-for-launch"
+    },
+    {
+      "path": "public/images/our-thinking/README.md",
+      "format": "md",
+      "bytes": 1703,
+      "sha256": "a215f70c1977cdb59a8919bfc3b861db336cb6b597568bd326f89b479e8e1460",
+      "status": "supplied-asset"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "repository": "mridulavdass-bit/polaris-brand-design-system",
+  "commit": "0328f77f90b31a7478866c9af11a3fd69b02ec24",
+  "files": [
+    {
+      "source": "src/app/colour-tokens.css",
+      "destination": "src/styles/tokens/colour-tokens.css",
+      "sourceGitBlob": "4f2cee0aa3160c22d7754490e801194a5d92e10c",
+      "sourceSha256": "b7dbe4f24ac057a348d1f96c6d249e34e9425876478aa4210a0088aadd7ea3f4",
+      "sha256": "b7dbe4f24ac057a348d1f96c6d249e34e9425876478aa4210a0088aadd7ea3f4",
+      "adapted": false
+    },
+    {
+      "source": "src/app/typography-tokens.css",
+      "destination": "src/styles/tokens/typography-tokens.css",
+      "sourceGitBlob": "3a3e0e0fa2edfe5f01ad89fd009485d46f9c31d1",
+      "sourceSha256": "18bed17bd8ba1d895ff6c8a7af8c48155483e4acc8a866993975060d2cbd422b",
+      "sha256": "18bed17bd8ba1d895ff6c8a7af8c48155483e4acc8a866993975060d2cbd422b",
+      "adapted": false
+    },
+    {
+      "source": "src/app/spacing-tokens.css",
+      "destination": "src/styles/tokens/spacing-tokens.css",
+      "sourceGitBlob": "37aaacb8cff77d4919719783c556b9b7bc2aca0d",
+      "sourceSha256": "cd82f89198e3fb8692f595b7609b8e33f370559b1a86b14b03ca6313e60c2db5",
+      "sha256": "cd82f89198e3fb8692f595b7609b8e33f370559b1a86b14b03ca6313e60c2db5",
+      "adapted": false
+    },
+    {
+      "source": "src/app/visual-foundation-tokens.css",
+      "destination": "src/styles/tokens/visual-foundation-tokens.css",
+      "sourceGitBlob": "3d65c77413f2e9c657e8a97919bfedbb51e67734",
+      "sourceSha256": "5ef6ee5c7e0d6bd45e588d29b7a849ba29959663f714eacbf0ecd57c8c538a1c",
+      "sha256": "5ef6ee5c7e0d6bd45e588d29b7a849ba29959663f714eacbf0ecd57c8c538a1c",
+      "adapted": false
+    },
+    {
+      "source": "src/app/button-tokens.css",
+      "destination": "src/styles/tokens/button-tokens.css",
+      "sourceGitBlob": "0ab11885aa6926fe1d4a8b2e3b5a25f51fa61627",
+      "sourceSha256": "aca97e6af8a71989a757e1d163c66073d0fcc8aa54e65adbf34b748ae2698e27",
+      "sha256": "aca97e6af8a71989a757e1d163c66073d0fcc8aa54e65adbf34b748ae2698e27",
+      "adapted": false
+    },
+    {
+      "source": "src/app/form-tokens.css",
+      "destination": "src/styles/tokens/form-tokens.css",
+      "sourceGitBlob": "580b5a54ccd00f9f713a7a90b57ba60914d6e60c",
+      "sourceSha256": "049d3ddfd1a00bb81d5dc6aed1613b3d57b93cdca96dac6f644053720d0a3c2d",
+      "sha256": "049d3ddfd1a00bb81d5dc6aed1613b3d57b93cdca96dac6f644053720d0a3c2d",
+      "adapted": false
+    },
+    {
+      "source": "src/app/card-tokens.css",
+      "destination": "src/styles/tokens/card-tokens.css",
+      "sourceGitBlob": "53019db274a5bee277d6d94ac6c75eb5ecb03387",
+      "sourceSha256": "9624e0af2a59514487e023d4302c38fed816fa52a9b7de7af8eb48417c3d66a4",
+      "sha256": "9624e0af2a59514487e023d4302c38fed816fa52a9b7de7af8eb48417c3d66a4",
+      "adapted": false
+    },
+    {
+      "source": "src/lib/colour-system.ts",
+      "destination": "src/lib/brand/colour-system.ts",
+      "sourceGitBlob": "17d32c9c0556ab458dc7031b3b5b47db7af6f296",
+      "sourceSha256": "5504eb5bfa0be54cc1f6eba8d261a7ca9db78443d8bb183458f31eaf31987fe3",
+      "sha256": "5504eb5bfa0be54cc1f6eba8d261a7ca9db78443d8bb183458f31eaf31987fe3",
+      "adapted": false
+    },
+    {
+      "source": "src/lib/typography-system.ts",
+      "destination": "src/lib/brand/typography-system.ts",
+      "sourceGitBlob": "6cfe9cc314223611297da8703c39c1b3b3151192",
+      "sourceSha256": "4398eb1192637a22a35e55eb94acc9ad74f807dd29f98fcd793dd4f1949aa989",
+      "sha256": "4398eb1192637a22a35e55eb94acc9ad74f807dd29f98fcd793dd4f1949aa989",
+      "adapted": false
+    },
+    {
+      "source": "src/lib/spacing-system.ts",
+      "destination": "src/lib/brand/spacing-system.ts",
+      "sourceGitBlob": "d2de31c98bc918eca734fdfad26c98af222842fe",
+      "sourceSha256": "1998e038f1fb4332ef84a94bde2f1e8f14847b09248084da5ca2e5527b9ca09c",
+      "sha256": "1998e038f1fb4332ef84a94bde2f1e8f14847b09248084da5ca2e5527b9ca09c",
+      "adapted": false
+    },
+    {
+      "source": "src/lib/visual-foundations.ts",
+      "destination": "src/lib/brand/visual-foundations.ts",
+      "sourceGitBlob": "f0482180f6d7f0b5478c532be1a16db05fbfe46b",
+      "sourceSha256": "1c396d515bcd7defdcb62b83f99ff2e7399db1c73ed7b5536fabefb1be761cb0",
+      "sha256": "1c396d515bcd7defdcb62b83f99ff2e7399db1c73ed7b5536fabefb1be761cb0",
+      "adapted": false
+    },
+    {
+      "source": "src/lib/button-system.ts",
+      "destination": "src/lib/brand/button-system.ts",
+      "sourceGitBlob": "6e20473cd5a0d47cbe33a6c32cf981188e27668f",
+      "sourceSha256": "b4f42f990f73dc9fae9addf42291c651370fea05852c4d93174986b8cab752eb",
+      "sha256": "b4f42f990f73dc9fae9addf42291c651370fea05852c4d93174986b8cab752eb",
+      "adapted": false
+    },
+    {
+      "source": "src/components/polaris-icon.tsx",
+      "destination": "src/components/brand/polaris-icon.tsx",
+      "sourceGitBlob": "c104734b4466e3930574800fb24cdbebe46c72c8",
+      "sourceSha256": "915c54b5472da586d5b2ab205aa0650660d8e19b0c84b7fc83d10ece54c4a79e",
+      "sha256": "915c54b5472da586d5b2ab205aa0650660d8e19b0c84b7fc83d10ece54c4a79e",
+      "adapted": false
+    },
+    {
+      "source": "src/components/polaris-button.tsx",
+      "destination": "src/components/ui/polaris-button.tsx",
+      "sourceGitBlob": "f992c7ce9b354eaac84328fe73f988cf4cae39c9",
+      "sourceSha256": "0d96aebd7eb5914a290398d2b74155fddb370fd8b7a0c377e7ab210132773ee9",
+      "sha256": "7afc4bfef9318e617b969e38c9434c23c3f6990fe1443420c57936459d5e8240",
+      "adapted": true
+    },
+    {
+      "source": "src/components/polaris-action-link.tsx",
+      "destination": "src/components/ui/polaris-action-link.tsx",
+      "sourceGitBlob": "39016c1800d5d72ec76e96b1916832bd9780bb95",
+      "sourceSha256": "036cb386107eea02536593d49f2177d6cd16bf25160a64fcb03c6460dc6ebdd1",
+      "sha256": "0472efbb67338897af0720a3293722d98547329b005874d65e74186f2861287e",
+      "adapted": true
+    },
+    {
+      "source": "src/app/polaris-button.css",
+      "destination": "src/styles/polaris-button.css",
+      "sourceGitBlob": "418b9e89b757ff595455c37a7ed4694cc3295d64",
+      "sourceSha256": "920fcd92d398de91aaa927c0f08ed367f1f2ed1289800bf8a0d4bbc15e361ed8",
+      "sha256": "d742461ec9b0d68b310f8024efb26085797f32cf4c6af615061049f18f7b896f",
+      "adapted": true
+    },
+    {
+      "source": "public/brand/logos/v1.1/png/polaris-icon-primary.png",
+      "destination": "public/brand/logos/v1.1/png/polaris-icon-primary.png",
+      "sourceGitBlob": "d35aecf21174b7594996769843be47c7bb6e46a7",
+      "sourceSha256": "702ba1340b111510ce3a03da6976be3981424187bb12b6f2f63638a20dc9cfbf",
+      "sha256": "702ba1340b111510ce3a03da6976be3981424187bb12b6f2f63638a20dc9cfbf",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/png/polaris-logo-black.png",
+      "destination": "public/brand/logos/v1.1/png/polaris-logo-black.png",
+      "sourceGitBlob": "19a8b22e7dd709236dbf09c2b5446a2aa407c5ca",
+      "sourceSha256": "b2313a52bb291e5889b06155523cc7701fda585360cfb1bc4ef088c731287a4b",
+      "sha256": "b2313a52bb291e5889b06155523cc7701fda585360cfb1bc4ef088c731287a4b",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/png/polaris-logo-horizontal.png",
+      "destination": "public/brand/logos/v1.1/png/polaris-logo-horizontal.png",
+      "sourceGitBlob": "509aafa9e3b398a7b8b70e2bc740a288bac8e6da",
+      "sourceSha256": "f8bb3ebdd5a982eb99061d13a9fa0c9660c7f9d1e94a9b6d368ddbf14c7d12f1",
+      "sha256": "f8bb3ebdd5a982eb99061d13a9fa0c9660c7f9d1e94a9b6d368ddbf14c7d12f1",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/png/polaris-logo-primary.png",
+      "destination": "public/brand/logos/v1.1/png/polaris-logo-primary.png",
+      "sourceGitBlob": "dc5faff78569bf7b0330112ac19f595c8b6d03d4",
+      "sourceSha256": "1cd1289246027608dee9ae376c6707482b7f59d12981d12a238b306f92a0693c",
+      "sha256": "1cd1289246027608dee9ae376c6707482b7f59d12981d12a238b306f92a0693c",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/png/polaris-logo-reversed.png",
+      "destination": "public/brand/logos/v1.1/png/polaris-logo-reversed.png",
+      "sourceGitBlob": "60ffbe950662fdac29f8d7322a645ef5680345a0",
+      "sourceSha256": "188449f5d0dea319eefdd916787b6fc4ab1ef69ada16d9ffb86d80c940a1126e",
+      "sha256": "188449f5d0dea319eefdd916787b6fc4ab1ef69ada16d9ffb86d80c940a1126e",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/png/polaris-symbol-primary.png",
+      "destination": "public/brand/logos/v1.1/png/polaris-symbol-primary.png",
+      "sourceGitBlob": "66d34e0045f3625d17a17139adda87724fd8e076",
+      "sourceSha256": "df39f66a4a502524481388e4bfce6192ea4ecb8e4878e328b59820d840da0feb",
+      "sha256": "df39f66a4a502524481388e4bfce6192ea4ecb8e4878e328b59820d840da0feb",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/svg/polaris-icon-primary.svg",
+      "destination": "public/brand/logos/v1.1/svg/polaris-icon-primary.svg",
+      "sourceGitBlob": "375fd9aea80c2473cc69a91daf53205657b390aa",
+      "sourceSha256": "80578ea07b47aca2f9566867d0b7b1199574ef001833a312d9aae645ed106f8b",
+      "sha256": "80578ea07b47aca2f9566867d0b7b1199574ef001833a312d9aae645ed106f8b",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/svg/polaris-logo-black.svg",
+      "destination": "public/brand/logos/v1.1/svg/polaris-logo-black.svg",
+      "sourceGitBlob": "5a64b12ca08c1c9ab90c29749bec6dd505d7c724",
+      "sourceSha256": "e6712e8e5275e8fffcd095622caf32c52e0330e147397c9ff75c8c8548d1e153",
+      "sha256": "e6712e8e5275e8fffcd095622caf32c52e0330e147397c9ff75c8c8548d1e153",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/svg/polaris-logo-horizontal.svg",
+      "destination": "public/brand/logos/v1.1/svg/polaris-logo-horizontal.svg",
+      "sourceGitBlob": "975c5a8c823a4226fb442dc22206ccaeaa9e86ba",
+      "sourceSha256": "fc96e36fc8c20616937803c8b87be6583399e8d412ab22c77dcdb85bed511784",
+      "sha256": "fc96e36fc8c20616937803c8b87be6583399e8d412ab22c77dcdb85bed511784",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/svg/polaris-logo-primary.svg",
+      "destination": "public/brand/logos/v1.1/svg/polaris-logo-primary.svg",
+      "sourceGitBlob": "ac68e037cab6053fc9ce6f277fcfe47abafd424d",
+      "sourceSha256": "e6d9ea52eb0c349d68e58ab1cd91412cec11d1e981fbc375aae477944bc994d5",
+      "sha256": "e6d9ea52eb0c349d68e58ab1cd91412cec11d1e981fbc375aae477944bc994d5",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/svg/polaris-logo-reversed.svg",
+      "destination": "public/brand/logos/v1.1/svg/polaris-logo-reversed.svg",
+      "sourceGitBlob": "1718369bc73e1b86c821e3e9f18b5a307eb19d6d",
+      "sourceSha256": "1e353c806def39810aa172effbe4346aab6e8aea2770d43674b130d86248071a",
+      "sha256": "1e353c806def39810aa172effbe4346aab6e8aea2770d43674b130d86248071a",
+      "adapted": false
+    },
+    {
+      "source": "public/brand/logos/v1.1/svg/polaris-symbol-primary.svg",
+      "destination": "public/brand/logos/v1.1/svg/polaris-symbol-primary.svg",
+      "sourceGitBlob": "f093a81512cb8eca65fea886768b592a10af49f4",
+      "sourceSha256": "2e33f8c1d8a6faa6eb9f6f4396db65516244582dea3e913e96093c8050833db3",
+      "sha256": "2e33f8c1d8a6faa6eb9f6f4396db65516244582dea3e913e96093c8050833db3",
+      "adapted": false
+    },
+    {
+      "source": "public/licenses/phosphor-icons-react-LICENSE.txt",
+      "destination": "public/licenses/phosphor-icons-react-LICENSE.txt",
+      "sourceGitBlob": "e2eb0bd013b5e311bc97231854760d4a3d20af41",
+      "sourceSha256": "6918b72504641180600cbbd4a86b0dfa9dfccf788775694325b71b9a029f6eb4",
+      "sha256": "6918b72504641180600cbbd4a86b0dfa9dfccf788775694325b71b9a029f6eb4",
+      "adapted": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+/* Generated from src/lib/visual-foundations.ts. All specifications Approved. */
+:root {
+  --icon-size-small: 1rem;
+  --icon-size-medium: 1.25rem;
+  --icon-size-default: 1.5rem;
+  --icon-size-large: 2rem;
+  --radius-none: 0px;
+  --radius-small: 0.25rem;
+  --radius-medium: 0.5rem;
+  --radius-large: 1rem;
+  --radius-pill: 999px;
+  --radius-control: var(--radius-small);
+  --radius-panel: var(--radius-medium);
+  --border-width-default: 1px;
+  --border-width-emphasis: 2px;
+  --border-width-focus: 3px;
+  --focus-outline-offset: var(--space-1);
+  --divider-width: var(--border-width-default);
+  --divider-colour: var(--color-border-default);
+  --surface-treatment-flat: var(--color-surface-primary);
+  --surface-treatment-subtle: var(--color-surface-secondary);
+  --surface-treatment-inverse: var(--color-surface-inverse);
+  --elevation-flat: none;
+  --elevation-raised: 0 2px 8px color-mix(in srgb, var(--color-brand-ink) 10%, transparent);
+  --elevation-floating: 0 8px 24px color-mix(in srgb, var(--color-brand-ink) 16%, transparent);
+  --overlay-scrim: color-mix(in srgb, var(--color-brand-ink) 40%, transparent);
+  --motion-duration-instant: 0ms;
+  --motion-duration-fast: 100ms;
+  --motion-duration-standard: 160ms;
+  --motion-duration-deliberate: 240ms;
+  --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-enter: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-instant: 0ms;
+    --motion-duration-fast: 0ms;
+    --motion-duration-standard: 0ms;
+    --motion-duration-deliberate: 0ms;
+  }
+}

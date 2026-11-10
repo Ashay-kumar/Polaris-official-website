@@ -1,0 +1,66 @@
+name: Validate and deploy Polaris Pages
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check:foundation
+      - run: npm run check:content
+      - run: node scripts/check-stage-03-assets.mjs
+      - run: npm run build:pages
+      - run: npm run typecheck
+      - run: npm run check:export
+      - run: npx playwright install --with-deps chromium
+      - name: Verify static Pages preview in Chromium
+        env:
+          POLARIS_TEST_BASE_PATH: /Polaris-official-website
+          POLARIS_TEST_BROWSER: chromium
+        run: |
+          node scripts/serve-export.mjs &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID"' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/Polaris-official-website/ > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:e2e
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        with:
+          path: out
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy approved main build
+        id: deployment
+        uses: actions/deploy-pages@v5

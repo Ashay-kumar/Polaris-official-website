@@ -1,0 +1,3 @@
+# Preserve approved asset/provenance hashes across Windows and Linux.
+* -text
+*.pdf binary

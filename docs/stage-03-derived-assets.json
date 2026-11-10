@@ -1,0 +1,41 @@
+{
+  "iconSource": "public/brand/logos/v1.1/svg/polaris-icon-primary.svg",
+  "iconSourceSha256": "80578ea07b47aca2f9566867d0b7b1199574ef001833a312d9aae645ed106f8b",
+  "icons": [
+    {
+      "path": "src/app/icon.svg",
+      "sha256": "80578ea07b47aca2f9566867d0b7b1199574ef001833a312d9aae645ed106f8b"
+    },
+    {
+      "path": "src/app/favicon.ico",
+      "sha256": "0d9bd1fe34567ce314d07870fc042817f98d8a29631326c538592baf929d7be9"
+    },
+    {
+      "path": "src/app/apple-icon.png",
+      "sha256": "18a5acfd8a446f855b5bd734f95f1d34fc6c58ec72c7dabad0e3ec0b762f3d93"
+    }
+  ],
+  "pdfSource": "public/downloads/polaris-home-leadership-kit.pdf",
+  "pdfSourceSha256": "0a39023cb7a555de06cee6abe39a0b10f0d14407b5d42e478b6c91f8c770bbf5",
+  "renderer": "Windows.Data.Pdf native renderer; pages 1, 2, 6; complete page canvas, no document edits",
+  "previews": {
+    "1": {
+      "src": "/images/home-leadership-kit/previews/page-1.png",
+      "width": 1125,
+      "height": 1591,
+      "sha256": "24d5856bdff27f0f0db628075a0edaac0f0b16e22bb0747f7233ca231e9a4e92"
+    },
+    "2": {
+      "src": "/images/home-leadership-kit/previews/page-2.png",
+      "width": 1125,
+      "height": 1591,
+      "sha256": "b29fccd8633daa9445a580b0038134195d703270d51d3e78520bc552f1f0f9b9"
+    },
+    "6": {
+      "src": "/images/home-leadership-kit/previews/page-6.png",
+      "width": 1125,
+      "height": 1591,
+      "sha256": "6f8a0aeadbf4f9c6a94aa8f072723c53af8e66a04f5c4faec3ed54bde69005db"
+    }
+  }
+}
