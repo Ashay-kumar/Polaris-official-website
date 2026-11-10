@@ -1,11 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { sitePath } from "./site-path";
-test("Styles, local fonts and decorative assets load under the Pages subpath", async ({ page, request }) => {
+test("Styles, local fonts and decorative assets load at the domain root", async ({ page, request }) => {
+  expect((await request.get("/Polaris-official-website/")).status()).toBe(404);
   const failures: string[]=[];
   page.on("response",response=>{if(response.status()>=400)failures.push(response.url());});
   page.on("requestfailed",request=>failures.push(request.url()));
   for (const route of ["/", "/our-thinking/", "/home-leadership-kit/", "/help-shape-polaris/", "/about/"]) {
     await page.goto(sitePath(route));
+    expect(await page.content()).not.toContain("/Polaris-official-website");
     // Check the actual web-font families, not platform-specific local fallback faces.
     const loaded = await page.evaluate(async () => {
       await document.fonts.ready;

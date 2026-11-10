@@ -1,6 +1,2 @@
-/** Public files need an explicit prefix; Next Link handles route prefixes itself. */
-export function publicPath(path: string): string {
-  return path.startsWith("/") && !path.startsWith("//")
-    ? (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + path
-    : path;
-}
+/** Public resources are served at the domain root in development and static hosting. */
+export function publicPath(path: string): string { return path; }

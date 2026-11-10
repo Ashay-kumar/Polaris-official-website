@@ -1,3 +1,5 @@
+> Historical Stage 04 record. Hosting instructions below are superseded by [Cloudflare Pages preparation](cloudflare-pages.md). PR #1 was merged before Stage 05; its GitHub Pages configuration is replaced by validation-only CI.
+
 # Stage 04 - first-draft handover
 
 ## Preview scope

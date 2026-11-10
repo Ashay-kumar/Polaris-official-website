@@ -1,3 +1,5 @@
+> Historical Stage 04 record. Hosting instructions below are superseded by [Cloudflare Pages preparation](cloudflare-pages.md). PR #1 was merged before Stage 05; its GitHub Pages configuration is replaced by validation-only CI.
+
 This first draft introduces the five Polaris website pages: Home, Our Thinking, Home Leadership Kit, Help Shape Polaris and About Polaris. It selectively integrates the approved brand system at commit 0328f77f90b31a7478866c9af11a3fd69b02ec24, preserving Curious Pop tokens, local DM Serif Display/Source Sans 3, official logos and the Phosphor adapter.
 
 ## Included
