@@ -1,0 +1,5 @@
+.document { width: 100%; max-width: 300px; margin: 0 auto; }
+.document a { display: block; background: #fff; border: 1px solid var(--color-border-default); box-shadow: var(--elevation-floating); }
+.document img { display: block; width: 100%; height: auto; }
+.document figcaption { color: var(--color-text-primary); font-size: var(--type-supporting-size); text-align: center; margin-top: var(--space-4); line-height: 1.4; }
+.document figcaption span { display: block; font-size: .75rem; color: var(--color-text-secondary); }

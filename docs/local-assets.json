@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "source": "node_modules/@fontsource/dm-serif-display/files/dm-serif-display-latin-400-normal.woff2",
+      "origin": "@fontsource/dm-serif-display@5.3.0",
+      "destination": "src/styles/fonts/dm-serif-display-latin-400-normal.woff2",
+      "bytes": 24744,
+      "sha256": "fdf61e20fd2c0108e0ea28da4daca0035205b4b7fc031a3974b865b704de160a"
+    },
+    {
+      "source": "node_modules/@fontsource/dm-serif-display/LICENSE",
+      "origin": "@fontsource/dm-serif-display@5.3.0",
+      "destination": "public/licenses/dm-serif-display-OFL.txt",
+      "bytes": 4599,
+      "sha256": "e9d4ced9825bf03a6b634c37fe8ae974f6d1b80fbb0bd3ae9b089987e4dc541b"
+    },
+    {
+      "source": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2",
+      "origin": "@fontsource/source-sans-3@5.3.1",
+      "destination": "src/styles/fonts/source-sans-3-latin-400-normal.woff2",
+      "bytes": 15696,
+      "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b"
+    },
+    {
+      "source": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2",
+      "origin": "@fontsource/source-sans-3@5.3.1",
+      "destination": "src/styles/fonts/source-sans-3-latin-600-normal.woff2",
+      "bytes": 15668,
+      "sha256": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38"
+    },
+    {
+      "source": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-700-normal.woff2",
+      "origin": "@fontsource/source-sans-3@5.3.1",
+      "destination": "src/styles/fonts/source-sans-3-latin-700-normal.woff2",
+      "bytes": 15596,
+      "sha256": "ae35266f2ab0d5314ff9a04127931eb26c793e4f1269bb240046d4d2db4b7bb1"
+    },
+    {
+      "source": "node_modules/@fontsource/source-sans-3/LICENSE",
+      "origin": "@fontsource/source-sans-3@5.3.1",
+      "destination": "public/licenses/source-sans-3-OFL.txt",
+      "bytes": 4314,
+      "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+    },
+    {
+      "source": "founder-supplied/Polaris_Home_Leadership_Kit.pdf",
+      "destination": "public/downloads/polaris-home-leadership-kit.pdf",
+      "origin": "User confirmed approved original on 11 November 2026; unchanged copy",
+      "bytes": 13123,
+      "sha256": "0a39023cb7a555de06cee6abe39a0b10f0d14407b5d42e478b6c91f8c770bbf5"
+    }
+  ]
+}

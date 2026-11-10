@@ -1,0 +1,9 @@
+.container {
+  inline-size: 100%;
+  max-inline-size: var(--container-max, var(--layout-container-standard));
+  margin-inline: auto;
+  padding-inline: var(--layout-page-gutter);
+  min-inline-size: 0;
+}
+.compact { --container-max: var(--layout-container-compact); }
+.wide { --container-max: var(--layout-container-wide); }

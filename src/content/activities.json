@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "quality": "communication",
+    "name": "Three-part day",
+    "duration": "10 minutes, at dinner",
+    "instructions": "Ask your child to tell their day in three parts: a beginning, a middle and an end. Then ask one curious follow-up question (\"what happened next?\").",
+    "rationale": "Gives a simple structure for telling a story, which is the base of all clear speaking.",
+    "ages": "5 to 8: use pictures or a drawing as prompts. 9 to 14: ask them to include one thing that surprised them."
+  },
+  {
+    "id": 2,
+    "quality": "communication",
+    "name": "Teach me",
+    "duration": "10 minutes, twice a week",
+    "instructions": "Your child teaches you something they learned for 3 minutes, as if you were new to it. Ask two real questions. If you got confused, say where, kindly.",
+    "rationale": "Explaining is the fastest way to learn and shows where the gaps are.",
+    "ages": "9 to 11: school topics. 12 to 14: a skill or topic they chose, with a one-minute summary at the end."
+  },
+  {
+    "id": 3,
+    "quality": "communication",
+    "name": "Order it yourself",
+    "duration": "5 minutes, whenever you go out",
+    "instructions": "Let your child place the order at a shop or restaurant, ask for directions or make a simple phone call, while you stand back and stay quiet.",
+    "rationale": "Real conversations with unfamiliar people build speaking confidence faster than rehearsal at home.",
+    "ages": "5 to 8: simple orders, you stay close. 9 to 14: a phone call to a relative or to book something."
+  },
+  {
+    "id": 4,
+    "quality": "leadership",
+    "name": "My job this week",
+    "duration": "2 minutes a day",
+    "instructions": "Give your child one job that is only theirs for the week (watering plants, laying the table, planning the next day's bag). Check in once, then let them own it, including forgetting and fixing it.",
+    "rationale": "Ownership builds reliability. Letting small lapses happen builds responsibility.",
+    "ages": "5 to 8: simple daily job. 9 to 14: add planning and a weekly review with you."
+  },
+  {
+    "id": 5,
+    "quality": "leadership",
+    "name": "Plan the outing",
+    "duration": "30 minutes to plan, a few hours to do",
+    "instructions": "Let your child plan a family outing: where, how to get there, a small budget and a timeline. You follow the plan unless it is unsafe.",
+    "rationale": "Planning with limits teaches decisions, trade-offs and how to handle a plan that goes wrong.",
+    "ages": "9 to 11: a simple Sunday plan. 12 to 14: add a budget sheet and a back-up plan."
+  },
+  {
+    "id": 6,
+    "quality": "leadership",
+    "name": "Captain of the week",
+    "duration": "Weekly",
+    "instructions": "Rotate a family \"captain\" each week. The captain chooses one shared activity, makes sure everyone gets a turn to speak and summarises the plan at the end.",
+    "rationale": "Leading is also about listening, including everyone and making sure the group finishes what it started.",
+    "ages": "5 to 8: choose the game. 9 to 14: run a short family meeting with an agenda."
+  },
+  {
+    "id": 7,
+    "quality": "curiosity",
+    "name": "Question jar",
+    "duration": "Daily to add, weekly to explore",
+    "instructions": "Keep a jar. Any question your child asks that you cannot answer immediately goes in on a slip of paper. Pick one each weekend and find out together using two different sources.",
+    "rationale": "Shows that not knowing is normal and that questions are valued.",
+    "ages": "5 to 8: pictures and books. 9 to 14: compare two sources and discuss which you trust more."
+  },
+  {
+    "id": 8,
+    "quality": "curiosity",
+    "name": "How does it work?",
+    "duration": "20 minutes, weekly",
+    "instructions": "Pick a safe everyday object (an old clock, a torch, a tap) and let your child take it apart or find out how it works, guessing before looking.",
+    "rationale": "Guessing, testing and checking is the basic method of all learning.",
+    "ages": "5 to 8: a toy or simple object with you nearby. 9 to 14: a video or manual, then explain it back."
+  },
+  {
+    "id": 9,
+    "quality": "curiosity",
+    "name": "Four-week experiment",
+    "duration": "15 minutes, 3 times a week for 4 weeks",
+    "instructions": "Ask your child what they would like to get better at (drawing, a sport, coding, cooking). Agree a four-week experiment with a tiny goal, and note progress together each week.",
+    "rationale": "Learning something unrelated to school makes the child the owner of their learning.",
+    "ages": "9 to 11: pick one small skill. 12 to 14: they design the plan and measure the result."
+  },
+  {
+    "id": 10,
+    "quality": "resilience",
+    "name": "My story of trying again",
+    "duration": "10 minutes, occasionally",
+    "instructions": "Tell your child about something you did not get right the first time and what you did next, including how you felt. Then ask whether they have felt similarly.",
+    "rationale": "Normalises setbacks and shows a path through them.",
+    "ages": "5 to 8: keep it short and simple. 9 to 14: include how long it took you to feel better."
+  },
+  {
+    "id": 11,
+    "quality": "resilience",
+    "name": "Three questions after a letdown",
+    "duration": "5 minutes, after a disappointment",
+    "instructions": "When something goes wrong (a bad result, a lost match), wait until they are calm. Then ask: What happened? What is in your control? What will you try next?",
+    "rationale": "Moves a child from feeling stuck to planning a next step, without pretending it did not hurt.",
+    "ages": "5 to 8: use one question, \"what could we try next time?\". 9 to 14: write the answers down."
+  },
+  {
+    "id": 12,
+    "quality": "resilience",
+    "name": "Hard-thing notebook",
+    "duration": "5 minutes, 3 times a week",
+    "instructions": "Choose one thing that is hard for your child. Each time they practise it, note one small improvement in a notebook. Review it each Sunday.",
+    "rationale": "Showing progress over time proves that effort works, which is the root of persistence.",
+    "ages": "5 to 8: stickers on a chart. 9 to 14: a notebook with dates and a short note."
+  }
+]

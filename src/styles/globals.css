@@ -1,0 +1,49 @@
+@import "./tokens/colour-tokens.css";
+@import "./tokens/typography-tokens.css";
+@import "./tokens/spacing-tokens.css";
+@import "./tokens/visual-foundation-tokens.css";
+@import "./tokens/button-tokens.css";
+@import "./tokens/form-tokens.css";
+@import "./tokens/card-tokens.css";
+
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body {
+  margin: 0;
+  background: var(--color-surface-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-line-height);
+  letter-spacing: var(--type-body-letter-spacing);
+}
+a { color: var(--color-text-link); text-underline-offset: 0.2em; }
+button, input, textarea, select { font: inherit; }
+img, svg { max-inline-size: 100%; }
+button, a, input, textarea, select, summary { touch-action: manipulation; }
+button { font: inherit; }
+p { overflow-wrap: break-word; }
+.skip-link { position: fixed; z-index: 100; top: var(--space-3); left: var(--space-3); padding: var(--space-3) var(--space-5); background: var(--color-brand-ink); color: var(--color-text-inverse); border-radius: var(--radius-medium); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); outline-color: var(--color-brand-ivory); outline-offset: -6px; }
+:focus-visible {
+  outline: var(--border-width-focus) solid var(--control-focus-ring);
+  outline-offset: var(--focus-outline-offset);
+}
+[data-surface="inverse"] { --control-focus-ring: var(--control-focus-ring-inverse); }
+::selection { background: var(--color-brand-lime); color: var(--color-brand-ink); }
+.sr-only {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (forced-colors: active) {
+  :focus-visible { outline-color: Highlight; }
+}
+
+.draft-notice { padding: .6rem 1rem; text-align: center; background: var(--color-brand-ivory); color: var(--color-brand-ink); font-size: .875rem; border-bottom: 1px solid currentColor; }

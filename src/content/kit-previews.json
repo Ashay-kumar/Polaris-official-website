@@ -1,0 +1,20 @@
+{
+  "1": {
+    "src": "/images/home-leadership-kit/previews/page-1.png",
+    "width": 1125,
+    "height": 1591,
+    "sha256": "24d5856bdff27f0f0db628075a0edaac0f0b16e22bb0747f7233ca231e9a4e92"
+  },
+  "2": {
+    "src": "/images/home-leadership-kit/previews/page-2.png",
+    "width": 1125,
+    "height": 1591,
+    "sha256": "b29fccd8633daa9445a580b0038134195d703270d51d3e78520bc552f1f0f9b9"
+  },
+  "6": {
+    "src": "/images/home-leadership-kit/previews/page-6.png",
+    "width": 1125,
+    "height": 1591,
+    "sha256": "6f8a0aeadbf4f9c6a94aa8f072723c53af8e66a04f5c4faec3ed54bde69005db"
+  }
+}

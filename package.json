@@ -1,0 +1,40 @@
+{
+  "name": "polaris-official-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "check:foundation": "node scripts/check-foundation.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "test:e2e": "playwright test",
+    "build:pages": "node scripts/build-pages.mjs",
+    "check:export": "node scripts/check-export.mjs",
+    "preview:pages": "node scripts/serve-export.mjs"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "dependencies": {
+    "@fontsource/dm-serif-display": "5.3.0",
+    "@fontsource/source-sans-3": "5.3.1",
+    "@phosphor-icons/react": "2.1.10",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.4.3",
+    "typescript": "^5.9.0"
+  }
+}
