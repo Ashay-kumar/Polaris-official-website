@@ -37,7 +37,7 @@ const logoManifest = fs.readFileSync("src/lib/brand/logos.ts", "utf8");
 const logoFiles = [...logoManifest.matchAll(/\/([\w-]+\.svg)/g)].map(m => m[1]);
 assert.equal(logoFiles.length, 6);
 for (const name of logoFiles) {
-  const file = `public/brand/logos/v1.1/svg/${name}`;
+  const file = `public/brand/logos/${name.startsWith("kyro-learning-") ? "v2.0" : "v1.1"}/svg/${name}`;
   const svg = fs.readFileSync(file, "utf8");
   assert.match(svg, /<svg\b/);
   assert.match(svg, /viewBox="0 0 [\d.]+ [\d.]+"/);
