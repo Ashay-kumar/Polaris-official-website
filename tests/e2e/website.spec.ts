@@ -113,7 +113,7 @@ test("Feedback validates and preserves answers without submitting", async ({ pag
   await page.getByLabel("Your email address").fill("");
   await page.getByRole("button", { name: "Review my answers" }).click();
   await expect(page.getByRole("heading", { name: "Review your perspective" })).toBeFocused();
-  await expect(page.getByRole("button", { name: "Submission unavailable in preview" })).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Submit feedback" })).toBeDisabled();
   await expect(page.getByRole("heading", { name: "Thank you!" })).toHaveCount(0);
   expect(outgoing).toEqual([]);
   const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
@@ -144,10 +144,10 @@ test("PDF download matches the approved original and all internal links resolve"
     }
   }
   await page.goto(sitePath("/"));
-  const downloadPromise = page.waitForEvent("download");
-  await page.getByRole("link", { name: "Download the Kit", exact: true }).click();
-  const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe("polaris-home-leadership-kit.pdf");
+  await page.getByRole("button", { name: "Download the Kit", exact: true }).click();
+  await expect(page.getByRole("dialog", { name: "Your Kit Is Almost Yours!" })).toBeVisible();
+  await expect(page.getByRole("dialog").getByRole("button", { name: "Download the Kit", exact: true })).toBeDisabled();
+  await page.keyboard.press("Escape");
 });
 
 test("Reduced motion and skip link work", async ({ page }) => {

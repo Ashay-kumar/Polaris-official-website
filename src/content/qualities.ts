@@ -7,7 +7,7 @@ export const qualities: { id: QualityId; name: string; description: string; exam
   { id: "resilience", name: "Resilience", description: "Trying again after losing, failing or being disappointed.", example: "In My story of trying again, a parent shares a setback, what they did next and how they felt.", reflection: "How could you make room for disappointment before discussing a next step?", photo: "quality-resilience.jpg", width: 372, height: 232 },
 ];
 
-export const kitDownload = "/downloads/polaris-home-leadership-kit.pdf";
+export const kitDownload = "/downloads/Kyro_Learning_Home_Leadership_Kit.pdf";
 export const perspectives = [
   { id: "parent", label: "Parent / caregiver", asset: "role-parent-caregiver.svg" },
   { id: "educator", label: "Educator", asset: "role-educator.svg" },

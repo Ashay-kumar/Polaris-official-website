@@ -1,3 +1,4 @@
+import { KitAccessProvider } from "@/components/feedback/kit-access";
 import { publicPath } from "@/lib/public-path";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -27,7 +28,7 @@ const body = localFont({
 });
 
 export const metadata: Metadata = {
-  title: { default: "Polaris", template: "%s | Polaris" },
+  title: { default: "Kyro Learning", template: "%s | Kyro Learning" },
   // Keep previews non-indexable until content, assets and submission service are approved.
   robots: { index: false, follow: false },
   icons: {
@@ -37,5 +38,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${editorial.variable} ${body.variable}`}><body><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><aside className="draft-notice" aria-label="First-draft preview">First-draft preview - Copy and provisional photography are under review. Feedback submission is not enabled.</aside><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></body></html>;
+  return <html lang="en" className={`${editorial.variable} ${body.variable}`}><body><KitAccessProvider><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></KitAccessProvider></body></html>;
 }

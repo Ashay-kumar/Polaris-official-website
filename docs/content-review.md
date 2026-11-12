@@ -38,3 +38,11 @@ Approve the provisional copy, especially the four quality summaries, timeline wo
 `src/components/pages/editorial-heroes.tsx` preserves each current hero's core headline and the existing supporting paragraphs/CTA destinations passed from its page. The four original quality names remain visible in Home's new quality rail. Added editorial text is provisional: the report-card qualification, Questions / Ideas / Possibilities annotation, three conversation prompts, progress-photo caption/note, conversation-start cue and collage caption. These are visual/editorial prompts, not claims of research, assessment or participation.
 
 Kit preview captions identify actual pages 1, 2 and 6. Preview pixels, including original document colours and wording, are faithful to the source PDF; they are not a redesigned cover or newly written document. The source PDF still includes its original check-in/WhatsApp wording; no corresponding service or endpoint is invented on the website.
+
+## Stage 06 additions requiring founder review
+
+The illustrated booklet is an editorial CSS packaging concept using the approved logo, actual four qualities, activity count/age range and a real activity title. It is explicitly labelled an illustration, not the actual PDF cover or an additional product. Original PDF content and previews are unchanged. Modal purpose text, preview limitations and optional communications wording are provisional UI copy; approve final collection purposes/privacy notice/consent before enabling capture. No clinical claims, testimonials or participant identities were added.
+
+## Stage 06.1 founder-supplied form copy
+
+Kit heading/description, kit-feedback informational notice, optional marketing wording and feedback-specific optional permission now use the supplied copy. Kit phone is required; feedback phone remains optional. No development/draft badges are shown. Real request/submission is unavailable, honestly stated without a simulated success. Approve channel permissions and the actual privacy notice before enabling collection; wording alone is not universal channel consent.

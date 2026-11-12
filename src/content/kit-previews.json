@@ -1,20 +1,20 @@
 {
   "1": {
-    "src": "/images/home-leadership-kit/previews/page-1.png",
+    "src": "/images/home-leadership-kit/previews/kyro/page-1.png",
     "width": 1125,
-    "height": 1591,
-    "sha256": "24d5856bdff27f0f0db628075a0edaac0f0b16e22bb0747f7233ca231e9a4e92"
+    "height": 1592,
+    "sha256": "d2e3d5fd6b92c3edf0e593fe5433b83f57ab2dc32e16bb777db0068e6e02e9f1"
   },
-  "2": {
-    "src": "/images/home-leadership-kit/previews/page-2.png",
+  "3": {
+    "src": "/images/home-leadership-kit/previews/kyro/page-3.png",
     "width": 1125,
-    "height": 1591,
-    "sha256": "b29fccd8633daa9445a580b0038134195d703270d51d3e78520bc552f1f0f9b9"
+    "height": 1592,
+    "sha256": "03235cb7058cf0b7c4516a15f5e15c0921d0f4470481c17496e7fb053aa1fa0b"
   },
-  "6": {
-    "src": "/images/home-leadership-kit/previews/page-6.png",
+  "7": {
+    "src": "/images/home-leadership-kit/previews/kyro/page-7.png",
     "width": 1125,
-    "height": 1591,
-    "sha256": "6f8a0aeadbf4f9c6a94aa8f072723c53af8e66a04f5c4faec3ed54bde69005db"
+    "height": 1592,
+    "sha256": "00ef5cae92b3eac72ebb6805f67544e4085989783eee6906ab522afeb7433857"
   }
 }

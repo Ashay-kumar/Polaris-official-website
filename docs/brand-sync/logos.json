@@ -1,0 +1,56 @@
+{
+  "primary": {
+    "path": "/brand/logos/v2.0/svg/kyro-learning-logo-primary.svg",
+    "png": "/brand/logos/v2.0/png/kyro-learning-logo-primary.png",
+    "logoAssetVersion": "2.0",
+    "displayedWordmark": "Kyro / LEARNING",
+    "width": 1253,
+    "height": 1575,
+    "backgroundIncluded": false
+  },
+  "horizontal": {
+    "path": "/brand/logos/v2.0/svg/kyro-learning-logo-horizontal.svg",
+    "png": "/brand/logos/v2.0/png/kyro-learning-logo-horizontal.png",
+    "logoAssetVersion": "2.0",
+    "displayedWordmark": "Kyro / LEARNING",
+    "width": 1982,
+    "height": 794,
+    "backgroundIncluded": false
+  },
+  "black": {
+    "path": "/brand/logos/v2.0/svg/kyro-learning-logo-ink.svg",
+    "png": "/brand/logos/v2.0/png/kyro-learning-logo-ink.png",
+    "logoAssetVersion": "2.0",
+    "displayedWordmark": "Kyro / LEARNING",
+    "width": 1000,
+    "height": 1680,
+    "backgroundIncluded": false
+  },
+  "reversed": {
+    "path": "/brand/logos/v2.0/svg/kyro-learning-logo-reversed-backed.svg",
+    "png": "/brand/logos/v2.0/png/kyro-learning-logo-reversed-backed.png",
+    "logoAssetVersion": "2.0",
+    "displayedWordmark": "Kyro / LEARNING",
+    "width": 1383,
+    "height": 1680,
+    "backgroundIncluded": true
+  },
+  "symbol": {
+    "path": "/brand/logos/v1.1/svg/polaris-symbol-primary.svg",
+    "logoAssetVersion": "1.1",
+    "displayedWordmark": null,
+    "png": "/brand/logos/v1.1/png/polaris-symbol-primary.png",
+    "width": 1000,
+    "height": 981,
+    "unchanged": true
+  },
+  "icon": {
+    "path": "/brand/logos/v1.1/svg/polaris-icon-primary.svg",
+    "logoAssetVersion": "1.1",
+    "displayedWordmark": null,
+    "png": "/brand/logos/v1.1/png/polaris-icon-primary.png",
+    "width": 700,
+    "height": 700,
+    "unchanged": true
+  }
+}

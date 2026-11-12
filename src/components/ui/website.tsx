@@ -1,14 +1,15 @@
+import { KitDownloadTrigger } from "@/components/feedback/kit-access";
 import { publicPath } from "@/lib/public-path";
 import Image from "next/image";
 import Link from "@/components/ui/site-link";
 import type { ReactNode } from "react";
 import { kitDownload } from "@/content/qualities";
-import { KitDocumentPreview } from "@/components/brand/kit-document-preview";
+import { KitIllustration } from "@/components/brand/kit-illustration";
 import s from "@/styles/website.module.css";
 
-export function ButtonLink({ href, children, variant = "primary", download = false }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "lime" | "light"; download?: boolean }) {
-  const props = { className: `${s.button} ${s[variant]}`, children: <>{children}<span aria-hidden="true">{download ? "↓" : "↗"}</span></> };
-  return download ? <a href={publicPath(href)} download {...props} /> : <Link href={href} {...props} />;
+export function ButtonLink({ href, children, variant = "primary" }: { href: string; children: ReactNode; variant?: "primary" | "secondary" | "lime" | "light"; download?: boolean }) {
+  const props = { className: `${s.button} ${s[variant]}`, children };
+  return href.startsWith(kitDownload) ? <KitDownloadTrigger {...props} /> : <Link href={href} {...props} />;
 }
 export function Section({ id, children, className = "" }: { id?: string; children: ReactNode; className?: string }) {
   return <section id={id} className={`${s.section} ${className}`}><div className={s.container}>{children}</div></section>;
@@ -32,10 +33,10 @@ export function Hero({ eyebrow, title, children, art, home = false, light = fals
     </div><div className={s.wave} aria-hidden="true" />
   </section>;
 }
-export function KitCover({ page = 1 }: { page?: 1 | 2 | 6 }) { return <div className={s.kitCover}><KitDocumentPreview page={page} /><Decoration /></div>; }
+export function KitCover() { return <div className={s.kitCover}><KitIllustration /></div>; }
 export function KitFeature({ download = false }: { download?: boolean }) {
   return <Section className={s.kitFeature}><div className={s.split}><KitCover /><div><Eyebrow>A practical start</Eyebrow><Heading>The Home<br />Leadership <Accent pink>Kit.</Accent></Heading><p className={s.lead}>12 simple, at-home activities to build communication, leadership, curiosity and resilience in children aged 5 to 14.</p><ButtonLink href={download ? kitDownload : "/home-leadership-kit"} download={download}>{download ? "Download the Kit" : "Explore the Kit"}</ButtonLink><p className={s.caption}>A reflection and activity guide. Not a clinical or psychological assessment.</p></div></div></Section>;
 }
-export function Invite({ title = <>Your perspective<br />matters.</>, children, label = "Help Shape Polaris" }: { title?: ReactNode; children?: ReactNode; label?: string }) {
-  return <section className={s.invite} data-surface="inverse"><div className={`${s.container} ${s.inviteGrid}`}><Heading>{title}</Heading><p>{children ?? "Polaris is taking shape. Share your thoughts, experiences and what you would like us to explore next."}</p><ButtonLink href="/help-shape-polaris#conversation" variant="lime">{label}</ButtonLink></div><div className={s.inviteRibbon} aria-hidden="true" /></section>;
+export function Invite({ title = <>Your perspective<br />matters.</>, children, label = "Help Shape Kyro Learning" }: { title?: ReactNode; children?: ReactNode; label?: string }) {
+  return <section className={s.invite} data-surface="inverse"><div className={`${s.container} ${s.inviteGrid}`}><Heading>{title}</Heading><p>{children ?? "Kyro Learning is taking shape. Share your thoughts, experiences and what you would like us to explore next."}</p><ButtonLink href="/help-shape-polaris#conversation" variant="lime">{label}</ButtonLink></div><div className={s.inviteRibbon} aria-hidden="true" /></section>;
 }

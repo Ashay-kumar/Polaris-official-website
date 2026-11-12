@@ -48,3 +48,5 @@
 @media(min-width: 1200px) { .roleGrid { grid-template-columns: repeat(4,1fr); } }
 @media(max-width: 599px) { .form { padding: var(--space-5); } .progress { gap: var(--space-1); } .progress li { display: block; text-align: center; border: 0; border-radius: var(--radius-medium); padding: var(--space-2) var(--space-1); font-size: .75rem; } .progress li > span:first-child { margin: 0 auto var(--space-2); width: 24px; } .roleGrid { grid-template-columns: 1fr; } .roleGrid label { grid-template-columns: auto 1fr; text-align: left; min-height: 56px; } .roleGrid label > img { display: none; } .roleGrid label > span { grid-column: 2; } }
 @media(forced-colors: active) { .current, .selected { outline: 2px solid Highlight; } }
+
+.field label > svg {margin-inline-end:.35rem;}.field label {line-height:1.5;}
