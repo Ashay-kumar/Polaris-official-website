@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "manifestSha256": "cfdfac23f63444889d18292eaa03d2636ddbc6acfd6123f509f6bd2ce9a7d903",
+  "manifest": {
+    "schemaVersion": 1,
+    "contractVersion": "1.0.0",
+    "brandReleaseVersion": "0.1.0-identity.3",
+    "logoAssetVersion": "2.0",
+    "releaseStatus": "approved",
+    "releaseApproval": {
+      "approvedBy": "Brand & Design System owner",
+      "reference": "docs/kyro-brand-release-approval.md"
+    },
+    "repository": "mridulavdass-bit/polaris-brand-design-system",
+    "sourceCommit": "0328f77f90b31a7478866c9af11a3fd69b02ec24",
+    "approvedSourceBaseline": "0328f77f90b31a7478866c9af11a3fd69b02ec24",
+    "identityApproval": "Ashay approved Kyro Learning / Kyro and supplied wordmarks in Stage 07A.2b; not approval or publication of this export release",
+    "releaseNotes": "docs/stage-07a2b-identity-migration.md",
+    "compatibility": {
+      "node": ">=20.9.0",
+      "next": "16.4.3",
+      "react": "19.3.1",
+      "reactDom": "19.3.1",
+      "phosphor": "2.1.10",
+      "styling": "CSS custom properties; static-compatible local assets; no network at website build"
+    },
+    "contractSha256": "2488099af5d9c25cd736ab78480e282e3d808291f974d175ca5b2500c9a93d9e",
+    "buildIdentifier": "sha256:2488099af5d9c25cd736ab78480e282e3d808291f974d175ca5b2500c9a93d9e",
+    "files": [
+      {
+        "source": "brand-export/logos.json",
+        "destination": "docs/brand-sync/logos.json",
+        "kind": "contract-file",
+        "sha256": "c0074539965b8ce131ca822e5778c63fb1ced52b51804176d552532dd98b4412",
+        "license": "Proprietary brand configuration; authorised project use",
+        "bytes": 1750
+      },
+      {
+        "source": "public/brand/logos/v1.1/png/polaris-icon-primary.png",
+        "destination": "public/brand/logos/v1.1/png/polaris-icon-primary.png",
+        "kind": "git",
+        "sha256": "702ba1340b111510ce3a03da6976be3981424187bb12b6f2f63638a20dc9cfbf",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 101270
+      },
+      {
+        "source": "public/brand/logos/v1.1/png/polaris-symbol-primary.png",
+        "destination": "public/brand/logos/v1.1/png/polaris-symbol-primary.png",
+        "kind": "git",
+        "sha256": "df39f66a4a502524481388e4bfce6192ea4ecb8e4878e328b59820d840da0feb",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 200152
+      },
+      {
+        "source": "public/brand/logos/v1.1/svg/polaris-icon-primary.svg",
+        "destination": "public/brand/logos/v1.1/svg/polaris-icon-primary.svg",
+        "kind": "git",
+        "sha256": "80578ea07b47aca2f9566867d0b7b1199574ef001833a312d9aae645ed106f8b",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 2243
+      },
+      {
+        "source": "public/brand/logos/v1.1/svg/polaris-symbol-primary.svg",
+        "destination": "public/brand/logos/v1.1/svg/polaris-symbol-primary.svg",
+        "kind": "git",
+        "sha256": "2e33f8c1d8a6faa6eb9f6f4396db65516244582dea3e913e96093c8050833db3",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 2177
+      },
+      {
+        "source": "public/brand/logos/v2.0/png/kyro-learning-logo-horizontal.png",
+        "destination": "public/brand/logos/v2.0/png/kyro-learning-logo-horizontal.png",
+        "kind": "contract-file",
+        "sha256": "86b9221d5f4f6da57fc6b3e45c547377404c97b9e4b2d980ef25ad5723cc4e60",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Horizontal.png",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 272023
+      },
+      {
+        "source": "public/brand/logos/v2.0/png/kyro-learning-logo-ink.png",
+        "destination": "public/brand/logos/v2.0/png/kyro-learning-logo-ink.png",
+        "kind": "contract-file",
+        "sha256": "d07a752a25b61fc1d166cbb6a95fb3a6284e305d855bb0b8993e1029ce2b448d",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Black logo.png",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 330868
+      },
+      {
+        "source": "public/brand/logos/v2.0/png/kyro-learning-logo-primary.png",
+        "destination": "public/brand/logos/v2.0/png/kyro-learning-logo-primary.png",
+        "kind": "contract-file",
+        "sha256": "a22a4d8efe70f440ccac09158967b465fc3f5dc81d0cee668435e9b9257e1d71",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Primary Logo.png",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 371050
+      },
+      {
+        "source": "public/brand/logos/v2.0/png/kyro-learning-logo-reversed-backed.png",
+        "destination": "public/brand/logos/v2.0/png/kyro-learning-logo-reversed-backed.png",
+        "kind": "contract-file",
+        "sha256": "dc0a90e61692d5002e56183cb641f8ceeb74eed01160534e2b24b454b2a2ad53",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Reversed.png",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 398949
+      },
+      {
+        "source": "public/brand/logos/v2.0/svg/kyro-learning-logo-horizontal.svg",
+        "destination": "public/brand/logos/v2.0/svg/kyro-learning-logo-horizontal.svg",
+        "kind": "contract-file",
+        "sha256": "93729d917a0902350d37b3acbf0b6975507b2a01e96e93251ff6cd382e39b237",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Horizontal.svg",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 9431
+      },
+      {
+        "source": "public/brand/logos/v2.0/svg/kyro-learning-logo-ink.svg",
+        "destination": "public/brand/logos/v2.0/svg/kyro-learning-logo-ink.svg",
+        "kind": "contract-file",
+        "sha256": "8b584880749406947a279bc9d54e2b0d8b21645c65a870ec7b8126282366eefb",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Black logo.svg",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 9823
+      },
+      {
+        "source": "public/brand/logos/v2.0/svg/kyro-learning-logo-primary.svg",
+        "destination": "public/brand/logos/v2.0/svg/kyro-learning-logo-primary.svg",
+        "kind": "contract-file",
+        "sha256": "fbd1fa68dcdc854026506f45b237115a737bf8be1380ddb641307292c119e297",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Primary Logo.svg",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 9827
+      },
+      {
+        "source": "public/brand/logos/v2.0/svg/kyro-learning-logo-reversed-backed.svg",
+        "destination": "public/brand/logos/v2.0/svg/kyro-learning-logo-reversed-backed.svg",
+        "kind": "contract-file",
+        "sha256": "0cf588d9707a979276573c91cabe2fa0a1cbea5608cd253cc2286692e2b621af",
+        "license": "Proprietary founder-approved brand artwork; authorised project use",
+        "origin": "assets/incoming/Re-branded logo_wordmark/Reversed.svg",
+        "approval": "Ashay; Stage 07A.2b approved identity migration",
+        "bytes": 9872
+      },
+      {
+        "source": "node_modules/@fontsource/dm-serif-display/LICENSE",
+        "destination": "public/licenses/dm-serif-display-OFL.txt",
+        "kind": "font-package",
+        "sha256": "e9d4ced9825bf03a6b634c37fe8ae974f6d1b80fbb0bd3ae9b089987e4dc541b",
+        "origin": "@fontsource/dm-serif-display@5.3.0",
+        "license": "OFL-1.1",
+        "bytes": 4599
+      },
+      {
+        "source": "public/licenses/phosphor-icons-react-LICENSE.txt",
+        "destination": "public/licenses/phosphor-icons-react-LICENSE.txt",
+        "kind": "git",
+        "sha256": "6918b72504641180600cbbd4a86b0dfa9dfccf788775694325b71b9a029f6eb4",
+        "license": "MIT",
+        "bytes": 1071
+      },
+      {
+        "source": "node_modules/@fontsource/source-sans-3/LICENSE",
+        "destination": "public/licenses/source-sans-3-OFL.txt",
+        "kind": "font-package",
+        "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+        "origin": "@fontsource/source-sans-3@5.3.1",
+        "license": "OFL-1.1",
+        "bytes": 4314
+      },
+      {
+        "source": "src/components/polaris-icon.tsx",
+        "destination": "src/components/brand/polaris-icon.tsx",
+        "kind": "git",
+        "sha256": "915c54b5472da586d5b2ab205aa0650660d8e19b0c84b7fc83d10ece54c4a79e",
+        "license": "Project source; authorised project use",
+        "bytes": 1335
+      },
+      {
+        "source": "src/lib/button-system.ts",
+        "destination": "src/lib/brand/button-system.ts",
+        "kind": "git",
+        "sha256": "b4f42f990f73dc9fae9addf42291c651370fea05852c4d93174986b8cab752eb",
+        "license": "Project source; authorised project use",
+        "bytes": 3846
+      },
+      {
+        "source": "src/lib/colour-system.ts",
+        "destination": "src/lib/brand/colour-system.ts",
+        "kind": "git",
+        "sha256": "5504eb5bfa0be54cc1f6eba8d261a7ca9db78443d8bb183458f31eaf31987fe3",
+        "license": "Project source; authorised project use",
+        "bytes": 16206
+      },
+      {
+        "source": "brand-export/identity.json",
+        "destination": "src/lib/brand/identity.json",
+        "kind": "contract-file",
+        "sha256": "58e04e527a9d7afd279693d311c460290c1ea98b217622f1c14a62b3f1021467",
+        "license": "Proprietary brand configuration; authorised project use",
+        "bytes": 343
+      },
+      {
+        "source": "src/lib/spacing-system.ts",
+        "destination": "src/lib/brand/spacing-system.ts",
+        "kind": "git",
+        "sha256": "1998e038f1fb4332ef84a94bde2f1e8f14847b09248084da5ca2e5527b9ca09c",
+        "license": "Project source; authorised project use",
+        "bytes": 3878
+      },
+      {
+        "source": "src/lib/typography-system.ts",
+        "destination": "src/lib/brand/typography-system.ts",
+        "kind": "git",
+        "sha256": "4398eb1192637a22a35e55eb94acc9ad74f807dd29f98fcd793dd4f1949aa989",
+        "license": "Project source; authorised project use",
+        "bytes": 5438
+      },
+      {
+        "source": "src/lib/visual-foundations.ts",
+        "destination": "src/lib/brand/visual-foundations.ts",
+        "kind": "git",
+        "sha256": "1c396d515bcd7defdcb62b83f99ff2e7399db1c73ed7b5536fabefb1be761cb0",
+        "license": "Project source; authorised project use",
+        "bytes": 7434
+      },
+      {
+        "source": "node_modules/@fontsource/dm-serif-display/files/dm-serif-display-latin-400-normal.woff2",
+        "destination": "src/styles/fonts/dm-serif-display-latin-400-normal.woff2",
+        "kind": "font-package",
+        "sha256": "fdf61e20fd2c0108e0ea28da4daca0035205b4b7fc031a3974b865b704de160a",
+        "origin": "@fontsource/dm-serif-display@5.3.0",
+        "license": "OFL-1.1",
+        "bytes": 24744
+      },
+      {
+        "source": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2",
+        "destination": "src/styles/fonts/source-sans-3-latin-400-normal.woff2",
+        "kind": "font-package",
+        "sha256": "0f73f35e08cde0a2f10c109c6e01d71459d97e4099ecd9a50f1b6c0209e4de2b",
+        "origin": "@fontsource/source-sans-3@5.3.1",
+        "license": "OFL-1.1",
+        "bytes": 15696
+      },
+      {
+        "source": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-600-normal.woff2",
+        "destination": "src/styles/fonts/source-sans-3-latin-600-normal.woff2",
+        "kind": "font-package",
+        "sha256": "14527d193b0e30bc32ef931549a246cdfd286573bb12869b7e052b8101a39d38",
+        "origin": "@fontsource/source-sans-3@5.3.1",
+        "license": "OFL-1.1",
+        "bytes": 15668
+      },
+      {
+        "source": "node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-700-normal.woff2",
+        "destination": "src/styles/fonts/source-sans-3-latin-700-normal.woff2",
+        "kind": "font-package",
+        "sha256": "ae35266f2ab0d5314ff9a04127931eb26c793e4f1269bb240046d4d2db4b7bb1",
+        "origin": "@fontsource/source-sans-3@5.3.1",
+        "license": "OFL-1.1",
+        "bytes": 15596
+      },
+      {
+        "source": "src/app/button-tokens.css",
+        "destination": "src/styles/tokens/button-tokens.css",
+        "kind": "git",
+        "sha256": "aca97e6af8a71989a757e1d163c66073d0fcc8aa54e65adbf34b748ae2698e27",
+        "license": "Project source; authorised project use",
+        "bytes": 680
+      },
+      {
+        "source": "src/app/card-tokens.css",
+        "destination": "src/styles/tokens/card-tokens.css",
+        "kind": "git",
+        "sha256": "9624e0af2a59514487e023d4302c38fed816fa52a9b7de7af8eb48417c3d66a4",
+        "license": "Project source; authorised project use",
+        "bytes": 591
+      },
+      {
+        "source": "src/app/colour-tokens.css",
+        "destination": "src/styles/tokens/colour-tokens.css",
+        "kind": "git",
+        "sha256": "b7dbe4f24ac057a348d1f96c6d249e34e9425876478aa4210a0088aadd7ea3f4",
+        "license": "Project source; authorised project use",
+        "bytes": 11146
+      },
+      {
+        "source": "src/app/form-tokens.css",
+        "destination": "src/styles/tokens/form-tokens.css",
+        "kind": "git",
+        "sha256": "049d3ddfd1a00bb81d5dc6aed1613b3d57b93cdca96dac6f644053720d0a3c2d",
+        "license": "Project source; authorised project use",
+        "bytes": 583
+      },
+      {
+        "source": "src/app/spacing-tokens.css",
+        "destination": "src/styles/tokens/spacing-tokens.css",
+        "kind": "git",
+        "sha256": "cd82f89198e3fb8692f595b7609b8e33f370559b1a86b14b03ca6313e60c2db5",
+        "license": "Project source; authorised project use",
+        "bytes": 1479
+      },
+      {
+        "source": "src/app/typography-tokens.css",
+        "destination": "src/styles/tokens/typography-tokens.css",
+        "kind": "git",
+        "sha256": "18bed17bd8ba1d895ff6c8a7af8c48155483e4acc8a866993975060d2cbd422b",
+        "license": "Project source; authorised project use",
+        "bytes": 6887
+      },
+      {
+        "source": "src/app/visual-foundation-tokens.css",
+        "destination": "src/styles/tokens/visual-foundation-tokens.css",
+        "kind": "git",
+        "sha256": "5ef6ee5c7e0d6bd45e588d29b7a849ba29959663f714eacbf0ecd57c8c538a1c",
+        "license": "Project source; authorised project use",
+        "bytes": 1626
+      },
+      {
+        "source": "public/brand/logos/v1.1/png/polaris-logo-black.png",
+        "destination": "public/brand/logos/v1.1/png/polaris-logo-black.png",
+        "kind": "git",
+        "sha256": "b2313a52bb291e5889b06155523cc7701fda585360cfb1bc4ef088c731287a4b",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 291848
+      },
+      {
+        "source": "public/brand/logos/v1.1/png/polaris-logo-horizontal.png",
+        "destination": "public/brand/logos/v1.1/png/polaris-logo-horizontal.png",
+        "kind": "git",
+        "sha256": "f8bb3ebdd5a982eb99061d13a9fa0c9660c7f9d1e94a9b6d368ddbf14c7d12f1",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 187231
+      },
+      {
+        "source": "public/brand/logos/v1.1/png/polaris-logo-primary.png",
+        "destination": "public/brand/logos/v1.1/png/polaris-logo-primary.png",
+        "kind": "git",
+        "sha256": "1cd1289246027608dee9ae376c6707482b7f59d12981d12a238b306f92a0693c",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 294601
+      },
+      {
+        "source": "public/brand/logos/v1.1/png/polaris-logo-reversed.png",
+        "destination": "public/brand/logos/v1.1/png/polaris-logo-reversed.png",
+        "kind": "git",
+        "sha256": "188449f5d0dea319eefdd916787b6fc4ab1ef69ada16d9ffb86d80c940a1126e",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 330922
+      },
+      {
+        "source": "public/brand/logos/v1.1/svg/polaris-logo-black.svg",
+        "destination": "public/brand/logos/v1.1/svg/polaris-logo-black.svg",
+        "kind": "git",
+        "sha256": "e6712e8e5275e8fffcd095622caf32c52e0330e147397c9ff75c8c8548d1e153",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 9000
+      },
+      {
+        "source": "public/brand/logos/v1.1/svg/polaris-logo-horizontal.svg",
+        "destination": "public/brand/logos/v1.1/svg/polaris-logo-horizontal.svg",
+        "kind": "git",
+        "sha256": "fc96e36fc8c20616937803c8b87be6583399e8d412ab22c77dcdb85bed511784",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 8464
+      },
+      {
+        "source": "public/brand/logos/v1.1/svg/polaris-logo-primary.svg",
+        "destination": "public/brand/logos/v1.1/svg/polaris-logo-primary.svg",
+        "kind": "git",
+        "sha256": "e6d9ea52eb0c349d68e58ab1cd91412cec11d1e981fbc375aae477944bc994d5",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 9000
+      },
+      {
+        "source": "public/brand/logos/v1.1/svg/polaris-logo-reversed.svg",
+        "destination": "public/brand/logos/v1.1/svg/polaris-logo-reversed.svg",
+        "kind": "git",
+        "sha256": "1e353c806def39810aa172effbe4346aab6e8aea2770d43674b130d86248071a",
+        "license": "Proprietary brand artwork; authorised project use",
+        "bytes": 8978
+      }
+    ]
+  }
+}

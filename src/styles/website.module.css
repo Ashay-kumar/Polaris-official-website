@@ -246,3 +246,14 @@
   .button, .qualityCard, .qualityDetail, .journeySteps li, .principle { border: 1px solid CanvasText; }
   .navigation a[aria-current="page"] { text-decoration: underline; }
 }
+
+/* Refined shared rhythm: decorations stay within their own composition. */
+.kitCover {width:min(100%,420px);transform:none;margin:var(--space-4) auto;}
+.kitCover::before {content:none;}
+.section {scroll-margin-top:var(--space-8);}
+.qualityDetail {border-radius:var(--radius-large);}
+.howGrid li,.principle {border-radius:var(--radius-large);}
+.spotlightNote {transform:rotate(1deg);}
+.inviteRibbon {height:56px;bottom:-44px;}
+.actions > button {cursor:pointer;}
+@media(max-width:600px){.editorialRow,.split{gap:var(--space-8);}.spotlightNote{transform:none;}.qualityDetail {padding:var(--space-5);}}

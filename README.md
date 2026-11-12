@@ -26,3 +26,5 @@ Run npm run lint, npm run check:foundation, npm run check:content, node scripts/
 See [Cloudflare preparation](docs/cloudflare-pages.md) for owner setup and review steps. Production branch: main; build: npm run build; output: out; Node: 24. The GitHub workflow validates PRs and main only; it never deploys. PR #1 was already merged before this preparation. No deployment or repository settings change is performed by this task.
 
 See [content review](docs/content-review.md), [photography](docs/stage-03-photography.md), [brand provenance](docs/brand-provenance.md) and [feedback backend contract](docs/feedback-backend-contract.md). Historical stage reports describe their own completion point; this README and Cloudflare preparation guide describe the current preview configuration.
+
+Current frontend refinement: [Stage 06.1 review](docs/stage-06.1-refinement.md) and [forms backend handoff](docs/forms-backend-handoff.md). Kit phone is required; feedback phone is optional. Both use the shared maintained-metadata country selector. Final request/submission remains unavailable.

@@ -10,7 +10,7 @@ type Props = {
 };
 
 /** Preserve the complete approved canvas. Reversed artwork needs a dark surface. */
-export function PolarisLogo({ variant = "horizontal", alt = "Polaris", className, width }: Props) {
+export function PolarisLogo({ variant = "horizontal", alt = "Kyro Learning", className, width }: Props) {
   const asset = polarisLogos[variant];
   const displayWidth = width ?? asset.width;
   return <Image src={publicPath(asset.src)} alt={alt} width={displayWidth}

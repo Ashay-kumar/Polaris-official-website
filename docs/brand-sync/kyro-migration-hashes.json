@@ -1,0 +1,95 @@
+{
+  "purpose": "Kyro Learning website identity and eight-page kit migration",
+  "originalSnapshot": "docs/brand-sync/preflight-hashes.json",
+  "approvedBrandRelease": "0.1.0-identity.3",
+  "files": [
+    {
+      "path": "src/app/about/page.tsx",
+      "beforeSha256": "1bd18d211598f7929d6f8f57a316eb9a2fe012cb8f9070dabd1d81e68c381df8",
+      "afterSha256": "b69584ae30e26c898b573cf9183fa7734de33ea1facda34a4c0c2b4d58195812"
+    },
+    {
+      "path": "src/app/help-shape-polaris/page.tsx",
+      "beforeSha256": "753d529db502e239db8ffa5cb8fc1bbfb16e7ab76cb8ef834583e1ca8a659841",
+      "afterSha256": "d1c83ae8568155c28a228ce13f9c061a6ee95d6954bab5b75397166af0d0caa9"
+    },
+    {
+      "path": "src/app/home-leadership-kit/page.tsx",
+      "beforeSha256": "07c861952ef2a0cda86fc634afc676cad41a6d4fa7f51c7aab23ddde101951b8",
+      "afterSha256": "057c367afbbece7a04fde4da007640d667e8d67e816463c0c0550918d5a7e03b"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "beforeSha256": "7cc2ccb1267a32c3df2c634a670df530724efde960fa360fbf17edec4bff612c",
+      "afterSha256": "541be33488bc5ed35b49ce4c865ba33d753bf859acf15e61e380a8c39fc684dc"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "beforeSha256": "c0fb3d7db598eb8a4d4f34af96d91b7ca729064b1017b64f41079456bda6b0c5",
+      "afterSha256": "01d0f9836171348ecd28468c88f6d3a4bc841981bcd0024c3502d6b5afeb889f"
+    },
+    {
+      "path": "src/components/brand/kit-document-preview.tsx",
+      "beforeSha256": "787e29b9e8e636d86bcb2e6b3b622cd58a03493582636fbed9a1106db686e652",
+      "afterSha256": "0e47b1e5a0690efbc473e07daa91cbe0322e1d8f5d8ff7d0e42ab1e0ee316c59"
+    },
+    {
+      "path": "src/components/brand/polaris-logo.tsx",
+      "beforeSha256": "98185117f0214b4482b2ff0ea9c280ffe1b3440de8de1af4d09e7865e42922c4",
+      "afterSha256": "9eae3b13dfbfb4e0176371a31a6e9c48c7ccd28a3c6bd56a6ec296cc58002d5b"
+    },
+    {
+      "path": "src/components/feedback/feedback-form.tsx",
+      "beforeSha256": "527904cb9a4e608b0a46d08c8e5d6d58df2e45c9e981cda7a816c870a116ef8d",
+      "afterSha256": "c8ffd0007cb508bde40ea79a4ca89837a26dad3a7354b4c9fde0befed1e61f2c"
+    },
+    {
+      "path": "src/components/feedback/kit-access.tsx",
+      "beforeSha256": "3b2ea823ba192317c47bee6e50a610a6fc923162ca576c93eef53011452da89b",
+      "afterSha256": "10f26de8f020ee6fb62239e068a1e30b79d96e03b4b6d062f7072b5ee8d66fa7"
+    },
+    {
+      "path": "src/components/layout/site-footer.tsx",
+      "beforeSha256": "dbeb112e53f76c3a2b31fa2535259323fd3950f86b332ec315c5cdebed1904e0",
+      "afterSha256": "4e3ae31f49af9d42228e53e3c58549232f5f0423dcce54b65142a6c62e5ced84"
+    },
+    {
+      "path": "src/components/layout/site-header.tsx",
+      "beforeSha256": "396e331dd60c9c79daa104933e965e5a3f7eb6c750ed732695aca82a924a34de",
+      "afterSha256": "d39bf6653292cddaa71e835c0dc0f0739bacb64d831dc74ff49e9f56a234091b"
+    },
+    {
+      "path": "src/components/pages/editorial-heroes.tsx",
+      "beforeSha256": "a0ccc0354e38d8434de2a50d453af83c96384cd463a37be9e6847516dfe1ccb1",
+      "afterSha256": "2277af189914884aa3a2522d3cd962303282142e44cc59c52b29017e46a03c8d"
+    },
+    {
+      "path": "src/components/ui/website.tsx",
+      "beforeSha256": "ebd3d0ac389e45faafc4c45cd48e517b417846ac3f4819169098009b3386e600",
+      "afterSha256": "56e4471aa1746a6f1c025b3f739dd7b3b1c7c301363195dd29e8174b6737e36a"
+    },
+    {
+      "path": "src/content/kit-previews.json",
+      "beforeSha256": "1af65feb36ab397ab31bb8b2e5f5c74e6c9b13c6b963604149db2e08a03d6f74",
+      "afterSha256": "4adb7136fbf75a4abb673a3005639b2c8cb7a4a6852ed8c8cca5e5c3b0c1f041"
+    },
+    {
+      "path": "src/content/qualities.ts",
+      "beforeSha256": "dbbedd17004e498d9aaf60d9485ad2df8c944704bd0937e0cc6af28b6254fb1c",
+      "afterSha256": "07816e88c82bedfccb3504553e45a2f935cde01b4f288f1cf4dc5b27997f68e3"
+    },
+    {
+      "path": "src/lib/brand/logos.ts",
+      "beforeSha256": "28df6b63f859748a35e300bbd08103c630b8229560be58dbb977e520348da096",
+      "afterSha256": "a8d7510c8e13d7555d55b8df5530afebb17426a20d3c41d8ea4b8e3de5d5b2db"
+    }
+  ],
+  "revisions": [
+    {
+      "path": "src/app/home-leadership-kit/page.tsx",
+      "reason": "Approved direct PDF page-7 tracker link, preserving secondary-button styling and the separate download-request modal",
+      "previousSha256": "48ae887c4e86b6ffa61ec2462b5b87566f0258bcf3b0a5cbfb3c0d359ab37441",
+      "revisedSha256": "057c367afbbece7a04fde4da007640d667e8d67e816463c0c0550918d5a7e03b"
+    }
+  ]
+}
