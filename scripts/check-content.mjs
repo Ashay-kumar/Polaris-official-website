@@ -2,8 +2,9 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { inflateSync } from "node:zlib";
+import { privateKitPath } from "./private-kit-files.mjs";
 
-const pdf = fs.readFileSync("public/downloads/polaris-home-leadership-kit.pdf");
+const pdf = fs.readFileSync(privateKitPath("public/downloads/polaris-home-leadership-kit.pdf"));
 assert.equal(createHash("sha256").update(pdf).digest("hex"), "0a39023cb7a555de06cee6abe39a0b10f0d14407b5d42e478b6c91f8c770bbf5");
 function decodeAscii85(source) {
   const output = [];

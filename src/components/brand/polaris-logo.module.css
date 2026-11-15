@@ -1,0 +1,23 @@
+/* Presentation viewport in the original 1982 × 794 canvas: x200 y64 w1280 h672.
+   All artwork is inside x214–1458/y82–713; the retained gutter protects its edges.
+   These offsets remove only transparent padding, never modify the approved SVG. */
+.horizontalFrame {
+  display: inline-block;
+  position: relative;
+  width: var(--logo-width);
+  max-width: 100%;
+  aspect-ratio: 1280 / 672;
+  overflow: hidden;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.horizontalFrame > .horizontalImage {
+  position: absolute;
+  left: -15.625%; /* -200 / 1280 */
+  top: -9.5238095238%; /* -64 / 672 */
+  width: 154.84375%; /* 1982 / 1280 */
+  height: auto;
+  max-width: none;
+  max-inline-size: none;
+  display: block;
+}

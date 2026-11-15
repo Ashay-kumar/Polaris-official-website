@@ -14,6 +14,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_FORM_SUBMISSIONS_ENABLED: "false"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,7 +27,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run check:foundation
-      - run: npm run check:content
+      - run: npm run check:public-content
       - run: node scripts/check-stage-03-assets.mjs
       - run: npm run build
       - run: npm run typecheck

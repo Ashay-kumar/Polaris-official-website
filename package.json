@@ -11,6 +11,8 @@
     "lint": "eslint . --max-warnings=0",
     "check:foundation": "node scripts/check-foundation.mjs",
     "check:content": "node scripts/check-content.mjs",
+    "check:public-content": "node scripts/check-public-content.mjs",
+    "check:private-kit": "node scripts/check-private-kit.mjs",
     "test:e2e": "playwright test",
     "check:export": "node scripts/check-export.mjs",
     "preview": "node scripts/serve-export.mjs"

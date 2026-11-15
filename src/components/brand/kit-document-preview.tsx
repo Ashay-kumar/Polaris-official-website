@@ -1,6 +1,6 @@
 import { publicPath } from "@/lib/public-path";
 import Image from "next/image";
-import { kitDownload } from "@/content/qualities";
+import { KitDownloadTrigger } from "@/components/feedback/kit-access";
 import previews from "@/content/kit-previews.json";
 import s from "./kit-document-preview.module.css";
 
@@ -25,10 +25,7 @@ export function KitDocumentPreview({
 
   return (
     <figure className={s.document}>
-      <a
-        href={`${publicPath(kitDownload)}#page=${page}`}
-        aria-label={`Open Kyro Learning Home Leadership Kit, page ${page}: ${labels[page]}`}
-      >
+      <KitDownloadTrigger className={s.preview}>
         <Image
           src={publicPath(image.src)}
           width={image.width}
@@ -37,7 +34,7 @@ export function KitDocumentPreview({
           sizes="(max-width: 600px) 230px, 300px"
           priority={priority}
         />
-      </a>
+      </KitDownloadTrigger>
 
       {caption && (
         <figcaption>

@@ -1,0 +1,20 @@
+[
+  {
+    "from": "public/downloads/Kyro_Learning_Home_Leadership_Kit.pdf",
+    "to": "private/kit/Kyro_Learning_Home_Leadership_Kit.pdf",
+    "sha256": "69dda4c82161de29300c8212d82aef9f078be8ca084e475ef730fd6c1ed955da",
+    "bytes": 325137
+  },
+  {
+    "from": "public/downloads/polaris-home-leadership-kit.pdf",
+    "to": "private/kit/polaris-home-leadership-kit.pdf",
+    "sha256": "0a39023cb7a555de06cee6abe39a0b10f0d14407b5d42e478b6c91f8c770bbf5",
+    "bytes": 13123
+  },
+  {
+    "from": "public/downloads/Polaris_Home_Leadership_Kit.pdf",
+    "to": "private/kit/Polaris_Home_Leadership_Kit.pdf",
+    "sha256": "0a39023cb7a555de06cee6abe39a0b10f0d14407b5d42e478b6c91f8c770bbf5",
+    "bytes": 13123
+  }
+]

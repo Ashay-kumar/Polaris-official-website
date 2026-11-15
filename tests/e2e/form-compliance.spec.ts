@@ -1,0 +1,58 @@
+import { test, expect } from "@playwright/test";
+
+test("Kit requires adult confirmation independently of marketing and preserves it in review", async ({ page }) => {
+  await page.goto("/home-leadership-kit/");
+  await page.getByRole("button", { name: "Download the Kit", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Your Kit Is Almost Yours!" });
+  await expect(dialog).toContainText("Parents and lawful guardians may request resources for a child using the adult’s own contact information.");
+  await expect(dialog).not.toContainText("Records are retained indefinitely");
+  await expect(dialog).toContainText("not a commitment to retain personal data indefinitely");
+  await dialog.getByLabel("Full name", { exact: true }).fill("Synthetic Adult");
+  await dialog.getByLabel("Email address", { exact: true }).fill("adult@example.test");
+  await dialog.getByLabel("Phone number", { exact: true }).fill("+12025550123");
+  const adult = dialog.getByLabel("I confirm that I am 18 or older.", { exact: true });
+  await expect(adult).not.toBeChecked();
+  const privacy = dialog.getByRole("checkbox", { name: /I acknowledge that I have read/ });
+  await expect(privacy).not.toBeChecked();
+  await dialog.getByRole("button", { name: "Review details" }).click();
+  await expect(dialog.getByRole("alert")).toContainText("Confirm that you are 18 or older");
+  await adult.check(); await dialog.getByRole("button", { name: "Review details" }).click();
+  await expect(dialog.getByRole("alert")).toContainText("Acknowledge the Privacy Policy");
+  await privacy.check(); await dialog.getByRole("button", { name: "Review details" }).click();
+  await expect(dialog.getByRole("status").filter({ hasText: "Review your details" })).toContainText("Acknowledged");
+  await expect(dialog).toContainText("We may invite you to share your experience with the Home Leadership Kit.");
+  await expect(dialog).not.toContainText("in a few days");
+  await expect(dialog.getByRole("status").filter({ hasText: "Review your details" })).toContainText("18 or older: confirmed");
+  await expect(dialog.getByRole("status").filter({ hasText: "Review your details" })).toContainText("Not selected");
+  await adult.uncheck(); await expect(dialog.getByRole("status").filter({ hasText: "Review your details" })).toHaveCount(0);
+  await expect(dialog.getByRole("button", { name: "Download the Kit", exact: true })).toBeDisabled();
+});
+
+test("Feedback requires adult confirmation while contacts and follow-up remain optional", async ({ page }) => {
+  await page.goto("/help-shape-polaris/");
+  await expect(page.locator("#preview-info")).toContainText("not a commitment to retain personal data indefinitely");
+  await page.getByRole("radio", { name: "Parent / caregiver", exact: true }).check();
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+  await page.getByLabel("one challenge", { exact: false }).fill("Synthetic challenge for testing.");
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+  await page.getByLabel("What resources or support").fill("Synthetic resources for testing.");
+  await page.getByRole("button", { name: "Next", exact: true }).click();
+  const adult = page.getByRole("checkbox", { name: "I confirm that I am 18 or older.", exact: true });
+  await expect(adult).not.toBeChecked();
+  const privacy = page.getByRole("checkbox", { name: /I acknowledge that I have read/ });
+  await expect(privacy).not.toBeChecked();
+  await page.getByRole("button", { name: "Review my answers" }).click();
+  await expect(page.locator("form").getByRole("alert")).toContainText("Confirm that you are 18 or older");
+  await adult.check(); await page.getByRole("button", { name: "Review my answers" }).click();
+  await expect(page.locator("form").getByRole("alert")).toContainText("Acknowledge the Privacy Policy");
+  await privacy.check(); await page.getByRole("button", { name: "Review my answers" }).click();
+  await expect(page.locator("dl")).toContainText("18 or older: confirmed");
+  await expect(page.locator("dl")).toContainText("Not selected");
+  await page.getByRole("button", { name: "Edit contact details" }).click(); await expect(adult).toBeChecked();
+  await expect(privacy).toBeChecked();
+  await privacy.uncheck(); await page.getByRole("button", { name: "Review my answers" }).click();
+  await expect(page.locator("form").getByRole("alert")).toContainText("Acknowledge the Privacy Policy");
+  await privacy.check();
+  await adult.uncheck(); await page.getByRole("button", { name: "Review my answers" }).click();
+  await expect(page.locator("form").getByRole("alert")).toContainText("Confirm that you are 18 or older");
+});

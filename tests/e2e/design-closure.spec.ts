@@ -13,21 +13,21 @@ test("Kit dialog validates, traps/restores focus and never captures or downloads
   if(width===1440||width===390||width===320)await page.screenshot({path:"test-results/visual/kit-modal-top-"+width+".png"});
   await expect(dialog.getByLabel("Full name",{exact:true})).toBeFocused();
   await page.keyboard.press("Shift+Tab");await expect(dialog.getByRole("button",{name:"Close kit dialog"})).toBeFocused();
-  await page.keyboard.press("Shift+Tab");await expect(dialog.getByRole("button",{name:"Review details"})).toBeFocused();
+  await page.keyboard.press("Shift+Tab");await expect(dialog.getByRole("link",{name:/Privacy Policy/}).last()).toBeFocused();
   await page.keyboard.press("Tab");await expect(dialog.getByRole("button",{name:"Close kit dialog"})).toBeFocused();
-  await expect(dialog.getByRole("checkbox")).not.toBeChecked();
+  await expect(dialog.getByRole("checkbox",{name:/receive updates/})).not.toBeChecked();
   await dialog.getByRole("button",{name:"Review details"}).click();await expect(dialog.getByRole("alert")).toBeFocused();
   await expect(dialog.getByRole("alert")).toContainText("Enter your full name");await expect(dialog.getByRole("alert")).toContainText("Enter your phone number");await expect(dialog.getByLabel("Phone number",{exact:true})).toHaveAttribute("required");
   await dialog.getByLabel("Full name",{exact:true}).fill("Preview Visitor");await dialog.getByLabel("Email address",{exact:true}).fill("preview@example.test");
   await dialog.getByLabel("Phone number",{exact:true}).fill("07700");await dialog.getByRole("button",{name:"Review details"}).click();await expect(dialog.getByRole("alert")).toContainText("valid phone");
-  await dialog.getByLabel("Phone number",{exact:true}).fill("+1 (202) 555-0123");await dialog.getByRole("button",{name:"Review details"}).click();
-  await expect(dialog.getByRole("status")).toContainText("Review your details");if(width===1440){await dialog.getByRole("checkbox").check();await dialog.getByRole("button",{name:"Review details"}).click();await expect(dialog.getByRole("status")).toContainText("Selected");await dialog.getByRole("checkbox").uncheck();await dialog.getByRole("button",{name:"Review details"}).click();await expect(dialog.getByRole("status")).toContainText("Not selected");}
+  await dialog.getByLabel("I confirm that I am 18 or older.",{exact:true}).check();await dialog.getByRole("checkbox",{name:/I acknowledge that I have read/}).check();await dialog.getByLabel("Phone number",{exact:true}).fill("+1 (202) 555-0123");await dialog.getByRole("button",{name:"Review details"}).click();
+  await expect(dialog.getByRole("status").filter({hasText:"Review your details"})).toContainText("Review your details");if(width===1440){await dialog.getByRole("checkbox",{name:/receive updates/}).check();await dialog.getByRole("button",{name:"Review details"}).click();await expect(dialog.getByRole("status").filter({hasText:"Review your details"})).toContainText("Selected");await dialog.getByRole("checkbox",{name:/receive updates/}).uncheck();await dialog.getByRole("button",{name:"Review details"}).click();await expect(dialog.getByRole("status").filter({hasText:"Review your details"})).toContainText("Not selected");}
   await expect(dialog.getByRole("button",{name:"Download the Kit"})).toBeDisabled();
   expect(await dialog.evaluate(e=>e.scrollWidth<=e.clientWidth)).toBe(true);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   if(width===1440||width===390||width===320){await page.screenshot({path:'test-results/visual/kit-modal-'+width+'.png'});const axe=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze();expect(axe.violations).toEqual([]);}
   await page.keyboard.press("Escape");await expect(dialog).toHaveCount(0);await expect(opener).toBeFocused();
-  await opener.click();await expect(page.getByLabel("Full name",{exact:true})).toHaveValue("");await page.getByRole("button",{name:"Close kit dialog"}).click();await expect(opener).toBeFocused();
+  await opener.click();await expect(page.getByLabel("Full name",{exact:true})).toHaveValue("Preview Visitor");await page.getByRole("button",{name:"Close kit dialog"}).click();await expect(opener).toBeFocused();
  }
  expect(outgoing).toEqual([]);expect(downloads).toEqual([]);
  expect(await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length}))).toEqual({local:0,session:0});
@@ -39,7 +39,7 @@ test("Every resource CTA opens the shared dialog and perspective CTAs have no ar
   await page.goto(route);
   const perspective=page.locator('main a[class*="button"], main button[aria-haspopup="dialog"], header a[class*="headerCta"]');
   for(const link of await perspective.all())expect(await link.textContent()).not.toMatch(/[\u2197\u2192\u2193\u2191]/);
-  const triggers=page.locator('button[aria-haspopup="dialog"]');
+  const triggers=page.locator('main button[aria-haspopup="dialog"]');
   for(let i=0;i<await triggers.count();i++){await triggers.nth(i).click();await expect(page.getByRole("dialog",{name:"Your Kit Is Almost Yours!"})).toBeVisible();await page.keyboard.press("Escape");await expect(triggers.nth(i)).toBeFocused();}
  }
 });
@@ -51,8 +51,8 @@ test("Optional feedback phone validates, survives navigation and appears in revi
  await page.getByLabel("What resources or support").fill("Simple activities to explore together.");await page.getByRole("button",{name:"Next",exact:true}).click();
  const phone=page.getByLabel("Your phone number");await expect(phone).toHaveAttribute("type","tel");await expect(phone).not.toHaveAttribute("required");await phone.fill("12345");
  await page.getByRole("button",{name:"Review my answers"}).click();await expect(page.getByRole("form").getByRole("alert")).toContainText("valid phone");
- await phone.fill("+1 (202) 555-0123");await page.getByRole("button",{name:"Back",exact:false}).click();await page.getByRole("button",{name:"Next",exact:true}).click();await expect(phone).toHaveValue("+1 (202) 555-0123");await expect(page.getByRole("checkbox")).not.toBeChecked();
+ await phone.fill("+1 (202) 555-0123");await page.getByRole("button",{name:"Back",exact:false}).click();await page.getByRole("button",{name:"Next",exact:true}).click();await expect(phone).toHaveValue("+1 (202) 555-0123");await expect(page.getByRole("checkbox",{name:/I agree to be contacted/})).not.toBeChecked();
  await phone.scrollIntoViewIfNeeded();await page.screenshot({path:"test-results/visual/feedback-contact-390.png"});await page.getByRole("form").screenshot({path:"test-results/visual/feedback-contact-full.png"});
  const axe=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze();expect(axe.violations).toEqual([]);
- await page.getByRole("button",{name:"Review my answers"}).click();await expect(page.getByRole("form")).toContainText("+12025550123");await expect(page.getByRole("button",{name:"Submit feedback"})).toBeDisabled();await page.getByRole("form").screenshot({path:"test-results/visual/feedback-review.png"});
+ await page.getByRole("checkbox",{name:"I confirm that I am 18 or older.",exact:true}).check();await page.getByRole("checkbox",{name:/I acknowledge that I have read/}).check();await page.getByRole("button",{name:"Review my answers"}).click();await expect(page.getByRole("form")).toContainText("+12025550123");await expect(page.getByRole("button",{name:"Submit feedback"})).toBeDisabled();await page.getByRole("form").screenshot({path:"test-results/visual/feedback-review.png"});
 });

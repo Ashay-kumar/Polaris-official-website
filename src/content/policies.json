@@ -1,0 +1,394 @@
+{
+  "privacy-policy": {
+    "title": "Privacy Policy",
+    "id": "KYRO-PRIVACY-2026-01",
+    "sections": [
+      {
+        "heading": "1. Who we are and what this policy covers",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Kyro Learning is an independent educational initiative operated by Ashay Kumar, based in India (\"Kyro Learning\", \"we\", \"our\" or \"us\"). We provide information and educational resources for parents, teachers, counsellors, students and other interested visitors through kyrolearning.com (the \"Website\"). This Privacy Policy explains how personal data is handled when you visit the Website, send feedback using \"Share Your Perspective\", request the \"Home Leadership Kit\", or contact us."
+          },
+          {
+            "type": "paragraph",
+            "text": "The operator is responsible for determining the purposes of the personal data processing described in this policy. Questions, privacy complaints and requests may be sent to info@kyrolearning.com."
+          }
+        ]
+      },
+      {
+        "heading": "2. The personal data we collect",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We collect only information relevant to the service or interaction involved. Depending on how you use the Website, this may include:"
+          },
+          {
+            "type": "item",
+            "text": "Home Leadership Kit requests: name, email address, phone number and any other fields actually displayed on the request form; adult confirmation; necessary acknowledgement of the privacy notice; optional follow-up and marketing choices."
+          },
+          {
+            "type": "item",
+            "text": "Share Your Perspective: feedback, answers to questions and any optional contact details you choose to provide, together with form acknowledgements and choices."
+          },
+          {
+            "type": "item",
+            "text": "Submission and audit information: submission or retry identifier, date and time, the versions of notices or consent wording presented, and submission outcome information required to process requests and prevent duplicates."
+          },
+          {
+            "type": "item",
+            "text": "Communications: information you send us by email or in response to a permitted follow-up."
+          },
+          {
+            "type": "item",
+            "text": "Technical and security information: IP address, browser/request information, approximate device information, error or security events, and authentication or bot-prevention signals that may be processed by our hosting and security providers."
+          },
+          {
+            "type": "paragraph",
+            "text": "We do not intentionally request government identification numbers, payment card details, medical records or information about a child through these forms. Please do not include such information in free-text fields."
+          }
+        ]
+      },
+      {
+        "heading": "3. Why we process personal data",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We use the information for the purpose shown when it is collected, including to:"
+          },
+          {
+            "type": "item",
+            "text": "Receive, organize, review and respond to education-related feedback."
+          },
+          {
+            "type": "item",
+            "text": "Process Home Leadership Kit requests and provide the download after the backend confirms the submission is stored."
+          },
+          {
+            "type": "item",
+            "text": "Provide a response or follow-up where requested, chosen or otherwise permitted by applicable law."
+          },
+          {
+            "type": "item",
+            "text": "Send optional updates or marketing communications only where a separate, valid permission has been provided and such communications are enabled; submitting a form does not automatically subscribe you."
+          },
+          {
+            "type": "item",
+            "text": "Keep the Website working, protect against abuse and fraud, troubleshoot errors, maintain relevant records and avoid duplicate processing."
+          },
+          {
+            "type": "item",
+            "text": "Comply with applicable legal obligations and handle valid rights, complaints or lawful requests."
+          },
+          {
+            "type": "paragraph",
+            "text": "Where processing relies on your consent, the request for consent will specify the relevant purpose. You may refuse optional purposes without losing access to a resource that does not require them. We will not use contact information collected for one stated purpose for an unrelated purpose without an appropriate legal basis and notice."
+          }
+        ]
+      },
+      {
+        "heading": "4. Adults, students and children",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The educational material on this Website may be read by people of different ages. Our submission forms, however, are intended for adults aged 18 or older. Parents and lawful guardians may request resources for a child using the adult’s own contact information. We ask that you do not include a child’s name, contact details, date of birth, health information or other identifying or sensitive details in the forms or feedback fields."
+          },
+          {
+            "type": "paragraph",
+            "text": "We do not knowingly use our forms to collect personal data directly from children or engage in targeted advertising directed at children. If you believe a child has submitted personal information, contact us so we can review and take appropriate action. If Kyro Learning later adds child accounts or direct child submission features, we will first introduce the necessary age-appropriate notices, safeguards and parent/guardian consent processes under applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "5. Sharing information and service providers",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Submitted form information is transmitted through our website backend and stored in restricted-access Google Sheets. We use Google services for storage and may use Cloudflare for website delivery, backend execution, access control, security and bot-prevention features. Authorized helpers supporting the operation of Kyro Learning may access information only as needed for the specified purposes."
+          },
+          {
+            "type": "paragraph",
+            "text": "These providers may process data in countries other than India, subject to applicable legal requirements and the providers’ service terms and safeguards. We may also disclose information where required by applicable law, a valid legal process, or to protect the Website and its users. We do not sell personal data. We do not disclose form submissions publicly or use attributed testimonials without appropriate permission."
+          }
+        ]
+      },
+      {
+        "heading": "6. Retention and deletion",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Kyro Learning currently uses a manually managed Google Sheets workflow, without an automatic deletion schedule. Records may therefore remain stored until an authorized person reviews and removes them. This is an operational description, not a commitment to retain personal data indefinitely or to refuse deletion."
+          },
+          {
+            "type": "paragraph",
+            "text": "We aim to retain personal data only while it is reasonably necessary for the purpose explained at collection, legitimate operational records, applicable retention requirements, dispute handling or other lawful purposes. We will review requests to delete or correct data and remove information when the purpose has ended or deletion is required, subject to any applicable legal obligation to retain it. Consent withdrawal will stop processing for the withdrawn optional purpose, subject to lawful exceptions; it will not automatically erase processing already completed."
+          },
+          {
+            "type": "paragraph",
+            "text": "Before the public launch, Kyro Learning will establish a practical manual review and deletion process and the person responsible for carrying it out. We will update this policy if the retention system materially changes."
+          }
+        ]
+      },
+      {
+        "heading": "7. Your choices, rights and how to make requests",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You may contact info@kyrolearning.com to request information about how your data is handled, correction or updating of inaccurate data, deletion where applicable, withdrawal of optional permission, or assistance with a privacy concern. Please indicate which form or communication the request relates to. We may ask for reasonable verification before disclosing or changing personal data."
+          },
+          {
+            "type": "paragraph",
+            "text": "We will assess and respond to requests in accordance with the Indian laws applicable at the time of the request. Where the Digital Personal Data Protection Act, 2023 and its relevant provisions are in force, additional statutory rights and grievance remedies will apply as provided by that law. We do not require you to agree to optional marketing in order to make a privacy request."
+          }
+        ]
+      },
+      {
+        "heading": "8. Security and data incidents",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We use, or intend to use before public activation, appropriate technical and organizational controls, including restricted access to submission storage, server-side handling of sensitive credentials, protected API routing, input validation, abuse protection and transport encryption. Access permissions are limited to people who need them for the operation of the service."
+          },
+          {
+            "type": "paragraph",
+            "text": "No online system is guaranteed to be completely secure. If we become aware of a data incident, we will investigate, take reasonable containment measures and provide legally required notifications where applicable. Please avoid sharing sensitive information in open text fields."
+          }
+        ]
+      },
+      {
+        "heading": "9. Cookies and external links",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The Website may use necessary cookies or similar technologies for security and essential operations. During private review, Cloudflare Access may set login-session cookies for authorized reviewers. Details about current and optional technologies and how to control them are in our Cookie Policy. External websites and services linked from Kyro Learning have their own privacy practices, which we do not control."
+          }
+        ]
+      },
+      {
+        "heading": "10. Updates and contact",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We may revise this Privacy Policy as the Website, its data uses and the law change. The published version will show its effective date. Where a change requires a new notice or consent, we will provide it before the relevant new processing begins."
+          },
+          {
+            "type": "paragraph",
+            "text": "Privacy contact: Kyro Learning, operated by Ashay Kumar, India Email: info@kyrolearning.com Website: https://kyrolearning.com"
+          }
+        ]
+      }
+    ]
+  },
+  "cookie-policy": {
+    "title": "Cookie Policy",
+    "id": "KYRO-COOKIES-2026-01",
+    "sections": [
+      {
+        "heading": "1. What cookies and similar technologies are",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Cookies are small pieces of information that a website or its providers store in or retrieve from your browser. Similar technologies may include local storage, session storage and security tokens. Some are necessary to deliver or protect a service. Others may be used for analytics or marketing only if Kyro Learning chooses to introduce them."
+          }
+        ]
+      },
+      {
+        "heading": "2. How Kyro Learning currently uses these technologies",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "At initial public launch, Kyro Learning does not intend to use optional advertising pixels, behavioural advertising trackers or general website analytics tools. The Website and its infrastructure may use necessary technologies for:"
+          },
+          {
+            "type": "item",
+            "text": "Website operation, secure routing, delivery and troubleshooting."
+          },
+          {
+            "type": "item",
+            "text": "Protection against unwanted automated submissions or other abuse (for example, a security or bot-prevention service if activated)."
+          },
+          {
+            "type": "item",
+            "text": "Maintaining authentication sessions for authorized reviewers while Cloudflare Access protects the private Website. These review-only cookies may cease to be relevant once the Website is publicly available."
+          },
+          {
+            "type": "item",
+            "text": "Remembering the visitor’s cookie preference and maintaining necessary security or form workflow state."
+          },
+          {
+            "type": "paragraph",
+            "text": "The exact cookie or storage names, providers and lifetimes are environment-dependent. Kyro Learning will publish or link an accurate live inventory after inspecting the production deployment; it will not claim that a particular optional tracker is in use when it is not."
+          }
+        ]
+      },
+      {
+        "heading": "3. Cookie categories",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Strictly necessary: Essential operation, security, authentication where applicable, abuse prevention and storage of your privacy preferences. These may operate without an optional-tracking choice where permitted by applicable law. Blocking them in your browser may impair some functions."
+          },
+          {
+            "type": "paragraph",
+            "text": "Analytics (optional): Tools intended to measure visits or usage patterns. These are not planned for the initial launch. If introduced, they must remain disabled until any required consent is obtained."
+          },
+          {
+            "type": "paragraph",
+            "text": "Marketing (optional): Advertising or cross-site measurement technologies. These are not planned for the initial launch. If introduced, they must remain disabled until any required consent is obtained."
+          }
+        ]
+      },
+      {
+        "heading": "4. Choosing and changing your preferences",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "If optional cookie-based tools become available, the Website will provide a preferences interface that explains the optional categories and enables you to accept or reject them. Optional technologies must not load before any required choice is made. Rejecting optional technologies will not prevent normal access to educational content or the forms."
+          },
+          {
+            "type": "paragraph",
+            "text": "You may change your preference using a persistent Cookie preferences link when optional technologies are active. Withdrawing permission will stop future use of optional technologies within our control and delete optional cookies we control where technically possible. It cannot reverse information already processed before withdrawal."
+          },
+          {
+            "type": "paragraph",
+            "text": "At a time when the Website uses necessary technologies only, the interface may show an informational notice or preferences panel without an artificial \"Accept all\" requirement. Form consent for follow-up or marketing emails is separate from cookie preferences."
+          }
+        ]
+      },
+      {
+        "heading": "5. Browser controls, providers and updates",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You can also block or delete cookies using your browser settings. Browser restrictions may affect protected reviewer login, security checks or other functions. Hosting and security providers may maintain their own cookies under their respective documentation and privacy notices."
+          },
+          {
+            "type": "paragraph",
+            "text": "We may update this policy when technologies change. For questions about the Website’s use of cookies, email info@kyrolearning.com."
+          }
+        ]
+      }
+    ]
+  },
+  "terms-of-use": {
+    "title": "Terms of Use",
+    "id": "KYRO-TERMS-2026-01",
+    "sections": [
+      {
+        "heading": "1. About these Terms",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "These Terms of Use (\"Terms\") apply to your use of kyrolearning.com (the \"Website\") and the educational information and downloadable resources made available by Kyro Learning, an independent initiative operated by Ashay Kumar, India (\"Kyro Learning\", \"we\", \"us\"). Please read these Terms together with our Privacy Policy and Cookie Policy. By using the Website, you agree to follow these Terms to the extent permitted by law. If you do not agree, please discontinue use of the Website."
+          }
+        ]
+      },
+      {
+        "heading": "2. Educational information; no professional relationship",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Our material is intended for general educational, learning and family or classroom reflection purposes. It is not individualized medical, mental-health, psychological, legal or other regulated professional advice, diagnosis or treatment. The Website does not establish a teacher-student, clinician-patient or other professional advisory relationship. Use independent professional judgment and qualified assistance where a particular situation requires it."
+          }
+        ]
+      },
+      {
+        "heading": "3. Ownership of website content",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Unless stated otherwise, the Website’s written content, resources, visual design, graphics, logos, illustrations and downloadable materials are owned by Kyro Learning or used with permission. These Terms grant limited permission to use specified materials; they do not transfer ownership, trademarks or other intellectual-property rights."
+          }
+        ]
+      },
+      {
+        "heading": "4. Home Leadership Kit and other free resources",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Unless the resource itself specifies a different license, Kyro Learning grants a personal, non-exclusive, revocable, non-transferable permission to download and use its free resources for non-commercial learning and educational purposes. Parents and guardians may use them at home. Teachers and counsellors may use them in their own teaching or guidance activities and may distribute unmodified copies directly to the students or families they work with, with Kyro Learning attribution retained."
+          },
+          {
+            "type": "paragraph",
+            "text": "Without prior written permission, you must not sell a resource, include it in a paid resource bundle, remove copyright or ownership notices, present it as your own creation, publicly rehost downloadable files, publish altered versions as Kyro Learning materials, or broadly redistribute it outside your own educational setting. Reasonable accessibility adjustments for a learner’s personal use are permitted if they do not misrepresent the resource or remove attribution. Contact info@kyrolearning.com for wider licensing or collaboration requests."
+          }
+        ]
+      },
+      {
+        "heading": "5. Form eligibility and submissions",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Our submission forms are for people aged 18 or older. Parents or lawful guardians may submit requests on behalf of children using the adult’s own contact details. You agree to submit accurate information, use only details you are entitled to provide, and avoid sharing children’s identifying information or other sensitive information in open feedback fields."
+          },
+          {
+            "type": "paragraph",
+            "text": "If you submit feedback, you give Kyro Learning permission to receive, store, review and use its substance internally to understand or improve our educational material and services, in accordance with our Privacy Policy. Your submission does not authorize us to identify you publicly, publish an attributed testimonial, or reproduce your private correspondence for promotion without appropriate additional permission. You retain any rights you hold in your original submission."
+          }
+        ]
+      },
+      {
+        "heading": "6. Acceptable use",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "You must not use the Website to violate the law or another person’s rights; impersonate others; submit misleading, abusive, defamatory or unlawful content; upload malware; attempt unauthorized access; interfere with security systems; scrape or overload the service abusively; or misuse its forms, resources or protected review environment. We may restrict access or remove inappropriate submissions where reasonably necessary, subject to applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "7. Third-party services and links",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "The Website may link to or depend on third-party services, including hosting, security or file storage providers. Those services may have their own terms and privacy practices. Kyro Learning does not endorse or assume responsibility for third-party content merely because it is linked on the Website."
+          }
+        ]
+      },
+      {
+        "heading": "8. Availability, accuracy and changes",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "We aim to keep the Website useful and accurate, but educational content may be updated, incomplete or unsuitable for a particular learner or setting. We may modify, suspend or discontinue Website features or resources and may correct errors without prior notice where permitted by law. We do not promise uninterrupted operation or perpetual availability of any downloadable resource."
+          }
+        ]
+      },
+      {
+        "heading": "9. Responsibility and limitations",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "To the fullest extent permitted by applicable law, the Website and its free informational resources are provided on an \"as available\" basis without warranties beyond those that cannot legally be excluded. Kyro Learning is not responsible for losses that arise solely from using general educational information as a substitute for individualized qualified advice or from circumstances beyond its reasonable control."
+          },
+          {
+            "type": "paragraph",
+            "text": "Nothing in these Terms limits or excludes liability for fraud, wilful misconduct, violations of applicable law or any rights and remedies that cannot lawfully be excluded, including applicable consumer rights. Any limitation is subject to those protections."
+          }
+        ]
+      },
+      {
+        "heading": "10. Privacy, updates and governing law",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Personal data submitted through the Website is handled under our Privacy Policy. We may revise these Terms by posting an updated version with a new effective date. Your subsequent use may be subject to the updated Terms to the extent legally permissible; we will seek any additional consent the law requires."
+          },
+          {
+            "type": "paragraph",
+            "text": "These Terms are governed by the laws of India, subject to any mandatory rights, protections and forum rules that apply to users. Disputes will be handled by courts or other competent bodies having jurisdiction under applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "11. Contact",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "For questions, accessibility requests, licensing or permission requests, contact info@kyrolearning.com. Kyro Learning is operated by Ashay Kumar, India."
+          }
+        ]
+      }
+    ]
+  }
+}

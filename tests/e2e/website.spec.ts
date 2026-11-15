@@ -1,7 +1,6 @@
 import { sitePath } from "./site-path";
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { createHash } from "node:crypto";
 import fs from "node:fs";
 
 const pages = ["/", "/our-thinking", "/home-leadership-kit", "/help-shape-polaris", "/about"];
@@ -101,7 +100,8 @@ test("Feedback validates and preserves answers without submitting", async ({ pag
   await page.getByRole("button", { name: "Next", exact: true }).click();
   await page.getByLabel("What resources or support").fill("Simple activities to try together after school.");
   await page.getByRole("button", { name: "Next", exact: true }).click();
-  const consent = page.getByRole("checkbox");
+  const consent = page.getByRole("checkbox", { name: /I agree to be contacted/ });
+  await page.getByRole("checkbox", { name: "I confirm that I am 18 or older.", exact: true }).check();await page.getByRole("checkbox",{name:/I acknowledge that I have read/}).check();
   await expect(consent).not.toBeChecked();
   await consent.check();
   await page.getByRole("button", { name: "Review my answers" }).click();
@@ -122,12 +122,10 @@ test("Feedback validates and preserves answers without submitting", async ({ pag
   await expect(page.getByRole("radio", { name: "Parent / caregiver", exact: true })).not.toBeChecked();
 });
 
-test("PDF download matches the approved original and all internal links resolve", async ({ page, request }) => {
+test("Public PDF is unavailable and all internal links resolve", async ({ page, request }) => {
   const path = "/downloads/polaris-home-leadership-kit.pdf";
   const response = await request.get(sitePath(path));
-  expect(response.ok()).toBe(true);
-  expect(response.headers()["content-type"]).toContain("application/pdf");
-  expect(createHash("sha256").update(await response.body()).digest("hex")).toBe("0a39023cb7a555de06cee6abe39a0b10f0d14407b5d42e478b6c91f8c770bbf5");
+  expect(response.status()).toBe(404);
   const checked = new Set<string>();
   for (const route of pages) {
     await page.goto(sitePath(route));

@@ -12,7 +12,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
   return <header className={s.header} onKeyDown={event => { if (event.key === "Escape" && open) { setOpen(false); toggle.current?.focus(); } }}>
-    <div className={s.headerInner}><Link href="/" className={s.logoLink} aria-label="Kyro Learning home" onClick={() => setOpen(false)}><PolarisLogo width={156} /></Link>
+    <div className={s.headerInner}><Link href="/" className={s.logoLink} aria-label="Kyro Learning home" onClick={() => setOpen(false)}><PolarisLogo width={220} className={s.headerLogo} /></Link>
       <button ref={toggle} type="button" className={s.menuToggle} aria-expanded={open} aria-controls="site-navigation" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}><span aria-hidden="true">{open ? "×" : "☰"}</span></button>
       <nav id="site-navigation" aria-label="Main navigation" className={`${s.navigation} ${open ? s.navOpen : ""}`}>
         {navigation.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>)}

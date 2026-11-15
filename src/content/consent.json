@@ -1,0 +1,18 @@
+{
+  "privacy": {
+    "version": "KYRO-PRIVACY-2026-01",
+    "acknowledgement": "I acknowledge that I have read the Privacy Policy and understand how Kyro Learning will use the information I submit."
+  },
+  "feedback": {
+    "version": "KYRO-FEEDBACK-CONTACT-2026-01",
+    "text": "I agree to be contacted by Kyro Learning about the feedback I've shared."
+  },
+  "kit": {
+    "version": "KYRO-KIT-FOLLOWUP-2026-01",
+    "text": "We may invite you to share your experience with the Home Leadership Kit. Where follow-up requires your permission, we'll contact you only if you choose to receive it."
+  },
+  "marketing": {
+    "version": "KYRO-MARKETING-2026-01",
+    "text": "I'd like to receive updates about new kits, resources and offers from Kyro Learning."
+  }
+}

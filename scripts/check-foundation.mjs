@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
+import { isPrivateKit } from "./private-kit-files.mjs";
 
 const readJson = p => JSON.parse(fs.readFileSync(p, "utf8"));
 const hash = b => createHash("sha256").update(b).digest("hex");
@@ -12,9 +13,9 @@ for (const file of brand.files) {
   if (!file.adapted) assert.equal(file.sha256, file.sourceSha256);
 }
 const original = readJson("docs/asset-inventory.json").preservedFiles;
-for (const file of original) assert.equal(hash(fs.readFileSync(file.path)), file.sha256, `Original design asset changed: ${file.path}`);
+for (const file of original.filter(f => !isPrivateKit(f.path))) assert.equal(hash(fs.readFileSync(file.path)), file.sha256, `Original design asset changed: ${file.path}`);
 const local = readJson("docs/local-assets.json").files;
-for (const file of local) assert.equal(hash(fs.readFileSync(file.destination)), file.sha256, `Local asset changed: ${file.destination}`);
+for (const file of local.filter(f => !isPrivateKit(f.destination))) assert.equal(hash(fs.readFileSync(file.destination)), file.sha256, `Local asset changed: ${file.destination}`);
 
 const css = fs.readdirSync("src/styles/tokens").filter(f => f.endsWith(".css")).map(f => fs.readFileSync(`src/styles/tokens/${f}`, "utf8")).join("\n");
 const declarations = new Map([...css.matchAll(/(--[\w-]+)\s*:\s*([^;{}]+);/g)].map(m => [m[1], m[2].trim()]));
@@ -48,10 +49,4 @@ for (const font of local.filter(f => f.destination.endsWith(".woff2"))) {
   assert.equal(fs.readFileSync(font.destination).subarray(0, 4).toString(), "wOF2");
   assert.ok(fs.readFileSync("src/app/layout.tsx", "utf8").includes(path.basename(font.destination)));
 }
-const kit = local.find(f => f.destination.endsWith(".pdf"));
-if (kit) {
-  const pdf = fs.readFileSync(kit.destination).toString("latin1");
-  assert.ok(pdf.startsWith("%PDF-"));
-  assert.equal([...pdf.matchAll(/\/Type\s*\/Page\b/g)].length, 6);
-}
-console.log(`Foundation passed: ${brand.files.length} approved imports, ${original.length} preserved original files, ${declarations.size} token names, six SVG/PNG logo pairs, four local fonts${kit ? ", six-page kit" : ""}.`);
+console.log(`Foundation passed: approved public imports, ${declarations.size} token names, six logo pairs and four fonts. Private PDF bytes require check:private-kit.`);

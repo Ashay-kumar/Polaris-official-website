@@ -1,0 +1,14 @@
+.page { width: min(100% - 2.5rem, 78ch); margin-inline: auto; padding-block: var(--space-12); overflow-wrap: anywhere; }
+.page h1 { font-family: var(--font-editorial); font-weight: 400; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.12; margin: 0 0 var(--space-5); }
+.identifier { color: var(--color-text-secondary); font-size: .9rem; }
+.page section { margin-block-start: var(--space-8); }
+.page h2 { font-size: clamp(1.25rem, 3vw, 1.5rem); line-height: 1.35; }
+.page p, .page li { line-height: 1.7; }
+.page ul { padding-inline-start: 1.5rem; }
+.page li + li { margin-block-start: .65rem; }
+.trigger { border: 0; padding: 0; min-height: 24px; background: transparent; color: inherit; cursor: pointer; text-align: start; text-decoration: underline; text-underline-offset: .2em; }
+.dialog { color: var(--color-text-primary); background: var(--color-surface-page); border: 1px solid var(--color-border-default); border-radius: var(--radius-medium); width: min(36rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow: auto; padding: clamp(1.25rem, 4vw, 2rem); }
+.dialog::backdrop { background: rgb(25 37 61 / .6); }
+.dialog h2 { font-family: var(--font-editorial); font-weight: 400; font-size: 2rem; line-height: 1.2; margin-top: 0; }
+.dialog p { line-height: 1.6; }
+.close { display: block; margin-block-start: var(--space-5); padding: .65rem 1.25rem; min-height: 44px; border: 1px solid currentColor; border-radius: var(--radius-medium); background: var(--color-brand-ink); color: var(--color-text-inverse); cursor: pointer; }
