@@ -48,9 +48,10 @@ test("Necessary-only preferences are accessible and create no browser storage", 
   expect(await context.cookies()).toEqual([]); expect(thirdParty).toEqual([]);
 });
 
-test("Both unchanged submission flows reference privacy without losing the current page", async ({ page }) => {
+test("Both submission flows retain privacy references after the form UX update", async ({ page }) => {
   await page.goto("/help-shape-polaris/");
-  await expect(page.locator("aside#preview-info").getByRole("link", { name: /Privacy Policy/ })).toHaveAttribute("href", "/privacy-policy");
+  await page.locator("details#preview-info summary").click();
+  await expect(page.locator("details#preview-info").getByRole("link", { name: /Privacy Policy/ })).toHaveAttribute("href", "/privacy-policy");
   await page.goto("/home-leadership-kit/");
   await page.getByRole("button", { name: "Download the Kit", exact: true }).click();
   const links = page.getByRole("dialog").getByRole("link", { name: /Privacy Policy/ });
@@ -58,5 +59,5 @@ test("Both unchanged submission flows reference privacy without losing the curre
   for (const link of await links.all()) {
     await expect(link).toHaveAttribute("href", "/privacy-policy"); await expect(link).toHaveAttribute("target", "_blank");
   }
-  await expect(page.getByRole("dialog").getByRole("button", { name: "Download the Kit", exact: true })).toBeDisabled();
+  await expect(page.getByRole("dialog").getByRole("button", { name: "Submit and download kit", exact: true })).toBeDisabled();
 });

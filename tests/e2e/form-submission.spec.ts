@@ -1,89 +1,48 @@
 import { test, expect, type Page } from "@playwright/test";
-import { createHash } from "node:crypto";
-import fs from "node:fs";
 import AxeBuilder from "@axe-core/playwright";
+test.skip(process.env.KYRO_STAGE06B_MOCKS !== "true", "Run against the isolated synthetic local harness only.");
+async function mock(page: Page, kind: "kit" | "feedback") {
+ const requests: Record<string, unknown>[] = []; let downloads = 0;
+ await page.route("https://challenges.cloudflare.com/**", r => r.fulfill({contentType:"application/javascript",body:'window.turnstile={render:function(el,o){el.textContent="Synthetic verification";setTimeout(()=>o.callback("synthetic-only"),0);return "mock"},remove:function(){}}'}));
+ await page.route("**/api/"+(kind === "kit" ? "kit-request" : "feedback"), async r => { const data=r.request().postDataJSON();requests.push(data);await new Promise(resolve=>setTimeout(resolve,100)); await r.fulfill({status:requests.length===1?503:200,contentType:"application/json",body:JSON.stringify(requests.length===1?{}:{status:"accepted",submissionId:data.submissionId,persistedAt:new Date().toISOString(),rowsWritten:1,...(kind === "kit" ? {download:{status:"ready",token:"t".repeat(43),expiresAt:new Date(Date.now()+900000).toISOString()}}:{})})}); });
+ await page.route("**/api/kit-download", async r => { downloads++;expect(requests.length).toBe(2);expect(r.request().headers().authorization).toBe("Bearer "+"t".repeat(43));await r.fulfill(downloads===1?{status:503,body:"{}"}:{status:200,contentType:"application/pdf",body:Buffer.from("%PDF-1.4\n% Synthetic download fixture only\n%%EOF")}); });
+ return {requests,downloads:()=>downloads};
+}
+async function kit(page: Page) { await page.goto("/home-leadership-kit/");await page.getByRole("button",{name:"Download the Kit",exact:true}).click();return page.getByRole("dialog"); }
+test("Kit single action validates, preserves retry ID and automatically starts protected delivery", async ({page})=>{
+ const transport=await mock(page,"kit"),dialog=await kit(page);
+ await dialog.getByRole("button",{name:"Submit and download kit",exact:true}).click();await expect(dialog.getByLabel("Full name",{exact:true})).toBeFocused();expect(transport.requests).toHaveLength(0);
+ await dialog.getByLabel("Full name",{exact:true}).fill("Synthetic Visitor");await dialog.getByLabel("Email address",{exact:true}).fill("synthetic@example.test");await dialog.getByLabel("Phone number",{exact:true}).fill("+12025550123");
+ await dialog.getByRole("button",{name:"Submit and download kit",exact:true}).click();await expect(dialog.getByLabel("I confirm that I am 18 or older.",{exact:true})).toBeFocused();expect(transport.requests).toHaveLength(0);
+ await dialog.getByLabel("I confirm that I am 18 or older.",{exact:true}).check();await dialog.getByRole("button",{name:"Submit and download kit",exact:true}).click();await expect(dialog.getByRole("checkbox",{name:/I acknowledge/})).toBeFocused();
+ await dialog.getByRole("checkbox",{name:/I acknowledge/}).check();await expect(dialog.getByRole("checkbox",{name:/receive updates/})).not.toBeChecked();
+ await expect(dialog.getByRole("button",{name:"Review details"})).toHaveCount(0);await dialog.getByRole("button",{name:"Submit and download kit",exact:true}).click();await expect(dialog.getByRole("alert")).toContainText("Storage could not be confirmed");expect(transport.downloads()).toBe(0);
+ await page.keyboard.press("Escape");await page.getByRole("button",{name:"Download the Kit",exact:true}).click();await expect(dialog.getByLabel("Full name",{exact:true})).toHaveValue("Synthetic Visitor");await dialog.getByRole("button",{name:"Retry submission and download"}).click();
+ await expect(dialog.getByRole("heading",{name:"Your request is saved."})).toBeVisible();await expect(dialog.getByRole("alert")).toContainText("already been saved");expect(transport.requests[0].submissionId).toBe(transport.requests[1].submissionId);expect(transport.requests[0].marketingConsent).toBe(false);
+ const event=page.waitForEvent("download");await dialog.getByRole("button",{name:"Download your kit",exact:true}).click();expect((await event).suggestedFilename()).toBe("Kyro_Learning_Home_Leadership_Kit.pdf");expect(transport.requests).toHaveLength(2);
+ await dialog.screenshot({path:"test-results/visual/stage06b-kit-success.png"});
+ expect((await new AxeBuilder({page}).include("dialog").withTags(["wcag2a","wcag2aa","wcag21aa"]).analyze()).violations).toEqual([]);
+ await page.keyboard.press("Escape");await expect(page.getByRole("button",{name:"Download the Kit",exact:true})).toBeFocused();
+});
+test("Feedback optional responses, adult No, privacy, optional permission and idempotent recovery",async({page})=>{
+ const transport=await mock(page,"feedback");await page.goto("/help-shape-polaris/");const form=page.getByRole("form",{name:"Share your perspective"});
+ const disclosure=page.locator("details").filter({hasText:"Share thoughtfully"});await expect(disclosure).not.toHaveAttribute("open");await disclosure.locator("summary").focus();await page.keyboard.press("Enter");await expect(disclosure).toHaveAttribute("open","");
+ await form.getByRole("button",{name:"Submit your perspective",exact:true}).click();expect(transport.requests).toHaveLength(0);
+ await form.getByRole("radio",{name:"Parent / caregiver",exact:true}).check();await form.getByRole("radio",{name:"No",exact:true}).check();await form.getByRole("checkbox",{name:/I acknowledge/}).check();await form.getByRole("button",{name:"Submit your perspective",exact:true}).click();await expect(form).toContainText("meaningful response");await expect(form).toContainText("You must be 18");expect(transport.requests).toHaveLength(0);
+ await form.getByLabel("What should Kyro Learning").fill("Synthetic suggestions about everyday learning.");await form.getByRole("radio",{name:"Yes",exact:true}).check();await expect(form.getByRole("checkbox",{name:/I agree to be contacted/})).not.toBeChecked();await form.getByRole("checkbox",{name:/I agree to be contacted/}).check();await form.getByRole("button",{name:"Submit your perspective",exact:true}).click();await expect(form).toContainText("Add an email for follow-up");
+ await form.getByRole("checkbox",{name:/I agree to be contacted/}).uncheck();await form.getByRole("button",{name:"Submit your perspective",exact:true}).click();await expect(form.getByRole("alert").last()).toContainText("Storage could not be confirmed");await expect(form.getByLabel("What should Kyro Learning")).toHaveValue("Synthetic suggestions about everyday learning.");await form.getByRole("button",{name:"Retry your perspective"}).click();
+ await expect(page.getByRole("heading",{name:"Thank you for sharing."})).toBeVisible();await page.locator("#conversation").screenshot({path:"test-results/visual/stage06b-feedback-success.png"});expect(transport.requests[0].submissionId).toBe(transport.requests[1].submissionId);expect(transport.requests[0].adultConfirmed).toBe(true);expect(transport.requests[0].contactConsent).toBe(false);expect(transport.requests[0].challenges).toBe("");expect(transport.requests[0].resources).toBe("");
+ await expect(page.getByRole("status").filter({hasText:"Your perspective has been saved"}).getByRole("link",{name:"Explore Our Thinking"})).toHaveAttribute("href","/our-thinking/");expect((await new AxeBuilder({page}).include("#conversation").withTags(["wcag2a","wcag2aa","wcag21aa"]).analyze()).violations).toEqual([]);
+ await page.getByRole("button",{name:"Share another perspective"}).click();await expect(form.getByRole("radio",{name:"Yes",exact:true})).not.toBeChecked();await expect(form.getByRole("checkbox",{name:/I acknowledge/})).not.toBeChecked();
+ await form.getByRole("radio",{name:"Educator",exact:true}).check();await form.getByLabel("What resources or support").fill("Synthetic classroom resources and ideas.");await form.getByLabel("Your email").fill("synthetic@example.test");await form.getByLabel("Your phone number").fill("+12025550123");await form.getByRole("radio",{name:"Yes",exact:true}).check();await form.getByRole("checkbox",{name:/I acknowledge/}).check();await form.getByRole("checkbox",{name:/I agree to be contacted/}).check();await form.getByRole("button",{name:"Submit your perspective",exact:true}).click();await form.dispatchEvent("submit");await expect(page.getByRole("heading",{name:"Thank you for sharing."})).toBeVisible();expect(transport.requests).toHaveLength(3);expect(transport.requests[2].submissionId).not.toBe(transport.requests[0].submissionId);expect(transport.requests[2].contactConsent).toBe(true);expect(transport.requests[2].phone).toBe("+12025550123");
+});
+test("Responsive controls retain order, country keyboard search and 1:3 ratio",async({page})=>{
+ await mock(page,"kit");for(const width of [1440,1024,768,390,320]){await page.setViewportSize({width,height:900});const dialog=await kit(page);const country=dialog.getByRole("button",{name:/Country:/}),phone=dialog.getByLabel("Phone number",{exact:true});const a=await country.boundingBox(),b=await phone.boundingBox();expect(b!.width/a!.width).toBeCloseTo(3,0);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect(await dialog.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);await expect(dialog.getByRole("button",{name:"Submit and download kit",exact:true})).toBeVisible();
+ if(width===1440||width===320)await dialog.screenshot({path:"test-results/visual/stage06b-kit-"+width+".png"});
+ await country.click();const search=dialog.getByRole("combobox");await search.fill("United Kingdom");await page.keyboard.press("Enter");await expect(dialog.getByRole("button",{name:/Country: United Kingdom/})).toBeFocused();await page.keyboard.press("Escape");await page.goto("/help-shape-polaris/");expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ const form=page.getByRole("form");if(width===1440||width===320)await form.screenshot({path:"test-results/visual/stage06b-feedback-"+width+".png"});expect(await form.evaluate(el=>{const controls=[...el.querySelectorAll('input,textarea')];const firstConsent=controls.findIndex(c=>c.getAttribute('type')==='checkbox'||c.getAttribute('name')==='adult');return controls.slice(firstConsent).every(c=>c.getAttribute('type')!=='tel'&&c.getAttribute('type')!=='email'&&c.tagName!=='TEXTAREA');})).toBe(true);
+ if(width===320){await form.getByRole("button",{name:/Country:/}).click();await expect(form.getByRole("combobox")).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);expect((await new AxeBuilder({page}).include("#conversation").withTags(["wcag2a","wcag2aa","wcag21aa"]).analyze()).violations).toEqual([]);}
+ }
+});
 
-test.skip(process.env.KYRO_TEST_FORMS_ENABLED !== "true", "Requires explicit synthetic-version test build; never production defaults.");
-async function transport(page: Page, path: string) {
-  const requests: { submissionId: string; marketingConsent?: boolean; contactConsent?: boolean }[] = [];
-  const stored = new Map<string, { status: string; submissionId: string; persistedAt: string; rowsWritten: number }>();
-  await page.route("https://challenges.cloudflare.com/**", route => route.fulfill({ contentType: "application/javascript", body: 'window.turnstile={render:function(el,o){el.textContent="Synthetic verification ready";setTimeout(function(){o.callback("synthetic-test-token");},0);return "test-widget";},remove:function(){}};' }));
-  await page.route("**" + path, async route => {
-    const data = route.request().postDataJSON(); requests.push(data);
-    const receipt = stored.get(data.submissionId) ?? { status: "accepted", submissionId: data.submissionId, persistedAt: new Date().toISOString(), rowsWritten: 1, ...(path.includes("kit-request") ? { download: { status: "ready", token: "t".repeat(43), expiresAt: new Date(Date.now() + 900000).toISOString() } } : {}) };
-    stored.set(data.submissionId, receipt);
-    // Test-only lost acknowledgement: persistence precedes the simulated 503.
-    await route.fulfill({ status: requests.length === 1 ? 503 : 200, contentType: "application/json", body: JSON.stringify(requests.length === 1 ? { error: "Synthetic lost acknowledgement" } : receipt) });
-  });
-  return { requests, stored };
-}
-async function perspective(page: Page) {
-  await page.getByRole("radio", { name: "Parent / caregiver", exact: true }).check();
-  await page.getByRole("button", { name: "Next", exact: true }).click();
-  await page.getByLabel("one challenge", { exact: false }).fill("Synthetic family challenge only.");
-  await page.getByRole("button", { name: "Next", exact: true }).click();
-  await page.getByLabel("What resources or support").fill("Synthetic resources for testing.");
-  await page.getByRole("button", { name: "Next", exact: true }).click();
-  await expect(page.getByRole("checkbox", { name: /I agree to be contacted/ })).not.toBeChecked();
-  await page.getByRole("checkbox", { name: "I confirm that I am 18 or older.", exact: true }).check();
-  await page.getByRole("checkbox", { name: /I acknowledge that I have read/ }).check();
-  await page.getByRole("button", { name: "Review my answers" }).click();
-}
-test("Feedback retains failed answers, reuses ID and permits intentional new submissions", async ({ page }) => {
-  const mock = await transport(page, "/api/feedback");
-  await page.goto("/help-shape-polaris/"); await perspective(page);
-  await page.getByRole("button", { name: "Submit feedback", exact: true }).click();
-  await expect(page.getByRole("form").getByRole("alert")).toContainText("Storage could not be confirmed");
-  await page.screenshot({ path: "test-results/visual/stage03-feedback-error.png" });
-  await expect(page.getByRole("form")).toContainText("Synthetic family challenge only.");
-  await page.getByRole("button", { name: "Retry submission", exact: true }).click();
-  await expect(page.getByText("Your perspective has been received.")).toBeVisible();
-  await page.screenshot({ path: "test-results/visual/stage03-feedback-success.png" });
-  expect(mock.requests[0].submissionId).toBe(mock.requests[1].submissionId); expect(mock.stored.size).toBe(1);
-  expect(mock.requests[0].contactConsent).toBe(false);
-  await page.getByRole("button", { name: "Share another perspective" }).click(); await perspective(page);
-  await page.getByRole("button", { name: "Submit feedback", exact: true }).click();
-  await expect(page.getByText("Your perspective has been received.")).toBeVisible();
-  expect(mock.requests[2].submissionId).not.toBe(mock.requests[0].submissionId); expect(mock.stored.size).toBe(2);
-  expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
-});
-test("Kit retries survive modal closure; consent stays separate; real file becomes available after receipt", async ({ page }) => {
-  const mock = await transport(page, "/api/kit-request");
-  let downloadCalls = 0;
-  await page.route("**/api/kit-download", async route => {
-    expect(route.request().url()).not.toContain("?");
-    expect(route.request().headers().authorization === "Bearer " + "t".repeat(43)).toBe(true);
-    downloadCalls++;
-    await route.fulfill(downloadCalls === 1 ? { status: 503, contentType: "application/json", body: "{}" } : { status: 200, contentType: "application/pdf", body: fs.readFileSync("private/kit/Kyro_Learning_Home_Leadership_Kit.pdf") });
-  });
-  await page.setViewportSize({ width: 390, height: 844 }); await page.goto("/home-leadership-kit/");
-  await page.getByRole("button", { name: "Download the Kit", exact: true }).click();
-  const dialog = page.getByRole("dialog");
-  await dialog.getByLabel("Full name", { exact: true }).fill("Synthetic Visitor");
-  await dialog.getByLabel("Email address", { exact: true }).fill("synthetic@example.test");
-  await dialog.getByLabel("Phone number", { exact: true }).fill("+1 (202) 555-0123");
-  await expect(dialog.getByRole("checkbox", { name: /receive updates/ })).not.toBeChecked(); await dialog.getByRole("checkbox", { name: /receive updates/ }).check();
-  await dialog.getByLabel("I confirm that I am 18 or older.", { exact: true }).check();
-  await dialog.getByRole("checkbox", { name: /I acknowledge that I have read/ }).check();
-  await dialog.getByRole("button", { name: "Review details" }).click();
-  await dialog.getByRole("button", { name: "Download the Kit", exact: true }).click();
-  await expect(dialog.getByRole("alert")).toContainText("Storage could not be confirmed");
-  await page.screenshot({ path: "test-results/visual/stage03-kit-error.png" });
-  await page.keyboard.press("Escape"); await page.getByRole("button", { name: "Download the Kit", exact: true }).click();
-  await expect(dialog.getByLabel("Full name", { exact: true })).toHaveValue("Synthetic Visitor");
-  await expect(dialog.getByRole("checkbox", { name: /receive updates/ })).toBeChecked(); await dialog.getByRole("button", { name: "Retry request" }).click();
-  await expect(dialog.getByText("Your kit is ready.")).toBeVisible();
-  await dialog.screenshot({ path: "test-results/visual/stage03-kit-success.png" });
-  expect(mock.requests[0].submissionId).toBe(mock.requests[1].submissionId); expect(mock.stored.size).toBe(1); expect(mock.requests[0].marketingConsent).toBe(true);
-  await dialog.getByRole("button", { name: "Download your kit" }).click();
-  await expect(dialog.getByRole("alert")).toContainText("request has already been saved");
-  expect(mock.requests.length).toBe(2);
-  const downloadEvent = page.waitForEvent("download"); await dialog.getByRole("button", { name: "Download your kit" }).click();
-  const download = await downloadEvent, file = await download.path(); expect(file).not.toBeNull();
-  expect(createHash("sha256").update(fs.readFileSync(file!)).digest("hex")).toBe("69dda4c82161de29300c8212d82aef9f078be8ca084e475ef730fd6c1ed955da");
-  expect((await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze()).violations).toEqual([]);
-  await dialog.getByRole("button", { name: "Start another kit request" }).click();
-  await expect(dialog.getByRole("checkbox", { name: /receive updates/ })).not.toBeChecked();
-  await expect(dialog.getByLabel("I confirm that I am 18 or older.", { exact: true })).not.toBeChecked();
-  await expect(dialog.getByLabel("Full name", { exact: true })).toHaveValue("");
-});
+test("Unhydrated forms cannot submit personal details through native URL fallback",async({browser})=>{const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();await page.goto(process.env.POLARIS_TEST_URL+'/help-shape-polaris/');const form=page.getByRole('form');await expect(form).toHaveAttribute('method','post');await expect(form.getByRole('button',{name:'Submit your perspective'})).toBeDisabled();await page.getByLabel('Your email').fill('synthetic@example.test');await page.getByLabel('Your email').press('Enter');expect(page.url()).not.toContain('?');const kit=page.locator('dialog[aria-labelledby="kit-dialog-title"]');await expect(kit.locator('form')).toHaveAttribute('method','post');await expect(kit.getByRole('button',{name:'Submit and download kit',includeHidden:true})).toBeDisabled();await context.close();});

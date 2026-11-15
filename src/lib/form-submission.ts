@@ -1,7 +1,10 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import { privacyPolicyVersion } from "@/content/form-compliance";
 import consent from "@/content/consent.json";
+
+const subscribeToHydration = () => () => {};
+export function useFormReady() { return useSyncExternalStore(subscribeToHydration, () => true, () => false); }
 
 export type FormKind = "feedback" | "kit";
 export type KitAuthorization = { status: "ready"; token: string; expiresAt: string } | { status: "redeemed" };
