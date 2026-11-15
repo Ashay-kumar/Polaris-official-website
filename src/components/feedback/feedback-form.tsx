@@ -1,5 +1,10 @@
 "use client";
 import Link from "@/components/ui/site-link";
+import Image from "next/image";
+import { publicPath } from "@/lib/public-path";
+import { UserCircleIcon } from "@phosphor-icons/react/dist/ssr/UserCircle";
+import { EnvelopeIcon } from "@phosphor-icons/react/dist/ssr/Envelope";
+import { PolarisIcon } from "@/components/brand/polaris-icon";
 import { useEffect, useRef, useState } from "react";
 import { phoneError, normalisePhone, type CountryCode } from "@/lib/phone";
 import { perspectives } from "@/content/qualities";
@@ -15,7 +20,7 @@ import s from "./feedback-form.module.css";
 type Answers = { perspective: string; challenge: string; wish: string; understand: string; name: string; email: string; phone: string; phoneCountry: CountryCode; followUp: boolean; adult: "" | "yes" | "no"; privacyAcknowledged: boolean };
 type Errors = Partial<Record<keyof Answers, string>>;
 const initial: Answers = { perspective: "", challenge: "", wish: "", understand: "", name: "", email: "", phone: "", phoneCountry: "IN", followUp: false, adult: "", privacyAcknowledged: false };
-export function FeedbackGuidance() { return <details id="preview-info" className={s.preview}><summary>Share thoughtfully</summary><p>{adultNotice}</p><p>Please avoid sensitive or identifying information about a child.</p><p>{retentionNotice} <Link href="/privacy-policy">Privacy Policy</Link></p></details>; }
+export function FeedbackGuidance() { return <details id="preview-info" className={s.preview}><summary><Image src={publicPath("/images/help-shape-polaris/conversation-bubbles.svg")} width={44} height={44} alt="" unoptimized/><span>Share thoughtfully</span></summary><p>{adultNotice}</p><p>Please avoid sensitive or identifying information about a child.</p><p>{retentionNotice} <Link href="/privacy-policy">Privacy Policy</Link></p></details>; }
 export function FeedbackForm() {
  const ready = useFormReady();
  const submission = useFormSubmission("feedback");
@@ -40,7 +45,7 @@ export function FeedbackForm() {
   void submission.submit({category: answers.perspective === "visitor" ? "interested" : answers.perspective, challenges: answers.challenge.trim(), resources: answers.wish.trim(), suggestions: answers.understand.trim(), name: answers.name.trim(), email: answers.email.trim(), phone: normalisePhone(answers.phone, answers.phoneCountry) || "", country: answers.phoneCountry, adultConfirmed: answers.adult === "yes", privacyAcknowledged: answers.privacyAcknowledged, contactConsent: answers.followUp});
  }
  function field(id: "challenge" | "wish" | "understand", label: string) {
-  return <div className={s.field}><label htmlFor={id}>{label} <span>(optional)</span></label><textarea id={id} name={id} rows={4} value={answers[id]} onChange={e => update(id,e.target.value)} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? id+"-error" : undefined}/>{errors[id] && <p id={id+"-error"} className={s.error}>{errors[id]}</p>}</div>;
+  return <div className={`${s.field} ${s.questionField}`}><label htmlFor={id}><Image src={publicPath(`/images/help-shape-polaris/${id === "challenge" ? "question-challenge.svg" : id === "wish" ? "question-wish.svg" : "question-understand.svg"}`)} width={48} height={48} alt="" unoptimized/><span className={s.questionLabel}>{label} <span>(optional)</span></span></label><textarea id={id} name={id} rows={4} value={answers[id]} onChange={e => update(id,e.target.value)} aria-invalid={!!errors[id]} aria-describedby={errors[id] ? id+"-error" : undefined}/>{errors[id] && <p id={id+"-error"} className={s.error}>{errors[id]}</p>}</div>;
  }
  return <div className={s.wrapper}>
 
@@ -48,15 +53,15 @@ export function FeedbackForm() {
   <form method="post" ref={form} className={s.form} noValidate aria-label="Share your perspective" aria-busy={submission.pending} onSubmit={e => {e.preventDefault();send();}}>
    {Object.values(errors).some(Boolean) && <div role="alert" className={s.errorSummary}>Please check the highlighted fields below.</div>}
    <fieldset className={s.group} disabled={submission.pending}><legend className={s.title}>Your perspective</legend>
-    <fieldset className={s.perspectives} aria-invalid={!!errors.perspective}><legend>Which perspective are you sharing today?</legend><div className={s.roleGrid}>{perspectives.map(p => <label key={p.id} className={answers.perspective === p.id ? s.selected : ""}><input type="radio" name="perspective" required value={p.id} checked={answers.perspective === p.id} onChange={() => update("perspective",p.id)} data-invalid={!!errors.perspective} aria-describedby={errors.perspective ? "perspective-error" : undefined}/><span>{p.label}</span></label>)}</div>{errors.perspective && <p id="perspective-error" className={s.error}>{errors.perspective}</p>}</fieldset>
+    <fieldset className={s.perspectives} aria-invalid={!!errors.perspective}><legend>Which perspective are you sharing today?</legend><div className={s.roleGrid}>{perspectives.map(p => <label key={p.id} className={answers.perspective === p.id ? s.selected : ""}><input type="radio" name="perspective" required value={p.id} checked={answers.perspective === p.id} onChange={() => update("perspective",p.id)} data-invalid={!!errors.perspective} aria-describedby={errors.perspective ? "perspective-error" : undefined}/><Image src={publicPath(`/images/help-shape-polaris/${p.asset}`)} width={64} height={64} alt="" unoptimized/><span>{p.label}</span></label>)}</div>{errors.perspective && <p id="perspective-error" className={s.error}>{errors.perspective}</p>}</fieldset>
     <p>Answer whichever questions feel relevant. Please share at least one meaningful response.</p>
     {field("challenge", "What's one challenge you face in supporting a child's development?")}
     {field("wish", "What resources or support do you wish existed?")}
     {field("understand", "What should Kyro Learning understand before developing its offering?")}
    </fieldset>
    <fieldset className={s.group} disabled={submission.pending}><legend className={s.title}>Your contact details (optional)</legend>
-    <div className={s.field}><label htmlFor="name">Your name <span>(optional)</span></label><input id="name" autoComplete="name" value={answers.name} onChange={e => update("name",e.target.value)} aria-invalid={!!errors.name} aria-describedby={errors.name ? "name-error" : undefined}/>{errors.name && <p id="name-error" className={s.error}>{errors.name}</p>}</div>
-    <div className={s.field}><label htmlFor="email">Your email <span>(optional unless follow-up is selected)</span></label><input id="email" type="email" autoComplete="email" maxLength={254} value={answers.email} onChange={e => update("email",e.target.value)} aria-invalid={!!errors.email} aria-describedby="email-hint email-error"/><span id="email-hint" className={s.hint}>Providing contact details does not opt you into follow-up.</span><p id="email-error" className={s.error}>{errors.email}</p></div>
+    <div className={s.field}><label htmlFor="name"><PolarisIcon icon={UserCircleIcon} size={20}/>Your name <span>(optional)</span></label><input id="name" autoComplete="name" value={answers.name} onChange={e => update("name",e.target.value)} aria-invalid={!!errors.name} aria-describedby={errors.name ? "name-error" : undefined}/>{errors.name && <p id="name-error" className={s.error}>{errors.name}</p>}</div>
+    <div className={s.field}><label htmlFor="email"><PolarisIcon icon={EnvelopeIcon} size={20}/>Your email <span>(optional unless follow-up is selected)</span></label><input id="email" type="email" autoComplete="email" maxLength={254} value={answers.email} onChange={e => update("email",e.target.value)} aria-invalid={!!errors.email} aria-describedby="email-hint email-error"/><span id="email-hint" className={s.hint}>Providing contact details does not opt you into follow-up.</span><p id="email-error" className={s.error}>{errors.email}</p></div>
     <InternationalPhone id="phone" label="Your phone number" country={answers.phoneCountry} value={answers.phone} onChange={v => update("phone",v)} onCountryChange={v => update("phoneCountry",v)} error={errors.phone}/>
    </fieldset>
    <fieldset className={s.group} disabled={submission.pending}><legend className={s.title}>Confirmations and consent</legend>
