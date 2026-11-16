@@ -30,6 +30,13 @@ for (const width of viewports) {
       await expect(page.locator("h1"), route).toHaveCount(1);
 
       if (route === "/") {
+        const introduction = page.locator("main > section").nth(1);
+        await expect(introduction.getByRole("heading", {
+          name: "What is Kyro Learning?", level: 2, exact: true
+        })).toBeVisible();
+        await expect(introduction).toContainText("The Idea");
+        await expect(introduction).toContainText("Kyro Learning is an early-stage initiative exploring everyday ways to support children's growth beyond academics.");
+        await expect(page.locator("main > section").nth(2)).toContainText("The problem");
         const headline = await page.locator("h1").boundingBox();
         const image = await page.getByRole("img", {
           name: "Illustration of a child exploring the world through a cardboard telescope",
@@ -253,7 +260,9 @@ test("Public PDF is unavailable and all internal links resolve", async ({ page, 
 
   await page.goto(sitePath("/"));
 
-  // Homepage CTA retains its original name.
+  await page.getByRole("link", { name: "Explore the Kit", exact: true }).click();
+  await expect(page).toHaveURL(/\/home-leadership-kit\/?$/);
+
   await page.getByRole("button", {
     name: "Download the Kit",
     exact: true
