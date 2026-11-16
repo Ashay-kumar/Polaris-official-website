@@ -7,7 +7,7 @@ import { FeedbackForm, FeedbackGuidance } from "@/components/feedback/feedback-f
 import { perspectives } from "@/content/qualities";
 import { pageMetadata } from "@/content/website-copy";
 import s from "@/styles/website.module.css";
-export const metadata: Metadata = { title:{absolute:pageMetadata.feedback.title}, description:pageMetadata.feedback.description };
+export const metadata: Metadata = { alternates: { canonical: "/help-shape-polaris/" }, title:{absolute:pageMetadata.feedback.title}, description:pageMetadata.feedback.description };
 export default function HelpPage() {
  return <>
   <ConversationHero><p>What do you wish you&apos;d learned sooner? Share your perspective on the skills and experiences children need as they grow.</p><div className={s.actions}><ButtonLink href="#conversation" variant="lime">Share Your Perspective</ButtonLink></div></ConversationHero>

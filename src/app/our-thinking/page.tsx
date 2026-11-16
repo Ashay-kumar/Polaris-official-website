@@ -4,7 +4,7 @@ import { Accent, ButtonLink, Eyebrow, Heading, Invite, KitFeature, Photo, Sectio
 import { QualityCards } from "@/components/pages/quality-cards";
 import { pageMetadata } from "@/content/website-copy";
 import s from "@/styles/website.module.css";
-export const metadata: Metadata = { title:{absolute:pageMetadata.thinking.title}, description:pageMetadata.thinking.description };
+export const metadata: Metadata = { alternates: { canonical: "/our-thinking/" }, title:{absolute:pageMetadata.thinking.title}, description:pageMetadata.thinking.description };
 export default function OurThinkingPage() {
  return <>
   <ThinkingHero><p>Marks tell part of the story. The way children communicate, explore, take initiative and recover from setbacks matters too.</p><div className={s.actions}><ButtonLink href="#qualities" variant="light">Explore the Four Qualities</ButtonLink></div></ThinkingHero>

@@ -29,8 +29,9 @@ const body = localFont({
 
 export const metadata: Metadata = {
   title: { default: "Kyro Learning", template: "%s | Kyro Learning" },
-  // Keep previews non-indexable until content, assets and submission service are approved.
-  robots: { index: false, follow: false },
+  metadataBase: new URL("https://kyrolearning.com"),
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   icons: {
     icon: [{ url: publicPath("/icon.svg"), type: "image/svg+xml" }, { url: publicPath("/favicon.ico"), sizes: "16x16 32x32 48x48", type: "image/x-icon" }],
     apple: [{ url: publicPath("/apple-icon.png"), sizes: "180x180", type: "image/png" }],

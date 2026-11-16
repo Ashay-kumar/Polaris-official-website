@@ -6,7 +6,7 @@ import { kitDownload } from "@/content/qualities";
 import { pageMetadata } from "@/content/website-copy";
 import s from "@/styles/website.module.css";
 
-export const metadata: Metadata = { title:{absolute:pageMetadata.kit.title}, description:pageMetadata.kit.description };
+export const metadata: Metadata = { alternates: { canonical: "/home-leadership-kit/" }, title:{absolute:pageMetadata.kit.title}, description:pageMetadata.kit.description };
 export default function KitPage() {
   return <>
     <KitHero>

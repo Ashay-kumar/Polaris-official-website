@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Accent, ButtonLink, Eyebrow, Heading, Invite, Photo, Section } from "@/components/ui/website";
 import { pageMetadata } from "@/content/website-copy";
 import s from "@/styles/website.module.css";
-export const metadata: Metadata = { title:{absolute:pageMetadata.about.title}, description:pageMetadata.about.description };
+export const metadata: Metadata = { alternates: { canonical: "/about/" }, title:{absolute:pageMetadata.about.title}, description:pageMetadata.about.description };
 export default function AboutPage() {
  return <>
   <AboutHero><p><strong>We&apos;re not starting with all the answers. We&apos;re starting with better questions.</strong></p><p>Kyro Learning is an early-stage initiative exploring how children can develop life skills through everyday experiences.</p><div className={s.actions}><ButtonLink href="/help-shape-polaris#conversation" variant="lime">Help Shape Kyro Learning</ButtonLink><ButtonLink href="/our-thinking" variant="secondary">Our Thinking</ButtonLink></div></AboutHero>
