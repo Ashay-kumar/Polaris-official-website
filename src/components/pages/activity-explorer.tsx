@@ -25,6 +25,6 @@ export function ActivityExplorer() {
       {photos[a.id] ? <Image className={s.photo} src={publicPath(`/images/home-leadership-kit/provisional-photos/${photos[a.id].file}`)} width={photos[a.id].width} height={photos[a.id].height} alt="" sizes="(max-width: 600px) 100vw, 320px" /> : <div className={s.icon}><QualityIcon quality={selected} /><span aria-hidden="true">{String(a.id).padStart(2,"0")}</span></div>}
       <div className={s.body}><p className={s.duration}>{a.duration}</p><h3>{a.name}</h3><details><summary>Explore this activity <span aria-hidden="true">+</span></summary><div className={s.instructions}><h4>How</h4><p>{a.instructions}</p><h4>Why it helps</h4><p>{a.rationale}</p><h4>Age guidance</h4><p>{a.ages}</p></div></details></div>
     </article>)}</div>
-    <p className={w.caption}>All activity instructions and age guidance are from the original six-page kit. Read them in context in the PDF.</p>
+    <p className={w.caption}>All activity instructions and age guidance are from the Home Leadership Kit. Read them in context in the PDF.</p>
   </div>;
 }

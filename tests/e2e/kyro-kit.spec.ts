@@ -28,6 +28,6 @@ test("Approved Kyro Learning PDF stays private while approved previews remain av
   }
 
   await page.goto(sitePath("/home-leadership-kit"));
-  await expect(page.getByText("The updated eight-page Kyro Learning PDF.")).toBeVisible();
+  await expect(page.getByText("Get all 12 activities, age guidance and the four-week tracker in one free kit.")).toBeVisible();
   await expect(page.getByRole("button", { name: "View the Tracker in the Kit" })).toBeVisible();
 });

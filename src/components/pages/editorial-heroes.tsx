@@ -9,7 +9,7 @@ import s from "./editorial-heroes.module.css";
 
 export function HomeHero({ children }: { children: ReactNode }) {
   return <section className={s.home} aria-labelledby="home-title"><div className={s.container}>
-    <div className={s.homeIntro}><Eyebrow>A different way to think about growth</Eyebrow><h1 id="home-title">Beyond<br />the <span>Marks.</span></h1></div>
+    <div className={s.homeIntro}><Eyebrow>Beyond the marks</Eyebrow><h1 id="home-title">Beyond<br />the <span>Marks.</span></h1></div>
     <div className={s.homeVisual}><Photo src="home/curious-child-telescope.jpg" width={894} height={308} alt="Illustration of a child exploring the world through a cardboard telescope" priority /></div>
     <div className={s.homeMessage}>{children}</div>
     <ul className={s.qualityRail} aria-label="The four qualities">{qualities.map(q=><li key={q.id}><QualityIcon quality={q.id} size={24} /><span>{q.name}</span></li>)}</ul>

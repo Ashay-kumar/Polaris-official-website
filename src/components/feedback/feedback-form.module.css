@@ -124,3 +124,9 @@
   .successIntro { align-items: flex-start; flex-direction: column; gap: var(--space-3); }
   .successIntro > img { width: 72px; height: 72px; }
 }
+
+/* Four approved questions retain the Stage 06C illustrated treatments. */
+.questionWrap:nth-of-type(1) .questionField{background:var(--color-peach-50)}
+.questionWrap:nth-of-type(2) .questionField{background:var(--color-blue-50)}
+.questionWrap:nth-of-type(3) .questionField{background:var(--color-peach-50)}
+.questionWrap:nth-of-type(4) .questionField{background:var(--color-pink-50)}

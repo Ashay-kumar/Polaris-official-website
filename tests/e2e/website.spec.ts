@@ -175,7 +175,7 @@ test("Feedback preserves answers without submitting in the review-release build"
     exact: true
   }).check();
 
-  await form.getByLabel("What resources or support")
+  await form.getByLabel("What activities or resources")
     .fill("Synthetic everyday activities.");
 
   await form.getByRole("radio", {
@@ -191,7 +191,7 @@ test("Feedback preserves answers without submitting in the review-release build"
 
   await expect(
     form.getByRole("button", {
-      name: "Submit your perspective"
+      name: "Submit Your Perspective"
     })
   ).toBeDisabled();
 
