@@ -267,5 +267,5 @@
   .kitFeature .split { grid-template-columns: 1fr; }
 }
 
-.ideaIntroduction { padding-block: var(--space-8); background: var(--color-surface-page); }
+.ideaIntroduction { padding-block: var(--space-12); background: var(--color-surface-page); }
 .ideaIntroduction p:last-child { margin-block: 0; }
