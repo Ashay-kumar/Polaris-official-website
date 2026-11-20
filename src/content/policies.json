@@ -117,15 +117,23 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Kyro Learning currently uses a manually managed Google Sheets workflow, without an automatic deletion schedule. Records may therefore remain stored until an authorized person reviews and removes them. This is an operational description, not a commitment to retain personal data indefinitely or to refuse deletion."
+            "text": "Kyro Learning follows a manual review and deletion process for personal data submitted through its website forms. Submission records are stored in restricted-access Google Sheets and reviewed monthly to assess whether they remain necessary for their original purpose."
           },
           {
             "type": "paragraph",
-            "text": "We aim to retain personal data only while it is reasonably necessary for the purpose explained at collection, legitimate operational records, applicable retention requirements, dispute handling or other lawful purposes. We will review requests to delete or correct data and remove information when the purpose has ended or deletion is required, subject to any applicable legal obligation to retain it. Consent withdrawal will stop processing for the withdrawn optional purpose, subject to lawful exceptions; it will not automatically erase processing already completed."
+            "text": "We retain personal data only while it is reasonably necessary for the purpose explained at collection. Records that are no longer required are deleted or anonymised, subject to applicable legal, operational or dispute-related retention requirements. Confirmed test submissions are removed after verification."
           },
           {
             "type": "paragraph",
-            "text": "Before the public launch, Kyro Learning will establish a practical manual review and deletion process and the person responsible for carrying it out. We will update this policy if the retention system materially changes."
+            "text": "Individuals may request access-related assistance, correction or deletion of their information by contacting info@kyrolearning.com. Requests are reviewed, with reasonable identity verification where necessary, and handled in accordance with applicable law."
+          },
+          {
+            "type": "paragraph",
+            "text": "Kyro Learning does not currently operate an automatic deletion schedule. Its manual review procedure will be updated as operational needs and applicable legal requirements evolve."
+          },
+          {
+            "type": "paragraph",
+            "text": "Consent withdrawal will stop processing for the withdrawn optional purpose, subject to lawful exceptions; it will not automatically erase processing already completed."
           }
         ]
       },
@@ -147,7 +155,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "We use, or intend to use before public activation, appropriate technical and organizational controls, including restricted access to submission storage, server-side handling of sensitive credentials, protected API routing, input validation, abuse protection and transport encryption. Access permissions are limited to people who need them for the operation of the service."
+            "text": "We use technical and organizational safeguards designed to protect website submissions and personal data, including restricted access to submission storage, server-side handling of sensitive credentials, protected API routing, input validation, abuse protection and transport encryption. Access permissions are limited to people who need them for the operation of the service."
           },
           {
             "type": "paragraph",
