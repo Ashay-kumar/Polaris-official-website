@@ -36,7 +36,7 @@ test("undecided and rejected make no Google requests or cookies; rejection persi
   expect(requests).toEqual([]); expect(await context.cookies()).toEqual([]);
 });
 
-test("acceptance sends one sanitized page view per navigation; persistence and withdrawal", async ({ page, context }) => {
+test("acceptance sends one sanitized page view per document; persistence and withdrawal", async ({ page, context }) => {
   const requests = await mockGoogle(page);
   await page.goto("/?email=synthetic%40example.test#private");
   await banner(page).getByRole("button", { name: "Accept analytics" }).click();
@@ -54,15 +54,37 @@ test("acceptance sends one sanitized page view per navigation; persistence and w
     return data.ad_storage === "denied" && data.ad_user_data === "denied" && data.ad_personalization === "denied";
   })).toBe(true);
   expect(queue.find(c => c[0] === "event")?.[2]).toMatchObject({ page_location: "https://kyrolearning.com/", page_title: "Kyro Learning", page_referrer: "" });
+  const homeQueue = queue;
+  const granted = await page.evaluate(k => JSON.parse(localStorage.getItem(k)!), key);
+  expect(granted).toMatchObject({ version: 1, choice: "granted" });
+  const homeFrame = page.frames().find(f => f.url().endsWith("/analytics-frame.html"));
+  expect(homeFrame).toBeDefined();
   await page.locator("header").getByRole("link", { name: "Our Thinking", exact: true }).click();
-  await expect.poll(async () => (await commands(page)).filter(c => c[0] === "event").length).toBe(2);
+  await expect(page).toHaveURL(/\/our-thinking\/?$/);
+  await expect.poll(async () => (await commands(page)).filter(c => c[0] === "event").length).toBe(1);
+  expect(homeFrame!.isDetached()).toBe(true);
+  await expect(banner(page)).toHaveCount(0);
+  expect(await page.evaluate(k => JSON.parse(localStorage.getItem(k)!), key)).toEqual(granted);
+  queue = await commands(page);
+  expect(queue.filter(c => c[0] === "event")).toEqual([["event", "page_view", {
+    send_to: "G-85B0Q7PSX8", page_location: "https://kyrolearning.com/our-thinking/", page_title: "Our Thinking", page_referrer: ""
+  }]]);
+  // The mock records script loads, not collection hits: one per consented document.
+  const loader = "https://www.googletagmanager.com/gtag/js?id=G-85B0Q7PSX8";
+  expect(requests).toEqual([loader, loader]);
   await page.evaluate(() => { history.pushState(null, "", "?name=private#email"); document.title = "synthetic@example.test"; });
   await page.getByRole("button", { name: "Cookie preferences", exact: true }).click();
   await page.keyboard.press("Escape");
-  expect((await commands(page)).filter(c => c[0] === "event")).toHaveLength(2);
+  expect((await commands(page)).filter(c => c[0] === "event")).toEqual(queue.filter(c => c[0] === "event"));
+  expect(requests).toEqual([loader, loader]);
   await page.reload();
   await expect(banner(page)).toHaveCount(0);
   await expect.poll(async () => (await commands(page)).filter(c => c[0] === "event").length).toBe(1);
+  expect(requests).toEqual([loader, loader, loader]);
+  expect(await page.evaluate(k => JSON.parse(localStorage.getItem(k)!), key)).toEqual(granted);
+  const reloadQueue = await commands(page);
+  expect(reloadQueue.filter(c => c[0] === "event")).toEqual(queue.filter(c => c[0] === "event"));
+  expect(JSON.stringify([homeQueue, queue, reloadQueue])).not.toMatch(/synthetic|private|example\.test|\?|#/i);
   await context.addCookies([{ name: "_ga", value: "synthetic", url: "http://127.0.0.1:4173/" }, { name: "_ga_85B0Q7PSX8", value: "synthetic", url: "http://127.0.0.1:4173/" }]);
   const before = requests.length;
   const dialog = await preferences(page);
@@ -70,6 +92,8 @@ test("acceptance sends one sanitized page view per navigation; persistence and w
   await expect(page.locator('iframe[title="Optional website analytics"]')).toHaveCount(0);
   expect((await context.cookies()).filter(c => c.name.startsWith("_ga"))).toEqual([]);
   await page.locator("header").getByRole("link", { name: "About", exact: true }).click();
+  await expect(page).toHaveURL(/\/about\/?$/);
+  expect(await page.evaluate(k => JSON.parse(localStorage.getItem(k)!), key)).toMatchObject({ version: 1, choice: "denied" });
   expect(requests).toHaveLength(before);
   await page.reload();
   expect(requests).toHaveLength(before);
