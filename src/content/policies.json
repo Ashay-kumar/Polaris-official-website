@@ -104,7 +104,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Submitted form information is transmitted through our website backend and stored in restricted-access Google Sheets. We use Google services for storage and may use Cloudflare for website delivery, backend execution, access control, security and bot-prevention features. Authorized helpers supporting the operation of Kyro Learning may access information only as needed for the specified purposes."
+            "text": "Submitted form information is transmitted through our website backend and stored in restricted-access Google Sheets. We use Google services for storage and Google Analytics 4, provided by Google, for optional analytics after acceptance. Information you intentionally submit through our forms is separate from the cookie identifiers, device/browser details and network information that Google may process for analytics; we do not pass form submissions or contact details to analytics. We may use Cloudflare for website delivery, backend execution, access control, security and bot-prevention features. Authorized helpers supporting the operation of Kyro Learning may access information only as needed for the specified purposes."
           },
           {
             "type": "paragraph",
@@ -160,7 +160,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The Website may use necessary cookies or similar technologies for security and essential operations. During private review, Cloudflare Access may set login-session cookies for authorized reviewers. Details about current and optional technologies and how to control them are in our Cookie Policy. External websites and services linked from Kyro Learning have their own privacy practices, which we do not control."
+            "text": "The Website uses necessary technologies for security and essential operations. Optional Google Analytics 4, provided by Google, measures page visits and broad usage to help us improve educational resources only after you accept analytics. Google may process online identifiers, technical device information and network information, including your IP address during transmission, in countries outside India under its terms and privacy practices. We send only fixed public page titles and allowlisted page locations without query strings or fragments; we do not send form fields, feedback answers, contact details, kit-request information or children’s information to analytics. Advertising features and Google signals are disabled. You may reject analytics without affecting access, forms or downloads, and change or withdraw your choice using Cookie preferences in the footer. See the Cookie Policy for storage, expiry and withdrawal limitations. Cloudflare Access may set reviewer login cookies during private review. External services have their own privacy practices, which we do not control."
           }
         ]
       },
@@ -188,7 +188,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Cookies are small pieces of information that a website or its providers store in or retrieve from your browser. Similar technologies may include local storage, session storage and security tokens. Some are necessary to deliver or protect a service. Others may be used for analytics or marketing only if Kyro Learning chooses to introduce them."
+            "text": "Cookies are small pieces of information that a website or its providers store in or retrieve from your browser. Similar technologies include local storage, session storage and security tokens. Some are necessary to deliver or protect a service. Optional Google Analytics is available only with your explicit consent; advertising tracking is not enabled."
           }
         ]
       },
@@ -197,7 +197,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "At initial public launch, Kyro Learning does not intend to use optional advertising pixels, behavioural advertising trackers or general website analytics tools. The Website and its infrastructure may use necessary technologies for:"
+            "text": "Kyro Learning uses necessary technologies for essential operations and offers optional Google Analytics 4 for measuring public page visits. No Google analytics script or analytics request is loaded before you accept. Necessary technologies may support:"
           },
           {
             "type": "item",
@@ -217,7 +217,7 @@
           },
           {
             "type": "paragraph",
-            "text": "The exact cookie or storage names, providers and lifetimes are environment-dependent. Kyro Learning will publish or link an accurate live inventory after inspecting the production deployment; it will not claim that a particular optional tracker is in use when it is not."
+            "text": "Your analytics choice is stored in local storage as kyro.analytics-consent with its version and timestamp for 180 days. Missing, invalid, expired or malformed records leave analytics disabled and prompt a new choice. If storage is blocked, a choice may apply only to the current page session. After acceptance, Google may set first-party _ga and _ga_85B0Q7PSX8 cookies to distinguish visits; this integration requests a 180-day lifetime with automatic renewal disabled. Google may nevertheless refresh its session-cookie expiry during an active visit. Your analytics permission still expires 180 days after your choice unless you make a new choice, and browser restrictions may shorten cookie lifetimes. Necessary hosting and security storage varies by environment."
           }
         ]
       },
@@ -230,7 +230,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Analytics (optional): Tools intended to measure visits or usage patterns. These are not planned for the initial launch. If introduced, they must remain disabled until any required consent is obtained."
+            "text": "Analytics (optional): Google Analytics 4, provided by Google, measures visits and broad usage to improve the Website. It may process cookie identifiers, device/browser and network information. Page locations exclude query strings and fragments and use only fixed public routes and titles. We do not pass form answers, names, emails, phone numbers, kit-request data or children’s information to analytics. Google signals and advertising consent remain disabled."
           },
           {
             "type": "paragraph",
@@ -243,15 +243,15 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "If optional cookie-based tools become available, the Website will provide a preferences interface that explains the optional categories and enables you to accept or reject them. Optional technologies must not load before any required choice is made. Rejecting optional technologies will not prevent normal access to educational content or the forms."
+            "text": "On your first visit, choose Accept analytics or Reject optional. Analytics is disabled unless you explicitly accept, and optional consent is never preselected. Rejecting has no effect on normal website access, form submission or private kit downloads."
           },
           {
             "type": "paragraph",
-            "text": "You may change your preference using a persistent Cookie preferences link when optional technologies are active. Withdrawing permission will stop future use of optional technologies within our control and delete optional cookies we control where technically possible. It cannot reverse information already processed before withdrawal."
+            "text": "Use Cookie preferences in the footer to view or change your choice at any time. Reject optional withdraws analytics permission immediately, disables collection and removes the isolated analytics frame and accessible first-party GA cookies where technically feasible. Cookies on inaccessible paths, other domains or with browser restrictions may require browser controls. Withdrawal cannot recall requests already sent or erase data Google has already processed. Removal of an already-loaded third-party script alone cannot reverse its prior execution."
           },
           {
             "type": "paragraph",
-            "text": "At a time when the Website uses necessary technologies only, the interface may show an informational notice or preferences panel without an artificial \"Accept all\" requirement. Form consent for follow-up or marketing emails is separate from cookie preferences."
+            "text": "Analytics preferences are separate from form acknowledgements and optional follow-up or marketing permissions. Your choice applies to this browser, not automatically to other devices. Changes, expiry or deletion of browser storage may require you to choose again."
           }
         ]
       },
@@ -260,7 +260,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "You can also block or delete cookies using your browser settings. Browser restrictions may affect protected reviewer login, security checks or other functions. Hosting and security providers may maintain their own cookies under their respective documentation and privacy notices."
+            "text": "You can also block or delete cookies using your browser settings. Browser restrictions may affect protected reviewer login or security checks. Google processes analytics information under its service terms and privacy practices, which may involve processing outside India. See Google’s Privacy Policy at https://policies.google.com/privacy and information about partner-site data at https://policies.google.com/technologies/partner-sites. Hosting and security providers maintain their own documentation and privacy notices."
           },
           {
             "type": "paragraph",
