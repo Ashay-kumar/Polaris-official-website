@@ -169,6 +169,10 @@
           {
             "type": "paragraph",
             "text": "The Website uses necessary technologies for security and essential operations. Cloudflare may provide aggregate traffic and performance measurements, such as page views and load times, to help us understand how the Website is used. Where enabled, Cloudflare Web Analytics measures visits and page performance without analytics cookies. We do not send form submissions or contact details to Web Analytics. Cloudflare Access may set reviewer login cookies during private review. With your permission, Google Analytics 4 measures visits to public pages and arrivals associated with the approved Meta campaign so we can understand how people find and use the Website. Google may process analytics cookie identifiers, browser and device information, and network information such as your IP address during transmission. We send approved page locations and campaign labels and exclude form answers and contact details. Advertising personalisation is disabled. You can withdraw permission through the Cookie Policy. External services have their own privacy practices."
+          },
+          {
+            "type": "paragraph",
+            "text": "We use Cloudflare server-side analytics to count eligible public page requests and report approved campaign arrivals in aggregate. The custom analytics dataset stores the canonical page path, a fixed campaign classification, and the measurement timestamp. It does not intentionally store visitor IP addresses, names, email addresses, tracking cookies, click IDs, or full query strings. Cloudflare separately processes technical request information to deliver and protect the Website. These totals count requests. They cannot establish how many unique people visited or whether a person viewed a page."
           }
         ]
       },

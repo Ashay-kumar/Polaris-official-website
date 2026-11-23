@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "include": [
+    "/",
+    "/about/",
+    "/cookie-policy/",
+    "/help-shape-polaris/",
+    "/home-leadership-kit/",
+    "/our-thinking/",
+    "/privacy-policy/",
+    "/terms-of-use/"
+  ],
+  "exclude": []
+}
