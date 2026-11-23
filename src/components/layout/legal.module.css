@@ -6,3 +6,7 @@
 .page p, .page li { line-height: 1.7; }
 .page ul { padding-inline-start: 1.5rem; }
 .page li + li { margin-block-start: .65rem; }
+
+.analyticsPreference { margin-block: var(--space-5); }
+.analyticsPreference label { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; cursor: pointer; }
+.analyticsPreference input { inline-size: 1.25rem; block-size: 1.25rem; margin: 0; accent-color: var(--color-brand-ink); }

@@ -1,3 +1,4 @@
+import { AnalyticsPreference } from "./analytics-preference";
 import Link from "@/components/ui/site-link";
 import policies from "@/content/policies.json";
 import s from "./legal.module.css";
@@ -22,6 +23,6 @@ export function LegalPage({ slug }: { slug: PolicySlug }) {
         if (index && blocks[index - 1].type === "item") return null;
         const items = []; for (let i = index; i < blocks.length && blocks[i].type === "item"; i++) items.push(blocks[i]);
         return <ul key={index}>{items.map(item => <li key={item.text}><PolicyText text={item.text}/></li>)}</ul>;
-      })}</section>)}
+      })}{slug === "cookie-policy" && section.heading === "4. Your analytics choice" && <AnalyticsPreference />}</section>)}
   </article>;
 }

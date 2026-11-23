@@ -1,3 +1,4 @@
+import { AnalyticsController } from "@/components/layout/analytics-preference";
 import { KitAccessProvider } from "@/components/feedback/kit-access";
 import { publicPath } from "@/lib/public-path";
 import type { Metadata } from "next";
@@ -39,5 +40,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${editorial.variable} ${body.variable}`}><body><KitAccessProvider><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></KitAccessProvider></body></html>;
+  return <html lang="en" className={`${editorial.variable} ${body.variable}`}><body><KitAccessProvider><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /><AnalyticsController /></KitAccessProvider></body></html>;
 }

@@ -168,7 +168,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "The Website uses necessary technologies for security and essential operations. Cloudflare may provide aggregate traffic and performance measurements, such as page views and load times, to help us understand how the Website is used. Where enabled, Cloudflare Web Analytics measures visits and page performance without analytics cookies. We do not send form submissions or contact details to Web Analytics. Cloudflare Access may set reviewer login cookies during private review. See the Cookie Policy for details. External services have their own privacy practices."
+            "text": "The Website uses necessary technologies for security and essential operations. Cloudflare may provide aggregate traffic and performance measurements, such as page views and load times, to help us understand how the Website is used. Where enabled, Cloudflare Web Analytics measures visits and page performance without analytics cookies. We do not send form submissions or contact details to Web Analytics. Cloudflare Access may set reviewer login cookies during private review. With your permission, Google Analytics 4 measures visits to public pages and arrivals associated with the approved Meta campaign so we can understand how people find and use the Website. Google may process analytics cookie identifiers, browser and device information, and network information such as your IP address during transmission. We send approved page locations and campaign labels and exclude form answers and contact details. Advertising personalisation is disabled. You can withdraw permission through the Cookie Policy. External services have their own privacy practices."
           }
         ]
       },
@@ -242,16 +242,16 @@
           },
           {
             "type": "paragraph",
-            "text": "Kyro Learning does not use advertising cookies."
+            "text": "Optional Google Analytics uses first-party analytics cookies to recognise visits when you turn on website analytics. It measures public page visits and can receive the approved Meta campaign labels on an eligible landing page. We exclude other URL parameters, click identifiers, fragments, full referrers, and form information from the page views we send. Kyro Learning does not use advertising cookies."
           }
         ]
       },
       {
-        "heading": "4. Storage from earlier visits",
+        "heading": "4. Your analytics choice",
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Kyro Learning has retired Google Analytics 4. Cookies or a saved analytics choice from earlier visits may remain in your browser until they expire or you clear site data. A saved choice no longer activates analytics."
+            "text": "Use the checkbox below to turn Google Analytics on or off. Analytics is off until you opt in. Your choice is stored in this browser for up to 180 days. Choices saved by the previous analytics system do not apply. Turning analytics off stops future collection and clears accessible analytics cookies. It does not delete information already sent to Google. The Website, feedback form and kit remain available either way."
           }
         ]
       },
@@ -260,7 +260,7 @@
         "blocks": [
           {
             "type": "paragraph",
-            "text": "You can block or delete cookies and clear other site data using your browser settings. Browser restrictions may affect protected reviewer login or security checks. Cloudflare provides information about how it processes data in its privacy policy at https://www.cloudflare.com/privacypolicy/."
+            "text": "You can block or delete cookies and clear other site data using your browser settings. Browser restrictions may affect protected reviewer login or security checks. Cloudflare and Google explain how they process data in their privacy policies at https://www.cloudflare.com/privacypolicy/ and https://policies.google.com/privacy."
           },
           {
             "type": "paragraph",
