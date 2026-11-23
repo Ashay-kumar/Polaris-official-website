@@ -1,7 +1,25 @@
 import { readFile } from "node:fs/promises";
+import { registerHooks } from "node:module";
 import { expect, test } from "@playwright/test";
-import { onRequestGet } from "../../functions/_middleware";
 import routes from "../../public/_routes.json" with { type: "json" };
+
+// Wrangler bundles the plain JSON import. Node needs an attribute when Playwright loads the source directly.
+const middlewareUrl = new URL("../../functions/_middleware.ts", import.meta.url).href;
+const jsonHook = registerHooks({
+  resolve(specifier, context, nextResolve) {
+    if (context.parentURL !== middlewareUrl || specifier !== "../public/_routes.json") {
+      return nextResolve(specifier, context);
+    }
+    const importAttributes = { type: "json" };
+    return { ...nextResolve(specifier, { ...context, importAttributes }), importAttributes };
+  },
+});
+let onRequestGet: typeof import("../../functions/_middleware").onRequestGet;
+try {
+  ({ onRequestGet } = await import("../../functions/_middleware"));
+} finally {
+  jsonHook.deregister();
+}
 
 const origin = "https://kyrolearning.com";
 const campaign = "utm_source=meta&utm_medium=paid_social&utm_campaign=kyro_website_launch";

@@ -1,4 +1,4 @@
-import routes from "../public/_routes.json" with { type: "json" };
+import routes from "../public/_routes.json";
 
 type CampaignClass = "meta_website_launch" | "other";
 type CampaignPoint = {
