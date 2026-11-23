@@ -6,19 +6,3 @@
 .page p, .page li { line-height: 1.7; }
 .page ul { padding-inline-start: 1.5rem; }
 .page li + li { margin-block-start: .65rem; }
-.trigger { border: 0; padding: 0; min-height: 24px; background: transparent; color: inherit; cursor: pointer; text-align: start; text-decoration: underline; text-underline-offset: .2em; }
-.dialog { color: var(--color-text-primary); background: var(--color-surface-page); border: 1px solid var(--color-border-default); border-radius: var(--radius-medium); width: min(36rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow: auto; padding: clamp(1.25rem, 4vw, 2rem); }
-.dialog::backdrop { background: rgb(25 37 61 / .6); }
-.dialog h2 { font-family: var(--font-editorial); font-weight: 400; font-size: 2rem; line-height: 1.2; margin-top: 0; }
-.dialog p { line-height: 1.6; }
-.close { display: block; margin-block-start: var(--space-5); padding: .65rem 1.25rem; min-height: 44px; border: 1px solid currentColor; border-radius: var(--radius-medium); background: var(--color-brand-ink); color: var(--color-text-inverse); cursor: pointer; }
-
-.consentBanner { position: fixed; z-index: 90; inset: auto 1rem 1rem; margin-inline: auto; width: min(44rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow: auto; padding: 1.25rem; color: var(--color-text-primary); background: var(--color-surface-page); border: 1px solid var(--color-border-default); border-radius: var(--radius-medium); box-shadow: 0 4px 24px rgb(0 0 0 / .18); overflow-wrap: anywhere; }
-.consentBanner h2 { margin: 0; font-size: 1.25rem; }
-.consentBanner p { margin-block: .65rem; line-height: 1.5; }
-.consentBanner a, .dialog a { color: inherit; text-decoration: underline; }
-.consentActions { display: flex; flex-wrap: wrap; gap: .75rem; margin-block-start: 1rem; }
-.consentActions button { flex: 1 1 10rem; min-height: 44px; padding: .65rem 1rem; border: 1px solid currentColor; border-radius: var(--radius-medium); background: var(--color-brand-ink); color: var(--color-text-inverse); font: inherit; cursor: pointer; }
-.consentActions button:focus-visible, .consentBanner a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
-.consentStatus:empty { display: none; }
-.consentStatus { flex-basis: 100%; }

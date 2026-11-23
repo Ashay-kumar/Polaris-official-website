@@ -22,16 +22,11 @@ test("Approved legal content, identifiers, footer links and responsive accessibi
   }
 });
 
-// Consent behavior is covered by analytics-consent.spec.ts.
-
 test("Both submission flows retain privacy references after the form UX update", async ({ page }) => {
   await page.goto("/help-shape-polaris/");
   await page.locator("details#preview-info summary").click();
   await expect(page.locator("details#preview-info").getByRole("link", { name: /Privacy Policy/ })).toHaveAttribute("href", /^\/privacy-policy\/?$/);
   await page.goto("/home-leadership-kit/");
-  const banner = page.getByRole("region", { name: "Your cookie choice" });
-  await banner.getByRole("button", { name: "Reject optional" }).click();
-  await expect(banner).toHaveCount(0);
   await page.getByRole("button", { name: "Download the Kit", exact: true }).click();
   const links = page.getByRole("dialog").getByRole("link", { name: /Privacy Policy/ });
   await expect(links).toHaveCount(2); // Required acknowledgement and retention notice.
