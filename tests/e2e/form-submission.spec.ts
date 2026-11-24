@@ -3,6 +3,10 @@ import AxeBuilder from "@axe-core/playwright";
 test.skip(process.env.KYRO_STAGE06B_MOCKS !== "true", "Run against the isolated synthetic local harness only.");
 async function mock(page: Page, kind: "kit" | "feedback") {
  const requests: Record<string, unknown>[] = []; let downloads = 0;
+ await page.addInitScript(() => {
+   localStorage.setItem("kyro.analytics-preference", JSON.stringify({ version: 1, choice: "denied", timestamp: Date.now() }));
+ });
+ await page.route(/https:\/\/[^/]*(?:googletagmanager\.com|google-analytics\.com|cloudflareinsights\.com)\//, route => route.abort());
  await page.route("https://challenges.cloudflare.com/**", r => r.fulfill({contentType:"application/javascript",body:'window.turnstile={render:function(el,o){el.textContent="Synthetic verification";setTimeout(()=>o.callback("synthetic-only"),0);return "mock"},remove:function(){}}'}));
  await page.route("**/api/"+(kind === "kit" ? "kit-request" : "feedback"), async r => { const data=r.request().postDataJSON();requests.push(data);await new Promise(resolve=>setTimeout(resolve,100)); await r.fulfill({status:requests.length===1?503:200,contentType:"application/json",body:JSON.stringify(requests.length===1?{}:{status:"accepted",submissionId:data.submissionId,persistedAt:new Date().toISOString(),rowsWritten:1,...(kind === "kit" ? {download:{status:"ready",token:"t".repeat(43),expiresAt:new Date(Date.now()+900000).toISOString()}}:{})})}); });
  await page.route("**/api/kit-download", async r => { downloads++;expect(requests.length).toBe(2);expect(r.request().headers().authorization).toBe("Bearer "+"t".repeat(43));await r.fulfill(downloads===1?{status:503,body:"{}"}:{status:200,contentType:"application/pdf",body:Buffer.from("%PDF-1.4\n% Synthetic download fixture only\n%%EOF")}); });

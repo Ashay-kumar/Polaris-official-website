@@ -143,7 +143,7 @@ test("browser navigation serves the static documents and counts requests with GA
   await page.goto("/cookie-policy/");
   await expect(page).toHaveURL(/\/cookie-policy\/$/);
   await expect(page.getByRole("heading", { name: "Cookie Policy", exact: true })).toBeVisible();
-  await expect(page.getByRole("checkbox", { name: "Allow optional website analytics" })).not.toBeChecked();
+  await page.getByRole("region", { name: "Your cookie choice" }).getByRole("button", { name: "Reject optional" }).click();
   await page.reload();
   expect(points.map(({ blobs }) => blobs)).toEqual([
     ["/", tagged], ["/cookie-policy/", "other"], ["/cookie-policy/", "other"],

@@ -1,11 +1,14 @@
 import { expect, test } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 import type { BrowserContext, Page } from "@playwright/test";
 
 const measurementId = "G-85B0Q7PSX8";
 const key = "kyro.analytics-preference";
 const campaign = "utm_source=meta&utm_medium=paid_social&utm_campaign=kyro_website_launch";
 const frame = (page: Page) => page.locator('iframe[src="/analytics-frame.html"]');
-const choice = (page: Page) => page.getByRole("checkbox", { name: "Allow optional website analytics" });
+const banner = (page: Page) => page.getByRole("region", { name: "Your cookie choice" });
+const trigger = (page: Page) => page.getByRole("button", { name: "Cookie preferences", exact: true });
+const dialog = (page: Page) => page.getByRole("dialog", { name: "Cookie preferences" });
 
 const fakeTag = `
   const queue = window.dataLayer;
@@ -38,7 +41,7 @@ async function intercept(context: BrowserContext, baseURL: string) {
   return { loaders, events };
 }
 
-test("legacy and expired choices keep GA4 off with an accessible mobile opt-in", async ({ page, context, baseURL }) => {
+test("legacy and expired choices show an accessible banner and rejection keeps GA4 off", async ({ page, context, baseURL }) => {
   const { loaders, events } = await intercept(context, baseURL!);
   await context.addInitScript(key => {
     if (window.top !== window || localStorage.getItem(key)) return;
@@ -47,25 +50,73 @@ test("legacy and expired choices keep GA4 off with an accessible mobile opt-in",
   }, key);
   await page.setViewportSize({ width: 320, height: 800 });
   await page.goto("/?" + campaign);
-  await page.locator("footer").getByRole("link", { name: "Cookie Policy", exact: true }).click();
-  await expect(choice(page)).toBeEnabled();
-  await expect(choice(page)).not.toBeChecked();
-  await expect(page.locator("#analytics-status")).toHaveText("Analytics is off.");
-  await expect(page.locator("#cookie-banner-title, #cookie-preferences-title")).toHaveCount(0);
-  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await expect(banner(page)).toBeVisible();
+  await expect(frame(page)).toHaveCount(0);
+  expect(loaders).toEqual([]);
+  for (const width of [320, 1440]) {
+    await page.setViewportSize({ width, height: 800 });
+    expect((await new AxeBuilder({ page }).include("section[aria-labelledby=cookie-banner-title]").analyze()).violations).toEqual([]);
+    await trigger(page).focus();
+    await page.keyboard.press("Enter");
+    await expect(dialog(page)).toBeVisible();
+    const close = dialog(page).getByRole("button", { name: "Close cookie preferences" });
+    await expect(close).toBeFocused();
+    await page.keyboard.press("Tab");
+    await expect(dialog(page).getByRole("link", { name: "Read the Cookie Policy" })).toBeFocused();
+    await page.keyboard.press("Shift+Tab");
+    await expect(close).toBeFocused();
+    expect((await new AxeBuilder({ page }).include("dialog[aria-labelledby=cookie-preferences-title]").analyze()).violations).toEqual([]);
+    await page.keyboard.press(width === 320 ? "Escape" : "Enter");
+    await expect(dialog(page)).toBeHidden();
+    await expect(trigger(page)).toBeFocused();
+  }
+  await banner(page).getByRole("button", { name: "Reject optional" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Analytics is off." })).toBeVisible();
+  await expect(banner(page)).toHaveCount(0);
+  await page.reload();
+  await trigger(page).click();
+  await expect(dialog(page)).toContainText("Rejected");
+  await expect(banner(page)).toHaveCount(0);
   await expect(frame(page)).toHaveCount(0);
   expect(loaders).toEqual([]);
   expect(events).toEqual([]);
   expect((await context.cookies()).filter(cookie => /^_ga/.test(cookie.name))).toEqual([]);
 });
 
+for (const savedChoice of ["granted", "denied"] as const) {
+  test(`keeps an existing ${savedChoice} preference and its original expiry`, async ({ page, context, baseURL }) => {
+    const { loaders, events } = await intercept(context, baseURL!);
+    const preference = JSON.stringify({ version: 1, choice: savedChoice, timestamp: Date.now() - 86_400_000 });
+    await context.addInitScript(({ key, preference }) => {
+      if (window.top === window && localStorage.getItem(key) === null) localStorage.setItem(key, preference);
+    }, { key, preference });
+
+    await page.goto("/");
+    await trigger(page).click();
+    await expect(dialog(page)).toContainText(savedChoice === "granted" ? "Accepted" : "Rejected");
+    await expect(banner(page)).toHaveCount(0);
+    expect(await page.evaluate(key => localStorage.getItem(key), key)).toBe(preference);
+    if (savedChoice === "granted") {
+      await expect.poll(() => events.length).toBe(1);
+      expect(loaders).toEqual([measurementId]);
+    } else {
+      await expect(frame(page)).toHaveCount(0);
+      expect(loaders).toEqual([]);
+      expect(events).toEqual([]);
+    }
+  });
+}
+
 test("opt-in emits one sanitized page view per document and withdrawal stops all tabs", async ({ page, context, baseURL }) => {
   const { loaders, events } = await intercept(context, baseURL!);
   await page.goto("/cookie-policy/");
-  await expect(choice(page)).toBeEnabled();
-  await choice(page).focus();
+  await expect(banner(page)).toBeVisible();
+  await expect(frame(page)).toHaveCount(0);
+  expect(loaders).toEqual([]);
+  await banner(page).getByRole("button", { name: "Accept analytics" }).focus();
   await page.keyboard.press("Space");
-  await expect(page.locator("#analytics-status")).toHaveText("Analytics is on.");
+  await expect(page.getByRole("status").filter({ hasText: "Analytics is on." })).toBeVisible();
+  await expect(banner(page)).toHaveCount(0);
   await expect.poll(() => events.length).toBe(1);
   expect(loaders).toEqual([measurementId]);
   expect(events[0].get("tid")).toBe(measurementId);
@@ -97,14 +148,14 @@ test("opt-in emits one sanitized page view per document and withdrawal stops all
   await expect.poll(() => events.length).toBe(9);
   await page.evaluate(() => { location.hash = "private"; });
   await page.locator("footer").getByRole("link", { name: "Cookie Policy", exact: true }).click();
-  await expect(choice(page)).toBeChecked();
+  await expect(banner(page)).toHaveCount(0);
   await expect.poll(() => events.length).toBe(10);
 
   await page.goBack();
   await expect.poll(() => events.length).toBe(11);
   expect(events[10].get("dl")).toBe("https://kyrolearning.com/terms-of-use/");
   await page.goForward();
-  await expect(choice(page)).toBeChecked();
+  await expect(banner(page)).toHaveCount(0);
   await expect.poll(() => events.length).toBe(12);
 
   const secondTab = await context.newPage();
@@ -112,13 +163,19 @@ test("opt-in emits one sanitized page view per document and withdrawal stops all
   await expect.poll(() => events.length).toBe(13);
   expect((await context.cookies()).some(cookie => cookie.name === "_ga")).toBe(true);
   const loadedBeforeWithdrawal = loaders.length;
-  await choice(page).uncheck();
-  await expect(page.locator("#analytics-status")).toHaveText("Analytics is off.");
+  await trigger(page).click();
+  await expect(dialog(page)).toContainText("Accepted");
+  await dialog(page).getByRole("button", { name: "Reject optional" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "Analytics is off." })).toBeVisible();
   await expect(frame(page)).toHaveCount(0);
   await expect(frame(secondTab)).toHaveCount(0);
+  await trigger(secondTab).click();
+  await expect(dialog(secondTab)).toContainText("Rejected");
   expect((await context.cookies()).some(cookie => cookie.name === "_ga")).toBe(false);
   await page.reload();
-  await expect(choice(page)).not.toBeChecked();
+  await trigger(page).click();
+  await expect(dialog(page)).toContainText("Rejected");
+  await expect(banner(page)).toHaveCount(0);
   await secondTab.goto("/about/");
   await expect(frame(secondTab)).toHaveCount(0);
   expect(loaders).toHaveLength(loadedBeforeWithdrawal);
