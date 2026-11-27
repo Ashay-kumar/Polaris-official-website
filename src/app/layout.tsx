@@ -5,7 +5,6 @@ import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { LocalGtm } from "@/components/layout/local-gtm";
 
 const editorial = localFont({
   src: "../styles/fonts/dm-serif-display-latin-400-normal.woff2",
@@ -40,5 +39,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${editorial.variable} ${body.variable}`}><body><KitAccessProvider><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /><LocalGtm /></KitAccessProvider></body></html>;
+  return <html lang="en" className={`${editorial.variable} ${body.variable}`}>
+    
+<head>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TCH3MJZH"></script>
+  <script dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    `
+  }} />
+</head>
+<body><KitAccessProvider><a href="#main-content" className="skip-link">Skip to content</a><SiteHeader /><main id="main-content" tabIndex={-1}>{children}</main><SiteFooter /></KitAccessProvider></body></html>;
 }
