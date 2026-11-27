@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 import { sitePath } from "./site-path";
 test("Styles, local fonts and decorative assets load at the domain root", async ({ page, request }) => {
+  await page.route("https://www.googletagmanager.com/gtm.js?id=GTM-TCH3MJZH",
+    route => route.fulfill({ contentType: "application/javascript", body: "" }));
   expect((await request.get("/Polaris-official-website/")).status()).toBe(404);
   const failures: string[]=[];
   page.on("response",response=>{if(response.status()>=400)failures.push(response.url());});

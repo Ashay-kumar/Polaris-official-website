@@ -11,6 +11,8 @@ export default defineConfig({
     baseURL: process.env.POLARIS_TEST_URL ?? "http://127.0.0.1:4173",
     channel: process.env.POLARIS_TEST_BROWSER === "chromium" ? undefined : "chrome",
     headless: true,
+    // Tests can intercept Google scripts, while unmatched requests fail closed at DNS.
+    launchOptions: { args: ["--host-resolver-rules=MAP www.googletagmanager.com ~NOTFOUND"] },
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
   },

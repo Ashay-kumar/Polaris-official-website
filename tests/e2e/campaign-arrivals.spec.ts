@@ -121,9 +121,14 @@ test("browser navigation serves the static documents and counts requests with GA
   const { points, env } = recorder();
   const localOrigin = new URL(baseURL!).origin;
   const external: string[] = [];
+  let gtmLoads = 0;
   await context.route("**/*", async (route) => {
     const url = new URL(route.request().url());
     if (url.origin !== localOrigin) {
+      if (url.href === "https://www.googletagmanager.com/gtm.js?id=GTM-TCH3MJZH") {
+        gtmLoads++;
+        return route.fulfill({ contentType: "application/javascript", body: "" });
+      }
       external.push(url.hostname);
       return route.abort();
     }
@@ -149,4 +154,5 @@ test("browser navigation serves the static documents and counts requests with GA
     ["/", tagged], ["/cookie-policy/", "other"], ["/cookie-policy/", "other"],
   ]);
   expect(external).toEqual([]);
+  expect(gtmLoads).toBe(3);
 });
