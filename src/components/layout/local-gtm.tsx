@@ -39,7 +39,8 @@ function hasValidGrant() {
 
 export function LocalGtm() {
   useEffect(() => {
-    if (!enabled || !loopbackHosts.has(location.hostname)) return;
+    const production = location.origin === "https://kyrolearning.com";
+    if (!production && !(enabled && loopbackHosts.has(location.hostname))) return;
 
     let frame: HTMLIFrameElement | undefined;
     let suspended = false;

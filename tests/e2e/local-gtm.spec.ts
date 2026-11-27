@@ -8,7 +8,8 @@ test.use({
 });
 
 const key = "kyro.analytics-preference";
-const enabledBuild = process.env.KYRO_TEST_LOCAL_GTM === "1";
+const fixtureOrigin = process.env.POLARIS_TEST_URL ?? "http://127.0.0.1:4173";
+const productionOrigin = "https://kyrolearning.com";
 const container = 'iframe[title="Local Google Tag Manager"]';
 const banner = (page: Page) => page.getByRole("region", { name: "Your cookie choice" });
 const accept = (page: Page) => banner(page).getByRole("button", { name: "Accept analytics" }).click();
@@ -19,7 +20,11 @@ async function intercept(context: BrowserContext, baseURL: string) {
   const traffic = { containers: 0, pageViews: 0, beacons: 0 };
   await context.route("**/*", async route => {
     const url = new URL(route.request().url());
-    if (url.origin === origin) return route.continue();
+    if (url.origin === origin) {
+      if (origin !== productionOrigin) return route.continue();
+      const response = await route.fetch({ url: new URL(url.pathname + url.search, fixtureOrigin).href, maxRedirects: 0 });
+      return route.fulfill({ response });
+    }
     if (url.hostname === "www.googletagmanager.com" && url.pathname === "/gtm.js") {
       expect(url.searchParams.get("id")).toBe("GTM-TCH3MJZH");
       traffic.containers++;
@@ -46,7 +51,6 @@ async function intercept(context: BrowserContext, baseURL: string) {
 }
 
 test("GTM is disabled in the default build even after analytics acceptance", async ({ page, context, baseURL }) => {
-  test.skip(enabledBuild, "Run on the default build");
   const traffic = await intercept(context, baseURL!);
   await page.goto("/");
   await accept(page);
@@ -56,8 +60,8 @@ test("GTM is disabled in the default build even after analytics acceptance", asy
   expect(traffic.containers).toBe(0);
 });
 
-test.describe("explicitly enabled loopback build", () => {
-  test.skip(!enabledBuild, "Run on the explicitly enabled local build");
+test.describe("production hostname served by the local fixture", () => {
+  test.use({ baseURL: productionOrigin });
 
   for (const preference of [
     { name: "missing", raw: null },
